@@ -26,11 +26,17 @@ class ClipEncoder:
     """Load one offline CLIP model on the first image encoding request."""
 
     def __init__(
-        self, model_path: Path, requested_device: str = "auto", *, precision: str = "fp32"
+        self,
+        model_path: Path | None = None,
+        requested_device: str = "auto",
+        *,
+        precision: str = "fp32",
+        model_id: str = "openai/clip-vit-base-patch16",
     ) -> None:
         if requested_device not in {"auto", "mps", "cuda", "cpu"}:
             raise ValueError("device must be auto, mps, cuda, or cpu")
         self.model_path = model_path
+        self.model_id = model_id
         if precision not in {"fp32", "tf32", "fp16"}:
             raise ValueError("precision must be fp32, tf32, or fp16")
         self.precision = precision
@@ -51,12 +57,34 @@ class ClipEncoder:
     def weight_dtype(self) -> str | None:
         return str(self._model.dtype).removeprefix("torch.") if self.loaded else None
 
+    def _offline_path(self) -> Path:
+        if self.model_path is not None:
+            if not self.model_path.is_dir():
+                raise FileNotFoundError(f"offline model snapshot not found: {self.model_path}")
+            return self.model_path
+        from huggingface_hub import snapshot_download
+        from huggingface_hub.errors import LocalEntryNotFoundError
+
+        try:
+            return Path(snapshot_download(self.model_id, local_files_only=True))
+        except LocalEntryNotFoundError:
+            raise FileNotFoundError(
+                f"offline model not found in Hugging Face cache: {self.model_id}"
+            ) from None
+
+    @property
+    def available_offline(self) -> bool:
+        try:
+            self._offline_path()
+        except (OSError, ValueError):
+            return False
+        return True
+
     def load(self) -> None:
         with self._lock:
             if self.loaded:
                 return
-            if not self.model_path.is_dir():
-                raise FileNotFoundError(f"offline model snapshot not found: {self.model_path}")
+            model_path = self._offline_path()
 
             import torch  # pyright: ignore[reportMissingImports]
             from transformers import CLIPImageProcessor, CLIPModel
@@ -89,10 +117,8 @@ class ClipEncoder:
                     torch.backends.cuda.matmul.allow_tf32 = self.precision == "tf32"
                     torch.backends.cudnn.allow_tf32 = self.precision == "tf32"
 
-            processor = CLIPImageProcessor.from_pretrained(
-                str(self.model_path), local_files_only=True
-            )
-            model = CLIPModel.from_pretrained(str(self.model_path), local_files_only=True)
+            processor = CLIPImageProcessor.from_pretrained(str(model_path), local_files_only=True)
+            model = CLIPModel.from_pretrained(str(model_path), local_files_only=True)
             model.eval()
             # Transformers' @wraps annotation loses the bound self in some releases.
             model.to(device, dtype=dtype)  # pyright: ignore[reportArgumentType]

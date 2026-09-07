@@ -32,7 +32,8 @@ class ServerConfig(ConfigModel):
 
 
 class ModelConfig(ConfigModel):
-    path: Path = Path("models/clip")
+    id: str = Field(default="openai/clip-vit-base-patch16", min_length=1)
+    path: Path | None = None
     device: Literal["auto", "cpu", "cuda", "mps"] = "auto"
     precision: Literal["fp32", "tf32", "fp16"] = "fp32"
 
@@ -191,7 +192,8 @@ def load_config(path: Path, *, environ: Mapping[str, str] | None = None) -> Serv
             config.camera_settings(name)
         except ValidationError as error:
             raise ConfigError(_validation_message(path, error, f"cameras.{name}.")) from None
-    config.model.path = (path.parent / config.model.path.expanduser()).resolve()
+    if config.model.path is not None:
+        config.model.path = (path.parent / config.model.path.expanduser()).resolve()
     config.data_dir = (path.parent / config.data_dir.expanduser()).resolve()
     return config
 

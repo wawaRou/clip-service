@@ -30,7 +30,10 @@ class ClipService:
         self._capture_factory = capture_factory
         self.started_at = time.monotonic()
         self.encoder = encoder or ClipEncoder(
-            config.model.path, config.model.device, precision=config.model.precision
+            config.model.path,
+            config.model.device,
+            precision=config.model.precision,
+            model_id=config.model.id,
         )
         self.store = CandidateStore(config.data_dir / "candidates", config.retention_hours * 3600)
         self.store.cancel_pending()
@@ -253,8 +256,9 @@ class ClipService:
             "model": {
                 "precision": self.config.model.precision,
                 "weight_dtype": getattr(self.encoder, "weight_dtype", None),
-                "path": str(self.config.model.path),
-                "available_offline": self.config.model.path.is_dir(),
+                "id": self.config.model.id,
+                "path": str(self.config.model.path) if self.config.model.path else None,
+                "available_offline": getattr(self.encoder, "available_offline", False),
                 "loaded": self.encoder.loaded,
                 "device": self.encoder.device,
             },

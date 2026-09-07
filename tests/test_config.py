@@ -23,7 +23,8 @@ class ConfigTests(unittest.TestCase):
                 "rtsp://frigate.local:8554/living_room_sub",
             )
             self.assertEqual(config.camera_url("door"), "rtsp://frigate.local:8554/door")
-            self.assertEqual(config.model.path, Path(directory).resolve() / "models/clip")
+            self.assertIsNone(config.model.path)
+            self.assertEqual(config.model.id, "openai/clip-vit-base-patch16")
             self.assertEqual(config.data_dir, Path(directory).resolve() / "data")
 
     def test_global_detection_defaults_allow_independent_camera_overrides(self):

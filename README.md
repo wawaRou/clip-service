@@ -88,7 +88,10 @@ uv build
 
 详细版本、系统库要求和验证状态见 [平台部署说明](docs/platforms.md)。
 
-检测前在配置中指定本地 CLIP 模型路径，并使用对应平台 extra 启动服务。模型在首次
+完整可配置项及默认值见 [config.example.toml](config.example.toml)。默认通过
+`model.id = "openai/clip-vit-base-patch16"` 从 Hugging Face 本地缓存读取模型，遵循
+`HF_HOME` / `HF_HUB_CACHE`；也可设置 `model.path` 指定本地模型目录（优先于 ID）。
+缓存缺失或模型文件不完整时直接返回加载错误，绝不联网下载。使用对应平台 extra 启动服务。模型在首次
 设置基准图时加载；未开启会话或未设置基准时只拉流缓存，等待候选回执时暂停该路检测。
 完整交互见 [Agent Server 接口说明](docs/api.md)。
 原生环境验收、性能测量与未验证项目见 [运行验收](docs/validation.md)。
