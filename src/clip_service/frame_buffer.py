@@ -11,6 +11,7 @@ class EncodedFrame:
     timestamp: float
     jpeg: bytes
     sequence: int = 0
+    stream_generation: int = 0
 
 
 class FrameRingBuffer:

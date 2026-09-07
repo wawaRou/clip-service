@@ -5,9 +5,12 @@ description = "Cross-platform CLIP visual change detection service"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
 dependencies = [
+    "numpy>=2,<3",
     "opencv-python-headless>=4.11,<5",
+    "pillow>=11,<13",
     "pydantic>=2.10,<3",
     "tomli>=2,<3 ; python_full_version < '3.11'",
+    "transformers>=4.48,<6",
 ]
 
 [project.optional-dependencies]

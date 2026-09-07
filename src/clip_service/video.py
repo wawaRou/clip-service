@@ -107,8 +107,20 @@ class CameraReader:
                 "last_error": self._last_error,
             }
 
+    def latest_frame(self) -> EncodedFrame | None:
+        with self._lock:
+            if (
+                not self._connected
+                or self._last_received_monotonic is None
+                or time.monotonic() - self._last_received_monotonic
+                > self.settings.frame_max_age_seconds
+            ):
+                return None
+            return self.ring.latest()
+
     def _read(self) -> None:
         sequence = 0
+        generation = 0
         next_buffer_at = 0.0
         while not self._stop.is_set():
             capture = None
@@ -116,6 +128,7 @@ class CameraReader:
                 capture = self._capture_factory(self._url, self.settings)
                 if not capture.isOpened():
                     raise OSError("unable to open Frigate stream")
+                generation += 1
                 while not self._stop.is_set():
                     ok, pixels = capture.read()
                     if not ok:
@@ -134,7 +147,9 @@ class CameraReader:
                         raise OSError("unable to encode camera frame")
                     sequence += 1
                     with self._lock:
-                        self.ring.append(EncodedFrame(time.time(), jpeg.tobytes(), sequence))
+                        self.ring.append(
+                            EncodedFrame(time.time(), jpeg.tobytes(), sequence, generation)
+                        )
                         self._last_received_monotonic = now
                     next_buffer_at = now + 1 / self.settings.ring_max_fps
             except (OSError, cv2.error):
