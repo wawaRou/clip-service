@@ -42,6 +42,21 @@ SSE 的 candidate_change 数据包含 camera、episode_id、candidate_id、相�
 图片、决定是否触发 VLM 后向候选的 ack 路径提交 episode_id、布尔 triggered_vlm，
 以及可选 baseline（格式与 source 相同）。省略 baseline 将沿用原基准继续检测。
 
+将 SSE 收到的候选标识代入，取五张图，再发送回执：
+
+```bash
+candidate_id='<SSE 中的 candidate_id>'
+for index in 0 1 2 3 4; do
+  curl -f "http://127.0.0.1:18080/api/v1/candidates/$candidate_id/frames/$index" \
+    -o "frame-$index.jpg"
+done
+curl -H 'Content-Type: application/json' \
+  -d "{\"episode_id\":\"motion-1\",\"triggered_vlm\":false,\"baseline\":{\"type\":\"candidate\",\"candidate_id\":\"$candidate_id\",\"frame_index\":4}}" \
+  "http://127.0.0.1:18080/api/v1/candidates/$candidate_id/ack"
+```
+
+此例用候选的最后一张图作为新基准；triggered_vlm 应填写 Agent Server 的实际决策。
+
 时间窗请求包含 episode_id、window_start、window_end、frame_count（1—9）。返回均匀
 目标时刻附近的 JPEG base64；单帧取窗口中点，缺失任一目标帧返回 503。时间戳为
 CLIP 主机收到画面的 Unix 秒数，不代表摄像头采集时间；跨机器调用应使用一致时钟，
@@ -55,7 +70,7 @@ CLIP 主机收到画面的 Unix 秒数，不代表摄像头采集时间；跨机
 
 所有摄像头共享一份模型。detection.inference_fps 是每路默认目标频率，单路可覆盖；
 服务按各路固定周期处理最新且未处理的有效帧。ring_max_fps 只控制历史缓存采样上限，
-推理直接读取最新解码帧；源视频必须提供足够新帧。默认目标为 10 FPS，100 FPS 未经实测，
+推理直接读取最新解码帧；源视频必须提供足够新帧。默认目标为 8 FPS，100 FPS 未经实测，
 不是默认能力。
 
 健康响应中每路 inference 字段提供：

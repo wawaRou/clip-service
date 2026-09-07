@@ -17,7 +17,7 @@ class ConfigTests(unittest.TestCase):
             )
             config = load_config(path, environ={})
             self.assertEqual(config.server.port, 18080)
-            self.assertEqual(config.camera_settings("living_room").inference_fps, 10)
+            self.assertEqual(config.camera_settings("living_room").inference_fps, 8)
             self.assertEqual(
                 config.camera_url("living_room"),
                 "rtsp://frigate.local:8554/living_room_sub",

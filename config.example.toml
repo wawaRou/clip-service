@@ -6,6 +6,9 @@ path = "./models/clip"
 rtsp_base_url = "rtsp://frigate.local:8554"
 # Use CLIP_FRIGATE_USERNAME / CLIP_FRIGATE_PASSWORD when authentication is enabled.
 
+[detection]
+inference_fps = 8 # Per-camera target; an individual camera may override it.
+
 # Replace these identifiers with the camera and go2rtc stream you want to analyze.
 # Omit all camera tables to start with no cameras; no example camera is added automatically.
 [cameras.front_door]

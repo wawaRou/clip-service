@@ -7,12 +7,12 @@
 
 | 平台 | 系统 | Python | torch | torchvision | 状态 |
 | --- | --- | --- | --- | --- | --- |
-| Mac / MPS | Apple Silicon macOS | 3.12 | 2.13.0 / PyPI | 暂未声明 | torch 版本沿用旧项目；新环境推理待验证 |
-| Thor / CUDA | L4T R39.2 / JetPack 7 系列 / CUDA 13.2 | 3.12 | 2.14.0+cu132 | 0.29.0+cu132 | 用户已实测通过此推理组合；项目集成待验证 |
+| Mac / MPS | Apple Silicon macOS | 3.12 | 2.13.0 / PyPI | 无需安装 | 原生 CLIP 与 Frigate 单路、三路逻辑摄像头闭环通过 |
+| Thor / CUDA | L4T R39.2 / JetPack 7 系列 / CUDA 13.2 | 3.12 | 2.14.0+cu132 | 0.29.0+cu132 | 原生 CLIP 与 Frigate 单路、三路逻辑摄像头闭环通过 |
 | Orin 64GB / CUDA | L4T 36.4.4 / JetPack 6.2.1 / CUDA 12.6 | 3.10 | 2.8.0 | 0.23.0 | 用户指定暂定固定，上机验证待完成 |
 
-Mac 尚未迁移旧项目的 transformers 等业务依赖；迁移时按实际使用添加并验证。
-共享源码保持 Python 3.10 兼容。目前锁定目标限制为 macOS ARM64 / Python 3.12，
+公共业务依赖已纳入同一份锁文件，Mac 使用 transformers 的 PIL 图像预处理器。
+共享源码保持 Python 3.10 兼容。锁定目标限制为 macOS ARM64 / Python 3.12，
 以及 Linux ARM64 / Python 3.10、3.12。平台 extra 与解释器组合应遵循 README 表格。
 
 ## 依赖来源
@@ -51,4 +51,4 @@ print("GPU matrix operation passed:", device)
 PY
 ```
 
-业务迁移后还需验证真实 CLIP 模型编码、图像预处理与视频读取。
+真实 Frigate 流的单路、三路集成验收命令和实测边界见 [运行验收](validation.md)。

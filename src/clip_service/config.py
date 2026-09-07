@@ -79,7 +79,7 @@ class FrigateConfig(ConfigModel):
 
 
 class DetectionConfig(ConfigModel):
-    inference_fps: float = Field(default=10, gt=0)
+    inference_fps: float = Field(default=8, gt=0)
     similarity_threshold: float = Field(default=0.9, ge=-1, le=1)
     stable_seconds: float = Field(default=0.3, ge=0)
     candidate_frame_interval: float = Field(default=0.075, gt=0)

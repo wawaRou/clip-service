@@ -73,12 +73,14 @@ Agent Server 开启会话并设置基准。模型、监听地址、数据目录�
 ## 开发检查
 
 ```bash
-uv run --locked ruff check .
-uv run --locked ruff format --check .
-uv run --locked pyright
-uv run --locked pytest
+uv run --locked --extra mac ruff check .
+uv run --locked --extra mac ruff format --check .
+uv run --locked --extra mac pyright
+uv run --locked --extra mac pytest
 uv build
 ```
+
+上述完整检查以 Mac 为例；其他机器替换为对应 extra，保留真实模型测试所需的推理依赖。
 
 新增公共业务依赖使用 `uv add`；开发工具使用 `uv add --group dev`。
 更新依赖后提交 `pyproject.toml` 与 `uv.lock`。推理依赖由平台 extra 统一管理，
@@ -89,3 +91,4 @@ uv build
 检测前在配置中指定本地 CLIP 模型路径，并使用对应平台 extra 启动服务。模型在首次
 设置基准图时加载；未开启会话或未设置基准时只拉流缓存，等待候选回执时暂停该路检测。
 完整交互见 [Agent Server 接口说明](docs/api.md)。
+原生环境验收、性能测量与未验证项目见 [运行验收](docs/validation.md)。

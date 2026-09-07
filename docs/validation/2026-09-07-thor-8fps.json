@@ -1,0 +1,172 @@
+{
+  "started_at": 1788779356.5651412,
+  "platform": "Linux-6.8.12-1021-tegra-aarch64-with-glibc2.39",
+  "machine": "aarch64",
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "torch": "2.14.0+cu132",
+  "torch_cuda": "13.2",
+  "service_version": "0.1.0",
+  "gpu": "NVIDIA Thor",
+  "transformers": "5.16.1",
+  "opencv": "4.14.0.94",
+  "device": "cuda",
+  "model": "/home/xujiawang24/.cache/huggingface/hub/models--openai--clip-vit-base-patch16/snapshots/57c216476eefef5ab752ec549e440a49ae4ae5f3",
+  "frigate_url": "rtsp://192.168.3.245:8554",
+  "stream": "living_room_c225_sub",
+  "source_count": 1,
+  "target_fps_per_camera": 8.0,
+  "warmup_seconds": 3,
+  "measurement_seconds_per_phase": 10,
+  "stable_seconds": 0.3,
+  "candidate_frame_interval": 0.075,
+  "measurement": {
+    "throughput": "completed encoding counter delta / host monotonic elapsed time",
+    "latencies": "latest completion sampled every 0.2s, not all encoded frames; seconds",
+    "processing": "preprocessing + CLIP + feature processing; excludes candidate storage",
+    "notification": "successful candidate window's first low-similarity frame receive on CLIP host to local SSE receive; includes confirmation/storage/notification; excludes camera/Frigate transit",
+    "trigger": "synthetic black baseline against real stream; not physical scene change",
+    "three_camera_phase": "three logical readers of the same physical Frigate stream"
+  },
+  "phases": [
+    {
+      "logical_cameras": 1,
+      "added_camera_ids": [],
+      "throughput": {
+        "elapsed_seconds": 10.095894424244761,
+        "health_samples": 50,
+        "cameras": {
+          "camera_1": {
+            "target_fps": 8.0,
+            "actual_fps": 7.924013132297045,
+            "frames_processed_delta": 80,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 50,
+              "p50": 0.05301325395703316,
+              "p95": 0.06549490164034068,
+              "max": 0.07136484514921904
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 50,
+              "p50": 0.09005067613907158,
+              "p95": 0.1404690939234569,
+              "max": 0.1815774030983448
+            }
+          }
+        }
+      },
+      "candidate_notifications": {
+        "camera_1": {
+          "candidate_id": "84ba0bc7701b48dc915bac0f57f835b3",
+          "started_at": 1788779377.3381352,
+          "sse_received_at": 1788779377.7131212,
+          "receive_to_sse_seconds": 0.374985933303833,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        }
+      }
+    },
+    {
+      "logical_cameras": 3,
+      "added_camera_ids": [
+        "camera_2",
+        "camera_3"
+      ],
+      "throughput": {
+        "elapsed_seconds": 10.182205447927117,
+        "health_samples": 50,
+        "cameras": {
+          "camera_1": {
+            "target_fps": 8.0,
+            "actual_fps": 7.856844021575534,
+            "frames_processed_delta": 80,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 50,
+              "p50": 0.03638088353909552,
+              "p95": 0.04078101743943989,
+              "max": 0.181764324195683
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 50,
+              "p50": 0.0729264710098505,
+              "p95": 0.13569876831024885,
+              "max": 0.22687743324786425
+            }
+          },
+          "camera_2": {
+            "target_fps": 8.0,
+            "actual_fps": 7.856844021575534,
+            "frames_processed_delta": 80,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 50,
+              "p50": 0.036681378027424216,
+              "p95": 0.040092260995879765,
+              "max": 0.04471211135387421
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 50,
+              "p50": 0.06969090667553246,
+              "p95": 0.11270414029713718,
+              "max": 0.1217235648073256
+            }
+          },
+          "camera_3": {
+            "target_fps": 8.0,
+            "actual_fps": 7.955054571845228,
+            "frames_processed_delta": 81,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 50,
+              "p50": 0.036867497488856316,
+              "p95": 0.04039383619092404,
+              "max": 0.04193257400766015
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 50,
+              "p50": 0.07100609713234007,
+              "p95": 0.10729973649140447,
+              "max": 0.11966435005888343
+            }
+          }
+        }
+      },
+      "candidate_notifications": {
+        "camera_3": {
+          "candidate_id": "1bc6de5f7ba34b86bf0b418df81745e6",
+          "started_at": 1788779395.405131,
+          "sse_received_at": 1788779395.868177,
+          "receive_to_sse_seconds": 0.4630458354949951,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        },
+        "camera_2": {
+          "candidate_id": "572e31feb0af45b09408d427279e95e4",
+          "started_at": 1788779395.879199,
+          "sse_received_at": 1788779396.326993,
+          "receive_to_sse_seconds": 0.44779396057128906,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        },
+        "camera_1": {
+          "candidate_id": "2046fea772d14b08bd35a291af25f412",
+          "started_at": 1788779395.8530622,
+          "sse_received_at": 1788779396.376894,
+          "receive_to_sse_seconds": 0.523831844329834,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        }
+      },
+      "remove_cameras_ended_sessions": true
+    }
+  ],
+  "completed_at": 1788779397.9443831,
+  "source_commit": "2201b64c1a147e50f7ac2a588873dd12f66e2abe",
+  "script_source": "Latest local uncommitted tests/manual_native.py copied separately before run",
+  "source_probe_reference": "thor-native.json: same Frigate stream independently probed on Thor immediately before this run; 1280x720 H264, r_frame_rate=30/1, avg_frame_rate=25/1"
+}
