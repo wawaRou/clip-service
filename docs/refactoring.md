@@ -1,6 +1,6 @@
 # 功能重构讨论
 
-状态：设计访谈已收敛，关键业务规则已确认；功能代码尚未迁移。本文保留访谈、旧实现核查与实施记录，长期决策见 ADR：
+状态：设计访谈已收敛，关键业务规则已确认；任务 01 已实现并验证，其余任务按依赖继续实施。本文保留访谈、旧实现核查与实施记录，长期决策见 ADR：
 
 - [ADR 0001：配置所有权与显式重载](adr/0001-file-owned-camera-configuration.md)
 - [ADR 0002：会话职责与恢复规则](adr/0002-agent-owned-sessions-and-recovery.md)
@@ -101,7 +101,7 @@
 5. [运行中重载配置并增删改摄像头](../.scratch/clip-refactor/issues/05-live-config-reload.md) — 依赖 03、04。
 6. [完成原生 uv 环境下的运行验收](../.scratch/clip-refactor/issues/06-native-runtime-acceptance.md) — 依赖 05。
 
-任务文件状态统一为 ready-for-agent，开始前仍须检查阻塞依赖。当前只有任务 01 可开始。
+任务文件状态统一为 ready-for-agent，开始前仍须检查阻塞依赖。任务 01 已完成，当前任务 02 可开始。
 
 ## 当前通知机制与延迟约束
 

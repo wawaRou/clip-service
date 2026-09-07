@@ -4,7 +4,11 @@ version = "0.1.0"
 description = "Cross-platform CLIP visual change detection service"
 readme = "README.md"
 requires-python = ">=3.10,<3.13"
-dependencies = []
+dependencies = [
+    "opencv-python-headless>=4.11,<5",
+    "pydantic>=2.10,<3",
+    "tomli>=2,<3 ; python_full_version < '3.11'",
+]
 
 [project.optional-dependencies]
 # Mac starts with the torch version present in the original project's environment.
@@ -19,7 +23,11 @@ orin = [
 ]
 
 [dependency-groups]
-dev = ["ruff>=0.12,<1"]
+dev = [
+    "pyright>=1.1,<2",
+    "pytest>=8,<9",
+    "ruff>=0.12,<1",
+]
 
 [project.scripts]
 clip-service = "clip_service.cli:main"
@@ -61,3 +69,10 @@ line-length = 100
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP"]
+
+[tool.pyright]
+include = ["src"]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.10"
+typeCheckingMode = "basic"

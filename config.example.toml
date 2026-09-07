@@ -1,0 +1,12 @@
+# Paths are relative to this file. Environment variables override file values.
+[model]
+path = "./models/clip"
+
+[frigate]
+rtsp_base_url = "rtsp://frigate.local:8554"
+# Use CLIP_FRIGATE_USERNAME / CLIP_FRIGATE_PASSWORD when authentication is enabled.
+
+# Replace these identifiers with the camera and go2rtc stream you want to analyze.
+# Omit all camera tables to start with no cameras; no example camera is added automatically.
+[cameras.front_door]
+stream = "front_door_sub"
