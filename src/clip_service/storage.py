@@ -29,6 +29,7 @@ class CandidateRecord:
     minimum_similarity: float
     frame_timestamps: tuple[float, ...]
     triggered_vlm: bool | None = None
+    ack_deadline_at: float | None = None
 
     def to_api(self) -> dict:
         result = asdict(self)
@@ -74,7 +75,14 @@ class CandidateStore:
                 self._records[record.candidate_id] = record
         self.cleanup()
 
-    def create(self, camera: str, episode_id: str, decision: CandidateDecision) -> CandidateRecord:
+    def create(
+        self,
+        camera: str,
+        episode_id: str,
+        decision: CandidateDecision,
+        *,
+        ack_timeout_seconds: float = 60,
+    ) -> CandidateRecord:
         candidate_id = uuid.uuid4().hex
         now = time.time()
         record = CandidateRecord(
@@ -84,6 +92,7 @@ class CandidateStore:
             status="pending",
             created_at=now,
             expires_at=now + self.retention_seconds,
+            ack_deadline_at=now + ack_timeout_seconds,
             started_at=decision.started_at,
             confirmed_at=decision.confirmed_at,
             similarity=decision.similarity,
@@ -132,11 +141,18 @@ class CandidateStore:
         self, candidate_id: str, *, status: str, triggered_vlm: bool | None
     ) -> CandidateRecord | None:
         with self._lock:
-            record = self.get(candidate_id)
+            record = self._records.get(candidate_id)
             if record is None:
                 return None
             updated = replace(record, status=status, triggered_vlm=triggered_vlm)
-            self._write_manifest(updated, self.root / candidate_id)
+            candidate_dir = self.root / candidate_id
+            try:
+                self._write_manifest(updated, candidate_dir)
+            except FileNotFoundError:
+                if candidate_dir.exists():
+                    raise
+                del self._records[candidate_id]
+                return None
             self._records[candidate_id] = updated
             return updated
 
@@ -146,15 +162,28 @@ class CandidateStore:
         temporary.chmod(0o600)
         temporary.replace(candidate_dir / "manifest.json")
 
+    def cancel_pending(self) -> int:
+        """Cancel candidates whose in-memory episodes did not survive a restart."""
+        with self._lock:
+            cancelled = 0
+            for candidate_id, record in list(self._records.items()):
+                if record.status == "pending":
+                    self.update_status(candidate_id, status="cancelled", triggered_vlm=None)
+                    cancelled += 1
+            return cancelled
+
     def cleanup(self, now: float | None = None) -> int:
         now = time.time() if now is None else now
         with self._lock:
             expired = [
                 candidate_id
                 for candidate_id, record in self._records.items()
-                if record.expires_at <= now
+                if record.expires_at <= now and record.status != "pending"
             ]
             for candidate_id in expired:
-                shutil.rmtree(self.root / candidate_id)
+                try:
+                    shutil.rmtree(self.root / candidate_id)
+                except FileNotFoundError:
+                    pass
                 del self._records[candidate_id]
             return len(expired)

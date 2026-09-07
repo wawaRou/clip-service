@@ -101,7 +101,7 @@
 5. [运行中重载配置并增删改摄像头](../.scratch/clip-refactor/issues/05-live-config-reload.md) — 依赖 03、04。
 6. [完成原生 uv 环境下的运行验收](../.scratch/clip-refactor/issues/06-native-runtime-acceptance.md) — 依赖 05。
 
-任务文件状态统一为 ready-for-agent，开始前仍须检查阻塞依赖。任务 01—03 已完成，当前实施任务 04。
+任务文件状态统一为 ready-for-agent，开始前仍须检查阻塞依赖。任务 01—04 已完成，下一项为任务 05。
 
 ## 当前通知机制与延迟约束
 

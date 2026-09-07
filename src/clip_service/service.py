@@ -27,9 +27,13 @@ class ClipService:
         self.started_at = time.monotonic()
         self.encoder = encoder or ClipEncoder(config.model.path, config.model.device)
         self.store = CandidateStore(config.data_dir / "candidates", config.retention_hours * 3600)
+        self.store.cancel_pending()
+        self.store.cleanup()
         self.events = EventBroker()
         self._stop = threading.Event()
         self._inference: threading.Thread | None = None
+        self._next_cleanup_at = time.monotonic()
+        self._maintenance_error: str | None = None
         self.cameras = {
             name: Camera(
                 CameraReader(
@@ -79,6 +83,7 @@ class ClipService:
 
     def _detect(self) -> None:
         while not self._stop.is_set():
+            self._maintain_candidates()
             for name in self._scheduler.due(time.monotonic()):
                 if self._stop.is_set():
                     return
@@ -89,16 +94,45 @@ class ClipService:
                     logging.getLogger(__name__).warning("camera %s: %s", camera.name, error)
                 finally:
                     self._scheduler.complete(name, time.monotonic())
-            self._stop.wait(self._scheduler.delay(time.monotonic()))
+            self._stop.wait(min(0.1, self._scheduler.delay(time.monotonic())))
+
+    def pending_candidates(self) -> list[dict[str, Any]]:
+        candidates = (camera.pending_candidate() for camera in self.cameras.values())
+        return [candidate.to_api() for candidate in candidates if candidate is not None]
+
+    def _maintain_candidates(self) -> None:
+        failed = False
+        now = time.time()
+        for camera in self.cameras.values():
+            try:
+                camera.expire_candidate(now)
+            except OSError:
+                failed = True
+                logging.getLogger(__name__).exception(
+                    "camera %s: candidate expiry failed", camera.name
+                )
+        try:
+            if time.monotonic() >= self._next_cleanup_at:
+                self.store.cleanup()
+                self._next_cleanup_at = time.monotonic() + 1
+        except OSError:
+            failed = True
+            logging.getLogger(__name__).exception("candidate cleanup failed")
+        self._maintenance_error = "candidate storage update failed; retrying" if failed else None
 
     def health(self) -> dict[str, Any]:
         cameras = {name: camera.health() for name, camera in self.cameras.items()}
         return {
             "schema_version": "1.0",
             "status": "degraded"
-            if any(camera["stale"] or camera["inference_error"] for camera in cameras.values())
+            if self._maintenance_error
+            or any(
+                camera["stale"] or camera["inference_error"] or camera["storage_error"]
+                for camera in cameras.values()
+            )
             else "ok",
             "uptime_seconds": time.monotonic() - self.started_at,
+            "maintenance_error": self._maintenance_error,
             "ring_seconds": self.config.detection.ring_seconds,
             "frame_window_max_distance_seconds": (
                 self.config.detection.frame_window_max_distance_seconds

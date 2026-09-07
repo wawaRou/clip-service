@@ -104,6 +104,9 @@ class RequestHandler(BaseHTTPRequestHandler):
         if path == "/api/v1/events":
             self._events()
             return
+        if path == "/api/v1/candidates":
+            self._json(200, {"candidates": self.server.service.pending_candidates()})
+            return
         match = CANDIDATE.fullmatch(path)
         if match:
             record = self.server.service.store.get(match.group(1))
@@ -194,7 +197,7 @@ class RequestHandler(BaseHTTPRequestHandler):
                 raise ServiceError("candidate not found", 404, "candidate_not_found")
             camera = self.server.service.camera(record.camera)
             baseline_jpeg = None
-            if body.get("baseline") is not None:
+            if record.status != "acknowledged" and body.get("baseline") is not None:
                 baseline_jpeg = self._resolve_baseline(camera.name, episode_id, body["baseline"])
             updated = camera.acknowledge(
                 candidate_id,

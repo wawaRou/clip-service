@@ -32,7 +32,7 @@ class Camera:
         self.store = store
         self.events = events
         self.episode_id: str | None = None
-        self.pending_candidate_id: str | None = None
+        self._pending: CandidateRecord | None = None
         self.detector = CandidateDetector(
             similarity_threshold=self.settings.similarity_threshold,
             stable_seconds=self.settings.stable_seconds,
@@ -44,11 +44,36 @@ class Camera:
         self._last_sequence = 0
         self._stream_generation = 0
         self._inference_error: str | None = None
+        self._storage_error: str | None = None
         self._measurement_started_at = time.monotonic()
         self._completed_at: deque[float] = deque()
         self._frames_processed = 0
         self._last_processing_seconds: float | None = None
         self._last_frame_latency_seconds: float | None = None
+
+    @property
+    def pending_candidate_id(self) -> str | None:
+        return self._pending.candidate_id if self._pending else None
+
+    def pending_candidate(self) -> CandidateRecord | None:
+        with self._lock:
+            self.expire_candidate()
+            return self._pending
+
+    def expire_candidate(self, now: float | None = None) -> None:
+        """Release a timed-out candidate without changing the comparison baseline."""
+        now = time.time() if now is None else now
+        with self._lock:
+            pending = self._pending
+            if pending is None:
+                return
+            deadline = min(pending.ack_deadline_at or pending.expires_at, pending.expires_at)
+            if now < deadline:
+                return
+            self.store.update_status(pending.candidate_id, status="expired", triggered_vlm=None)
+            self._pending = None
+            self.detector.acknowledge()
+            self._revision += 1
 
     def start_episode(self, episode_id: str) -> None:
         if not episode_id:
@@ -70,7 +95,7 @@ class Camera:
                     self.pending_candidate_id, status="cancelled", triggered_vlm=None
                 )
             self.episode_id = None
-            self.pending_candidate_id = None
+            self._pending = None
             self.detector.clear_baseline()
             self._revision += 1
 
@@ -120,10 +145,18 @@ class Camera:
         baseline_jpeg: bytes | None,
     ) -> CandidateRecord:
         with self._lock:
+            completed = self._acknowledged(candidate_id, episode_id, triggered_vlm)
+            if completed is not None:
+                return completed
+            self.expire_candidate()
             self._require_pending(episode_id, candidate_id)
             revision = self._revision
         embedding = self._encode(baseline_jpeg) if baseline_jpeg is not None else None
         with self._lock:
+            completed = self._acknowledged(candidate_id, episode_id, triggered_vlm)
+            if completed is not None:
+                return completed
+            self.expire_candidate()
             self._require_revision(episode_id, revision)
             self._require_pending(episode_id, candidate_id)
             record = self.store.update_status(
@@ -134,7 +167,7 @@ class Camera:
             if embedding is not None:
                 self.detector.set_baseline(embedding)
             self.detector.acknowledge()
-            self.pending_candidate_id = None
+            self._pending = None
             self._revision += 1
             return record
 
@@ -178,11 +211,18 @@ class Camera:
             if decision is None:
                 return
             try:
-                record = self.store.create(self.name, episode_id, decision)
+                record = self.store.create(
+                    self.name,
+                    episode_id,
+                    decision,
+                    ack_timeout_seconds=self.settings.ack_timeout_seconds,
+                )
             except OSError:
+                self._storage_error = "candidate storage write failed"
                 self.detector.acknowledge()
                 raise
-            self.pending_candidate_id = record.candidate_id
+            self._storage_error = None
+            self._pending = record
             self._revision += 1
             self.events.publish("candidate_change", record.to_api())
 
@@ -194,6 +234,7 @@ class Camera:
             measurement_seconds = min(5.0, now - self._measurement_started_at)
             return status | {
                 "inference_error": self._inference_error,
+                "storage_error": self._storage_error,
                 "inference": {
                     "target_fps": self.settings.inference_fps,
                     "actual_fps": len(self._completed_at) / measurement_seconds
@@ -246,3 +287,17 @@ class Camera:
         self._require_episode(episode_id)
         if self.pending_candidate_id != candidate_id:
             raise ServiceError("candidate is not pending", 409, "candidate_not_pending")
+
+    def _acknowledged(
+        self, candidate_id: str, episode_id: str, triggered_vlm: bool
+    ) -> CandidateRecord | None:
+        record = self.store.get(candidate_id)
+        if record is None:
+            raise ServiceError("candidate not found", 404, "candidate_not_found")
+        if record.status != "acknowledged":
+            return None
+        if record.episode_id != episode_id or record.triggered_vlm != triggered_vlm:
+            raise ServiceError(
+                "acknowledgement conflicts with the completed result", 409, "ack_conflict"
+            )
+        return record

@@ -12,6 +12,7 @@
 | 设置基准 | PUT /api/v1/cameras/{camera}/baseline |
 | 提取时间窗图片 | POST /api/v1/cameras/{camera}/frame-windows |
 | 查询候选 | GET /api/v1/candidates/{candidate_id} |
+| 查询当前未处理候选 | GET /api/v1/candidates?status=pending |
 | 获取候选图片 | GET /api/v1/candidates/{candidate_id}/frames/{index} |
 | 回执 | POST /api/v1/candidates/{candidate_id}/ack |
 | 结束会话 | DELETE /api/v1/cameras/{camera}/episodes/{episode_id} |
@@ -69,3 +70,23 @@ CLIP 主机收到画面的 Unix 秒数，不代表摄像头采集时间；跨机
 
 算力不足时跳过过期检测周期，公平处理各路；不会积压历史帧。目标 FPS 相同不代表
 所有输入条件下实际 FPS 必然相等，应结合断流、帧年龄、会话状态和处理耗时判断。
+
+## 断线、超时与重启
+
+SSE 只广播当前在线事件，不保存历史事件。Agent Server 连接或重连时先建立 SSE，
+再查询 `GET /api/v1/candidates?status=pending`，以 candidate_id 去重并处理返回的
+`candidates` 列表。这样可找回断线期间仍未过期的候选，期间也可能同时收到相同 SSE
+通知。省略 status 时同样只查询当前未处理候选。
+
+候选的 ack_deadline_at 是回执截止时间，expires_at 是图片保留截止时间。默认回执等待
+60 秒，图片保留 24 小时，两者分别配置；等待期限或图片保留期限先到时，候选过期，
+服务保留原基准继续检测，所以同一画面变化可能再次产生候选。图片仍在保留期内时，
+旧候选可查询为 expired，迟到回执返回冲突，不会更新基准或清除新候选。
+
+已成功回执的候选在记录保留期内可以安全重试，相同 episode_id 和 triggered_vlm 返回
+已保存的结果，baseline 不再解析或应用；冲突的处理结果返回 409。并发编码期间若会话
+或基准已改变，请求会返回状态冲突，Agent Server 应重新查询当前状态，而非假定写入成功。
+
+CLIP 重启后自动恢复拉流与缓存，旧 pending 候选标记为 cancelled，不恢复会话和基准。
+Agent Server 根据健康信息重新开启会话、设置基准，再开始处理候选。候选存储错误会
+使请求失败或健康状态降级；后台会重试到期清理，不把持久化失败报告为成功。
