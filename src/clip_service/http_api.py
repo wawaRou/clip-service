@@ -15,6 +15,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from typing import Any
 from urllib.parse import unquote, urlsplit
 
+from .camera import Camera
 from .errors import ServiceError
 from .service import ClipService
 
@@ -129,6 +130,11 @@ class RequestHandler(BaseHTTPRequestHandler):
         raise ServiceError("endpoint not found", 404, "not_found")
 
     def _post(self, path: str) -> None:
+        if path == "/api/v1/config/reload":
+            if self.headers.get("Content-Length", "0") != "0":
+                raise ServiceError("reload takes no body; edit the startup TOML file")
+            self._json(200, self.server.service.reload_config())
+            return
         match = CAMERA_FRAME_WINDOWS.fullmatch(path)
         if match:
             body = self._read_json()
@@ -198,7 +204,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             camera = self.server.service.camera(record.camera)
             baseline_jpeg = None
             if record.status != "acknowledged" and body.get("baseline") is not None:
-                baseline_jpeg = self._resolve_baseline(camera.name, episode_id, body["baseline"])
+                baseline_jpeg = self._resolve_baseline(camera, episode_id, body["baseline"])
             updated = camera.acknowledge(
                 candidate_id,
                 episode_id=episode_id,
@@ -216,8 +222,8 @@ class RequestHandler(BaseHTTPRequestHandler):
         body = self._read_json()
         camera_name = unquote(match.group(1))
         episode_id = _text(body, "episode_id")
-        jpeg = self._resolve_baseline(camera_name, episode_id, body.get("source"))
         camera = self.server.service.camera(camera_name)
+        jpeg = self._resolve_baseline(camera, episode_id, body.get("source"))
         camera.set_baseline(episode_id, jpeg)
         self._json(
             200,
@@ -238,10 +244,9 @@ class RequestHandler(BaseHTTPRequestHandler):
         camera.stop_episode(episode_id)
         self._json(200, {"camera": camera.name, "episode_id": episode_id, "state": "stopped"})
 
-    def _resolve_baseline(self, camera_name: str, episode_id: str, source: Any) -> bytes:
+    def _resolve_baseline(self, camera: Camera, episode_id: str, source: Any) -> bytes:
         if not isinstance(source, dict):
             raise ServiceError("baseline source must be an object")
-        camera = self.server.service.camera(camera_name)
         source_type = source.get("type")
         if source_type == "latest":
             return camera.latest_jpeg()
@@ -251,7 +256,7 @@ class RequestHandler(BaseHTTPRequestHandler):
             record = self.server.service.store.get(candidate_id)
             if record is None:
                 raise ServiceError("candidate not found", 404, "candidate_not_found")
-            if record.camera != camera_name or record.episode_id != episode_id:
+            if record.camera != camera.name or record.episode_id != episode_id:
                 raise ServiceError(
                     "candidate does not belong to episode", 409, "candidate_mismatch"
                 )

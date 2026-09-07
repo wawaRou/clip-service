@@ -8,6 +8,7 @@ import time
 from collections import deque
 from typing import Any
 
+from .config import DetectionConfig
 from .detector import CandidateDetector
 from .errors import ServiceError
 from .events import EventBroker
@@ -41,6 +42,7 @@ class Camera:
         )
         self._lock = threading.RLock()
         self._revision = 0
+        self._retired = False
         self._last_sequence = 0
         self._stream_generation = 0
         self._inference_error: str | None = None
@@ -79,6 +81,8 @@ class Camera:
         if not episode_id:
             raise ServiceError("episode_id is required")
         with self._lock:
+            if self._retired:
+                raise ServiceError("camera configuration was replaced", 409, "camera_retired")
             if self.episode_id == episode_id:
                 return
             if self.episode_id is not None:
@@ -86,6 +90,33 @@ class Camera:
             self.episode_id = episode_id
             self.detector.clear_baseline()
             self._revision += 1
+
+    def update_settings(self, settings: DetectionConfig) -> None:
+        """Keep the active baseline and frozen candidate; restart unconfirmed tracking."""
+        with self._lock:
+            self.reader.update_settings(settings)
+            self.settings = settings
+            self.detector.similarity_threshold = settings.similarity_threshold
+            self.detector.stable_seconds = settings.stable_seconds
+            self.detector.frame_interval = settings.candidate_frame_interval
+            self.detector.frame_count = settings.candidate_frame_count
+            self.detector.reset_tracking()
+            self._revision += 1
+
+    def retire(self, reason: str) -> None:
+        """End a camera removed or replaced by configuration, invalidating in-flight work."""
+        with self._lock:
+            episode_id = self.episode_id
+            if episode_id is not None:
+                self.stop_episode(episode_id)
+            self._retired = True
+            self._revision += 1
+            self.reader.request_stop()
+            if episode_id is not None:
+                self.events.publish(
+                    "episode_ended",
+                    {"camera": self.name, "episode_id": episode_id, "reason": reason},
+                )
 
     def stop_episode(self, episode_id: str) -> None:
         with self._lock:

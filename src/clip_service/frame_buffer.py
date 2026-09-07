@@ -33,6 +33,16 @@ class FrameRingBuffer:
             while self._frames and self._frames[0].timestamp < cutoff:
                 self._frames.popleft()
 
+    def update_settings(self, duration_seconds: float, max_fps: float) -> None:
+        """Keep recent history within the new time and frame-count limits."""
+        with self._lock:
+            self._duration = duration_seconds
+            self._frames = deque(self._frames, maxlen=max(2, int(duration_seconds * max_fps) + 2))
+            if self._frames:
+                cutoff = self._frames[-1].timestamp - duration_seconds
+                while self._frames and self._frames[0].timestamp < cutoff:
+                    self._frames.popleft()
+
     def latest(self) -> EncodedFrame | None:
         with self._lock:
             return self._frames[-1] if self._frames else None

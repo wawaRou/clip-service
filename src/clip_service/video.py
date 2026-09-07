@@ -60,6 +60,7 @@ class CameraReader:
         self._url = url
         self._capture_factory = capture_factory
         self._stop = threading.Event()
+        self._wake_reconnect = threading.Event()
         self._thread: threading.Thread | None = None
         self._lock = threading.Lock()
         self._connected = False
@@ -67,6 +68,30 @@ class CameraReader:
         self._last_error: str | None = None
         self._last_received_monotonic: float | None = None
         self._latest: EncodedFrame | None = None
+        self._capture_settings: DetectionConfig | None = None
+
+    @property
+    def source_url(self) -> str:
+        return self._url
+
+    @property
+    def open_timeout_budget(self) -> float:
+        """Include the timeout already given to a decoder that is still open."""
+        with self._lock:
+            return (self._capture_settings or self.settings).open_timeout_seconds
+
+    @property
+    def read_timeout_budget(self) -> float:
+        with self._lock:
+            return (self._capture_settings or self.settings).read_timeout_seconds
+
+    def update_settings(self, settings: DetectionConfig) -> None:
+        """Apply live settings; decoder timeouts apply on its next connection."""
+        with self._lock:
+            self.ring.update_settings(settings.ring_seconds, settings.ring_max_fps)
+            if settings.reconnect_delay_seconds != self.settings.reconnect_delay_seconds:
+                self._wake_reconnect.set()
+            self.settings = settings
 
     def start(self) -> None:
         self._thread = threading.Thread(target=self._read, name=f"video-{self.name}", daemon=True)
@@ -74,14 +99,13 @@ class CameraReader:
 
     def request_stop(self) -> None:
         self._stop.set()
+        self._wake_reconnect.set()
 
     def close(self, timeout: float | None = None) -> None:
         self.request_stop()
         if self._thread is not None:
             if timeout is None:
-                timeout = (
-                    self.settings.open_timeout_seconds + self.settings.read_timeout_seconds + 1
-                )
+                timeout = self.open_timeout_budget + self.read_timeout_budget + 1
             self._thread.join(timeout)
             if self._thread.is_alive():
                 raise TimeoutError(
@@ -125,12 +149,16 @@ class CameraReader:
         while not self._stop.is_set():
             capture = None
             try:
-                capture = self._capture_factory(self._url, self.settings)
+                with self._lock:
+                    self._capture_settings = self.settings
+                    capture_settings = self._capture_settings
+                capture = self._capture_factory(self._url, capture_settings)
                 if not capture.isOpened():
                     raise OSError("unable to open Frigate stream")
                 generation += 1
                 buffer_started_at = time.monotonic()
                 next_buffer_at = buffer_started_at
+                buffer_rate = self.settings.ring_max_fps
                 while not self._stop.is_set():
                     ok, pixels = capture.read()
                     if not ok:
@@ -151,13 +179,13 @@ class CameraReader:
                         frame = EncodedFrame(received_at, jpeg.tobytes(), sequence, generation, now)
                         self._latest = frame
                         self._last_received_monotonic = now
+                        if buffer_rate != self.settings.ring_max_fps:
+                            buffer_rate = self.settings.ring_max_fps
+                            buffer_started_at = next_buffer_at = now
                         if now >= next_buffer_at:
                             self.ring.append(frame)
-                            sample = (
-                                math.floor((now - buffer_started_at) * self.settings.ring_max_fps)
-                                + 1
-                            )
-                            next_buffer_at = buffer_started_at + sample / self.settings.ring_max_fps
+                            sample = math.floor((now - buffer_started_at) * buffer_rate) + 1
+                            next_buffer_at = buffer_started_at + sample / buffer_rate
             except (OSError, cv2.error):
                 # Decoder exception text may contain authentication data.
                 with self._lock:
@@ -170,5 +198,11 @@ class CameraReader:
                     self._connected = False
                     self._last_received_monotonic = None
                     self._latest = None
+                    self._capture_settings = None
                     self.ring.clear()
-            self._stop.wait(self.settings.reconnect_delay_seconds)
+            while not self._stop.is_set():
+                with self._lock:
+                    self._wake_reconnect.clear()
+                    reconnect_delay = self.settings.reconnect_delay_seconds
+                if self._stop.is_set() or not self._wake_reconnect.wait(reconnect_delay):
+                    break

@@ -30,7 +30,7 @@ def main() -> None:
         config = load_config(args.config)
     except ConfigError as error:
         parser.error(str(error))
-    service = ClipService(config)
+    service = ClipService(config, config_path=args.config.resolve())
     server = ServiceHTTPServer((config.server.host, config.server.port), service)
 
     def stop(signum: int, frame: object) -> None:
