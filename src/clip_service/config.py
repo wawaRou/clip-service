@@ -96,8 +96,6 @@ class DetectionConfig(ConfigModel):
 
     @model_validator(mode="after")
     def check_buffer_window(self):
-        if self.inference_fps > self.ring_max_fps:
-            raise ValueError("inference_fps must not exceed ring_max_fps")
         if self.candidate_frame_interval < 1 / self.ring_max_fps:
             raise ValueError("candidate_frame_interval must be at least 1 / ring_max_fps")
         span = self.candidate_frame_interval * (self.candidate_frame_count - 1)

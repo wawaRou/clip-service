@@ -113,7 +113,6 @@ class ConfigTests(unittest.TestCase):
 
     def test_camera_sampling_and_candidate_window_must_fit_the_buffer(self):
         cases = [
-            ("[detection]\ninference_fps = 31\n", "inference_fps"),
             ("[detection]\ncandidate_frame_interval = 0.01\n", "candidate_frame_interval"),
             ("[detection]\ncandidate_frame_interval = 2\n", "candidate_frame_interval"),
             ("[detection]\nstable_seconds = 7\n", "stable_seconds"),

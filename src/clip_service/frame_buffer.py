@@ -2,8 +2,9 @@ from __future__ import annotations
 
 import bisect
 import threading
+import time
 from collections import deque
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 
 @dataclass(frozen=True)
@@ -12,6 +13,7 @@ class EncodedFrame:
     jpeg: bytes
     sequence: int = 0
     stream_generation: int = 0
+    received_monotonic: float = field(default_factory=time.monotonic)
 
 
 class FrameRingBuffer:

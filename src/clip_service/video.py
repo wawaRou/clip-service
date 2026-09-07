@@ -66,6 +66,7 @@ class CameraReader:
         self._frames_received = 0
         self._last_error: str | None = None
         self._last_received_monotonic: float | None = None
+        self._latest: EncodedFrame | None = None
 
     def start(self) -> None:
         self._thread = threading.Thread(target=self._read, name=f"video-{self.name}", daemon=True)
@@ -94,7 +95,7 @@ class CameraReader:
                 if self._last_received_monotonic is None
                 else max(0.0, time.monotonic() - self._last_received_monotonic)
             )
-            latest = self.ring.latest()
+            latest = self._latest
             return {
                 "connected": self._connected,
                 "frames_received": self._frames_received,
@@ -116,12 +117,11 @@ class CameraReader:
                 > self.settings.frame_max_age_seconds
             ):
                 return None
-            return self.ring.latest()
+            return self._latest
 
     def _read(self) -> None:
         sequence = 0
         generation = 0
-        next_buffer_at = 0.0
         while not self._stop.is_set():
             capture = None
             try:
@@ -129,17 +129,18 @@ class CameraReader:
                 if not capture.isOpened():
                     raise OSError("unable to open Frigate stream")
                 generation += 1
+                buffer_started_at = time.monotonic()
+                next_buffer_at = buffer_started_at
                 while not self._stop.is_set():
                     ok, pixels = capture.read()
                     if not ok:
                         raise OSError("Frigate stream stopped providing frames")
                     now = time.monotonic()
+                    received_at = time.time()
                     with self._lock:
                         self._connected = True
                         self._frames_received += 1
                         self._last_error = None
-                    if now < next_buffer_at:
-                        continue
                     ok, jpeg = cv2.imencode(
                         ".jpg", pixels, [cv2.IMWRITE_JPEG_QUALITY, self.settings.jpeg_quality]
                     )
@@ -147,11 +148,16 @@ class CameraReader:
                         raise OSError("unable to encode camera frame")
                     sequence += 1
                     with self._lock:
-                        self.ring.append(
-                            EncodedFrame(time.time(), jpeg.tobytes(), sequence, generation)
-                        )
+                        frame = EncodedFrame(received_at, jpeg.tobytes(), sequence, generation, now)
+                        self._latest = frame
                         self._last_received_monotonic = now
-                    next_buffer_at = now + 1 / self.settings.ring_max_fps
+                        if now >= next_buffer_at:
+                            self.ring.append(frame)
+                            sample = (
+                                math.floor((now - buffer_started_at) * self.settings.ring_max_fps)
+                                + 1
+                            )
+                            next_buffer_at = buffer_started_at + sample / self.settings.ring_max_fps
             except (OSError, cv2.error):
                 # Decoder exception text may contain authentication data.
                 with self._lock:
@@ -163,5 +169,6 @@ class CameraReader:
                 with self._lock:
                     self._connected = False
                     self._last_received_monotonic = None
+                    self._latest = None
                     self.ring.clear()
             self._stop.wait(self.settings.reconnect_delay_seconds)

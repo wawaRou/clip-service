@@ -10,6 +10,7 @@ from .config import ServiceConfig
 from .errors import ServiceError
 from .events import EventBroker
 from .model import ClipEncoder, ImageEncoder
+from .scheduler import FrameScheduler
 from .storage import CandidateStore
 from .video import CameraReader, CaptureFactory, open_capture
 
@@ -41,6 +42,10 @@ class ClipService:
             for name, camera in config.cameras.items()
             if camera.enabled
         }
+        self._scheduler = FrameScheduler(
+            {name: camera.settings.inference_fps for name, camera in self.cameras.items()},
+            now=time.monotonic(),
+        )
 
     def start(self) -> None:
         for camera in self.cameras.values():
@@ -74,14 +79,17 @@ class ClipService:
 
     def _detect(self) -> None:
         while not self._stop.is_set():
-            for camera in self.cameras.values():
+            for name in self._scheduler.due(time.monotonic()):
                 if self._stop.is_set():
                     return
+                camera = self.cameras[name]
                 try:
                     camera.process_latest()
                 except (ServiceError, OSError) as error:
                     logging.getLogger(__name__).warning("camera %s: %s", camera.name, error)
-            self._stop.wait(0.01)
+                finally:
+                    self._scheduler.complete(name, time.monotonic())
+            self._stop.wait(self._scheduler.delay(time.monotonic()))
 
     def health(self) -> dict[str, Any]:
         cameras = {name: camera.health() for name, camera in self.cameras.items()}

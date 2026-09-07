@@ -5,6 +5,7 @@ from __future__ import annotations
 import math
 import threading
 import time
+from collections import deque
 from typing import Any
 
 from .detector import CandidateDetector
@@ -42,8 +43,12 @@ class Camera:
         self._revision = 0
         self._last_sequence = 0
         self._stream_generation = 0
-        self._next_inference_at = 0.0
         self._inference_error: str | None = None
+        self._measurement_started_at = time.monotonic()
+        self._completed_at: deque[float] = deque()
+        self._frames_processed = 0
+        self._last_processing_seconds: float | None = None
+        self._last_frame_latency_seconds: float | None = None
 
     def start_episode(self, episode_id: str) -> None:
         if not episode_id:
@@ -148,15 +153,20 @@ class Camera:
             if frame.stream_generation != self._stream_generation:
                 self.detector.reset_tracking()
                 self._stream_generation = frame.stream_generation
-            now = time.monotonic()
-            if frame.sequence == self._last_sequence or now < self._next_inference_at:
+            if frame.sequence == self._last_sequence:
                 return
             self._last_sequence = frame.sequence
-            self._next_inference_at = now + 1 / self.settings.inference_fps
             revision = self._revision
             episode_id = self.episode_id
+        started = time.monotonic()
         embedding = self._encode(frame.jpeg)
+        finished = time.monotonic()
         with self._lock:
+            self._completed_at.append(finished)
+            self._prune_measurements(finished)
+            self._frames_processed += 1
+            self._last_processing_seconds = finished - started
+            self._last_frame_latency_seconds = finished - frame.received_monotonic
             latest = self.reader.latest_frame()
             if (
                 self._revision != revision
@@ -179,8 +189,21 @@ class Camera:
     def health(self) -> dict[str, Any]:
         with self._lock:
             status = self.reader.health()
+            now = time.monotonic()
+            self._prune_measurements(now)
+            measurement_seconds = min(5.0, now - self._measurement_started_at)
             return status | {
                 "inference_error": self._inference_error,
+                "inference": {
+                    "target_fps": self.settings.inference_fps,
+                    "actual_fps": len(self._completed_at) / measurement_seconds
+                    if measurement_seconds > 0
+                    else 0.0,
+                    "measurement_seconds": measurement_seconds,
+                    "frames_processed": self._frames_processed,
+                    "last_processing_seconds": self._last_processing_seconds,
+                    "last_frame_latency_seconds": self._last_frame_latency_seconds,
+                },
                 "episode": {
                     "active": self.episode_id is not None,
                     "episode_id": self.episode_id,
@@ -192,6 +215,10 @@ class Camera:
                     "pending_candidate_id": self.pending_candidate_id,
                 },
             }
+
+    def _prune_measurements(self, now: float) -> None:
+        while self._completed_at and self._completed_at[0] < now - 5:
+            self._completed_at.popleft()
 
     def _encode(self, jpeg: bytes):
         try:
