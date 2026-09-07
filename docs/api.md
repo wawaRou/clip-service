@@ -7,6 +7,12 @@
 健康信息中的 `model.precision` 是配置的推理精度，`model.weight_dtype` 是已加载模型
 的实际权重类型。TF32 的权重类型仍为 float32。精度变更需要重启，不支持热重载。
 
+健康接口的 `model.id` 为配置的 Hugging Face 模型 ID，`model.path` 为显式目录
+（未设置时为 null）。`available_offline` 表示本地目录或缓存快照存在，文件完整性在
+首次模型加载时检查；缓存查找及加载均不联网。
+未加载时 `weight_dtype` 为 null，`device` 可能仍为 auto。健康请求返回 200 不代表
+模型已验证可用，应检查响应字段和首次基准请求的结果。
+
 | 操作 | 方法及路径 |
 | --- | --- |
 | 查询状态 | GET /api/v1/health |
@@ -60,10 +66,14 @@ curl -H 'Content-Type: application/json' \
 
 此例用候选的最后一张图作为新基准；triggered_vlm 应填写 Agent Server 的实际决策。
 
+自动候选从本轮变化起始时刻开始，按 `candidate_frame_interval` 选取 5 个不同帧，
+同时满足持续变化确认和五帧时间跨度后才发出通知；历史帧不足时不会发送不完整候选。
+
 时间窗请求包含 episode_id、window_start、window_end、frame_count（1—9）。返回均匀
 目标时刻附近的 JPEG base64；单帧取窗口中点，缺失任一目标帧返回 503。时间戳为
 CLIP 主机收到画面的 Unix 秒数，不代表摄像头采集时间；跨机器调用应使用一致时钟，
-并考虑 Frigate 转发与网络延迟。
+并考虑 Frigate 转发与网络延迟。`frame_window_max_distance_seconds` 仅控制该时间窗
+接口的选帧容差；自动候选五帧的容差为 `max(candidate_frame_interval / 2, 0.075)` 秒。
 
 默认确认时间为 0.3 秒、五帧间隔为 0.075 秒，均可通过 detection 配置覆盖。这些是
 可运行的初始值，仍须用真实画面验证误报和延迟。模型不可用时基准请求返回 503，
@@ -95,7 +105,8 @@ CLIP 主机收到画面的 Unix 秒数，不代表摄像头采集时间；跨机
 SSE 只广播当前在线事件，不保存历史事件。Agent Server 连接或重连时先建立 SSE，
 再查询 `GET /api/v1/candidates?status=pending`，以 candidate_id 去重并处理返回的
 `candidates` 列表。这样可找回断线期间仍未过期的候选，期间也可能同时收到相同 SSE
-通知。省略 status 时同样只查询当前未处理候选。
+通知。省略 status 时同样只查询当前未处理候选。当前接口不解析 status 查询参数，
+不支持按 acknowledged、expired 等状态列举历史记录；已知 ID 时可单独查询。
 
 候选的 ack_deadline_at 是回执截止时间，expires_at 是图片保留截止时间。默认回执等待
 60 秒，图片保留 24 小时，两者分别配置；等待期限或图片保留期限先到时，候选过期，
@@ -134,7 +145,3 @@ Frigate 地址或认证变化按受影响摄像头的换流处理。图片继续
 不能更改新摄像头状态。Agent Server 收到事件后停止旧会话流程，若摄像头仍启用，
 等待新流就绪后重新开启会话和设置基准。SSE 断线期间可能错过结束事件，重连后应同时
 查询健康信息和当前候选，对齐摄像头与会话状态。
-
-健康接口的 `model.id` 为配置的 Hugging Face 模型 ID，`model.path` 为显式目录
-（未设置时为 null）。`available_offline` 表示本地目录或缓存快照存在，文件完整性在
-首次模型加载时检查；缓存查找及加载均不联网。

@@ -16,30 +16,33 @@ uv.lock           依赖锁文件（提交到 Git）
 
 ## 初始化与运行
 
-基础开发环境不安装 PyTorch，可以运行拉流和健康查询：
+先按下方平台表安装对应 extra。以下以 Mac 为例，复制完整示例，修改 Frigate 地址、
+摄像头标识及流名，并确认所选模型已经缓存在本机：
 
 ```bash
-uv sync --locked --python 3.12
-uv run --locked clip-service --help
-uv run --locked clip-service --version
-uv run --locked python -m clip_service --version
+uv sync --locked --python 3.12 --extra mac
+cp config.example.toml config.local.toml
+# 编辑 config.local.toml 后启动：
+uv run --locked --extra mac clip-service --config config.local.toml
 ```
 
-复制 `config.example.toml` 为 `config.local.toml`，填写 Frigate 转发地址和所选流：
+另一个终端查询状态：
 
 ```bash
-cp config.example.toml config.local.toml
-uv run --locked clip-service --config config.local.toml
 curl http://127.0.0.1:18080/api/v1/health
 ```
+
+Thor / Orin 使用下表对应的解释器与 extra。每次运行都保留 extra；省略它可能使 uv
+同步时移除 PyTorch。只开发拉流和 HTTP 功能时，可以不选 extra 安装基础依赖，
+但此环境无法进行模型推理。
 
 Frigate 需要配置对应 go2rtc 转发流，默认 RTSP 端口 8554 必须能从服务所在机器访问。
 每路独立拉流并维护短时 JPEG 缓存；某路断流会自动重连，健康信息包含连接状态、
 缓存帧数和帧年龄。按 Ctrl+C 关闭服务。
 
-配置以全局默认值为基础，`cameras` 中可覆盖检测参数。空摄像头列表合法，不会连接
-示例摄像头。未知字段和非法值会在启动时被拒绝；相对模型及数据路径以配置文件所在
-目录为基准。机器配置和凭据存放在已忽略的 `config.local.toml` 或环境变量中。
+配置以全局默认值为基础，`cameras` 中可覆盖检测参数。删除全部 `[cameras.<标识>]`
+表即可空摄像头启动；示例中的 `front_door` 若保留则会实际尝试连接。未知字段和非法值
+会在启动时被拒绝；相对模型及数据路径以配置文件所在目录为基准。机器配置和凭据存放在已忽略的 `config.local.toml` 或环境变量中。
 
 部署环境变量优先于 TOML，TOML 优先于内置默认值：`CLIP_MODEL_PATH`、`CLIP_DATA_DIR`、
 `CLIP_DEVICE`、`CLIP_FRIGATE_URL`、`CLIP_FRIGATE_USERNAME`、`CLIP_FRIGATE_PASSWORD`。
@@ -62,9 +65,9 @@ Agent Server 开启会话并设置基准。模型、监听地址、数据目录�
 
 | 平台 | Python | 安装命令 | 运行命令 |
 | --- | --- | --- | --- |
-| Apple Silicon Mac | 3.12 | `uv sync --locked --python 3.12 --extra mac` | `uv run --locked --extra mac clip-service --help` |
-| Jetson Thor | 3.12 | `uv sync --locked --python /usr/bin/python3.12 --extra thor` | `uv run --locked --extra thor clip-service --help` |
-| Jetson Orin | 3.10 | `uv sync --locked --python /usr/bin/python3.10 --extra orin` | `uv run --locked --extra orin clip-service --help` |
+| Apple Silicon Mac | 3.12 | `uv sync --locked --python 3.12 --extra mac` | `uv run --locked --extra mac clip-service --config config.local.toml` |
+| Jetson Thor | 3.12 | `uv sync --locked --python /usr/bin/python3.12 --extra thor` | `uv run --locked --extra thor clip-service --config config.local.toml` |
+| Jetson Orin | 3.10 | `uv sync --locked --python /usr/bin/python3.10 --extra orin` | `uv run --locked --extra orin clip-service --config config.local.toml` |
 
 三组 extra 互斥，不使用 `--all-extras`。未提交统一的 `.python-version`，避免 Mac / Thor
 的默认 Python 版本覆盖 Orin 的 3.10。Jetson 使用系统解释器创建隔离的 `.venv`，
@@ -91,8 +94,9 @@ uv build
 完整可配置项及默认值见 [config.example.toml](config.example.toml)。默认通过
 `model.id = "openai/clip-vit-base-patch16"` 从 Hugging Face 本地缓存读取模型，遵循
 `HF_HOME` / `HF_HUB_CACHE`；也可设置 `model.path` 指定本地模型目录（优先于 ID）。
-缓存缺失或模型文件不完整时直接返回加载错误，绝不联网下载。使用对应平台 extra 启动服务。模型在首次
-设置基准图时加载；未开启会话或未设置基准时只拉流缓存，等待候选回执时暂停该路检测。
+缓存缺失或模型文件不完整时，首次加载直接失败，绝不联网下载。模型在首次
+设置基准图时加载，失败时该请求返回 503；服务仍可启动并提供健康查询。
+未开启会话或未设置基准时只拉流缓存，等待候选回执时暂停该路检测。
 完整交互见 [Agent Server 接口说明](docs/api.md)。
 原生环境验收、性能测量与未验证项目见 [运行验收](docs/validation.md)。
 
@@ -102,7 +106,7 @@ uv build
 
 ```toml
 [model]
-path = "/path/to/local/clip"
+id = "openai/clip-vit-base-patch16"
 device = "cuda"
 precision = "tf32"
 ```
@@ -121,3 +125,14 @@ precision = "tf32"
 TF32、FP16 可能改变相似度，调整后应观察阈值附近的候选判断；目标 FPS 仍由
 `detection.inference_fps` 单独控制。原生验收脚本可传 `--precision tf32` 或
 `--precision fp16` 复测完整流程。
+
+## 候选文件存储
+
+`data_dir = "data"` 相对于配置文件所在目录；配置位于项目根目录时，候选保存在
+`data/candidates/<候选ID>/`。每个候选包含 5 张 JPEG 和记录时间、相似度及处理状态的
+`manifest.json`，用于 Agent 获取图片、查询状态和重试回执。
+
+`retention_hours = 24.0` 从候选创建时开始计算图片及记录的保留期限。到期后接口不再
+提供候选，后台清理已结束的记录；仍处于 pending 状态时暂缓物理删除，等待状态结束。
+回执等待时间单独由 `detection.ack_timeout_seconds` 控制，默认 60 秒。
+短时视频帧缓存位于内存，由 `ring_seconds` 等参数控制；本服务不保存连续录像。

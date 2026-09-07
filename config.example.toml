@@ -3,7 +3,7 @@
 # 相对路径以本文件所在目录为基准，支持 ~。
 # 模型、server、data_dir、retention_hours 修改后需要重启；摄像头和检测配置可显式重载。
 data_dir = "data" # 候选图片和状态保存目录；环境变量 CLIP_DATA_DIR。
-retention_hours = 24.0 # 候选文件保留时间（小时），必须 > 0。
+retention_hours = 24.0 # 候选自创建起的保留时间（小时），> 0；与 ack_timeout_seconds 分开。
 
 [server]
 host = "127.0.0.1" # HTTP / SSE 监听地址。
@@ -33,7 +33,7 @@ candidate_frame_interval = 0.075 # 候选五帧间隔（秒），至少为 1 / r
 candidate_frame_count = 5 # 当前协议固定为 5，不支持其他值。
 ring_seconds = 7.0 # 短时帧缓存跨度（秒），> 0，必须大于候选五帧的总跨度。
 ring_max_fps = 30.0 # 缓存采样 FPS 上限，> 0。
-frame_window_max_distance_seconds = 0.5 # 选帧与目标时间的最大允许距离（秒），>= 0。
+frame_window_max_distance_seconds = 0.5 # 仅 frame-windows 接口的选帧容差（秒），>= 0。
 jpeg_quality = 85 # JPEG 质量，1–100。
 open_timeout_seconds = 3.0 # 打开视频流超时（秒），> 0。
 read_timeout_seconds = 3.0 # 读取视频帧超时（秒），> 0。
