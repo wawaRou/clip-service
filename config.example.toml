@@ -1,6 +1,7 @@
 # Paths are relative to this file. Environment variables override file values.
 [model]
 path = "./models/clip"
+precision = "fp32" # fp32 (default), tf32 (CUDA only), fp16 (CUDA or MPS).
 
 [frigate]
 rtsp_base_url = "rtsp://frigate.local:8554"

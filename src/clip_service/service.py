@@ -29,7 +29,9 @@ class ClipService:
         self._config_path = config_path.resolve() if config_path is not None else None
         self._capture_factory = capture_factory
         self.started_at = time.monotonic()
-        self.encoder = encoder or ClipEncoder(config.model.path, config.model.device)
+        self.encoder = encoder or ClipEncoder(
+            config.model.path, config.model.device, precision=config.model.precision
+        )
         self.store = CandidateStore(config.data_dir / "candidates", config.retention_hours * 3600)
         self.store.cancel_pending()
         self.store.cleanup()
@@ -249,6 +251,8 @@ class ClipService:
                 self.config.detection.frame_window_max_distance_seconds
             ),
             "model": {
+                "precision": self.config.model.precision,
+                "weight_dtype": getattr(self.encoder, "weight_dtype", None),
                 "path": str(self.config.model.path),
                 "available_offline": self.config.model.path.is_dir(),
                 "loaded": self.encoder.loaded,

@@ -34,6 +34,15 @@ class ServerConfig(ConfigModel):
 class ModelConfig(ConfigModel):
     path: Path = Path("models/clip")
     device: Literal["auto", "cpu", "cuda", "mps"] = "auto"
+    precision: Literal["fp32", "tf32", "fp16"] = "fp32"
+
+    @model_validator(mode="after")
+    def check_precision_backend(self):
+        if self.precision == "tf32" and self.device not in {"auto", "cuda"}:
+            raise ValueError("precision=tf32 requires device=cuda (or auto resolving to CUDA)")
+        if self.precision == "fp16" and self.device == "cpu":
+            raise ValueError("precision=fp16 requires CUDA or MPS")
+        return self
 
     @field_validator("path", mode="before")
     @classmethod

@@ -53,6 +53,7 @@ def configure(args, path, port, cameras, threshold):
     path.write_text(
         f'data_dir = "data"\n[server]\nhost = "127.0.0.1"\nport = {port}\n'
         f"[model]\npath = {quote(str(args.model.resolve()))}\ndevice = {quote(args.device)}\n"
+        f"precision = {quote(args.precision)}\n"
         f"[frigate]\nrtsp_base_url = {quote(args.frigate_url)}\n"
         f"[detection]\ninference_fps = {args.fps}\nsimilarity_threshold = {threshold}\n"
         "stable_seconds = 0.3\ncandidate_frame_interval = 0.075\n"
@@ -246,6 +247,11 @@ def run(args, directory, port, report):
                         f"/api/v1/cameras/{name}/baseline",
                         {"episode_id": episode, "source": {"type": "latest"}},
                     )
+                model_status = request(port, "GET", "/api/v1/health")["model"]
+                assert model_status["precision"] == args.precision
+                assert model_status["weight_dtype"] == (
+                    "float16" if args.precision == "fp16" else "float32"
+                )
                 phase = {
                     "logical_cameras": count,
                     "added_camera_ids": reload_result["added"],
@@ -312,6 +318,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--model", type=Path, required=True)
     parser.add_argument("--device", choices=("mps", "cuda"), required=True)
+    parser.add_argument("--precision", choices=("fp32", "tf32", "fp16"), default="fp32")
     parser.add_argument("--frigate-url", required=True)
     parser.add_argument("--stream", required=True)
     parser.add_argument("--output", type=Path, required=True)
@@ -343,6 +350,7 @@ def main():
         "transformers": version("transformers"),
         "opencv": version("opencv-python-headless"),
         "device": args.device,
+        "precision": args.precision,
         "model": str(args.model.resolve()),
         "frigate_url": args.frigate_url,
         "stream": args.stream,

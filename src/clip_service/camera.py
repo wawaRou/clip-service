@@ -13,7 +13,7 @@ from .detector import CandidateDetector
 from .errors import ServiceError
 from .events import EventBroker
 from .frame_buffer import EncodedFrame
-from .model import ImageEncoder
+from .model import ImageEncoder, PrecisionError
 from .storage import CandidateRecord, CandidateStore
 from .video import CameraReader
 
@@ -297,7 +297,11 @@ class Camera:
             embedding = self.encoder.encode_jpeg(jpeg)
         except (OSError, ValueError, RuntimeError, ImportError) as error:
             with self._lock:
-                self._inference_error = f"CLIP encoding failed ({type(error).__name__})"
+                self._inference_error = (
+                    str(error)
+                    if isinstance(error, PrecisionError)
+                    else f"CLIP encoding failed ({type(error).__name__})"
+                )
             raise ServiceError(self._inference_error, 503, "clip_unavailable") from error
         with self._lock:
             self._inference_error = None

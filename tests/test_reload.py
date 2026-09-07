@@ -183,8 +183,9 @@ def test_invalid_reload_retains_all_previous_settings_and_session(
         configuration(root="retention_hours=1"),
         configuration(extra='\n[model]\ndevice="cpu"\n'),
         configuration(extra="\n[server]\nport=18081\n"),
+        configuration(extra='\n[model]\nprecision="tf32"\n'),
     ],
-    ids=["data-directory", "retention", "model", "server"],
+    ids=["data-directory", "retention", "model", "server", "precision"],
 )
 def test_changes_to_service_settings_require_restart_without_disrupting_cameras(tmp_path, content):
     with RunningReload(tmp_path) as app:

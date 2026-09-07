@@ -175,5 +175,27 @@ class ConfigTests(unittest.TestCase):
             self.assertEqual(config.data_dir, Path(directory).resolve() / "recordings")
 
 
+def test_model_precision_is_configurable_and_rejects_incompatible_backends(tmp_path):
+    import pytest
+
+    path = tmp_path / "precision.toml"
+    for device, precision in [
+        ("auto", "fp32"),
+        ("cuda", "tf32"),
+        ("cuda", "fp16"),
+        ("mps", "fp16"),
+    ]:
+        path.write_text(
+            f'[model]\ndevice="{device}"\nprecision="{precision}"\n[frigate]\nrtsp_base_url="rtsp://localhost:8554"\n'
+        )
+        assert load_config(path, environ={}).model.precision == precision
+    for device, precision in [("cpu", "tf32"), ("mps", "tf32"), ("cpu", "fp16"), ("cuda", "fp4")]:
+        path.write_text(
+            f'[model]\ndevice="{device}"\nprecision="{precision}"\n[frigate]\nrtsp_base_url="rtsp://localhost:8554"\n'
+        )
+        with pytest.raises(ConfigError, match="model"):
+            load_config(path, environ={})
+
+
 if __name__ == "__main__":
     unittest.main()

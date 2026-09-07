@@ -4,6 +4,9 @@
 会话的请求均使用 Agent Server 自行生成的非空 episode_id。沿用旧项目的 HTTP/SSE
 协议，CLIP 服务只生成变化候选，不调用 VLM。
 
+健康信息中的 `model.precision` 是配置的推理精度，`model.weight_dtype` 是已加载模型
+的实际权重类型。TF32 的权重类型仍为 float32。精度变更需要重启，不支持热重载。
+
 | 操作 | 方法及路径 |
 | --- | --- |
 | 查询状态 | GET /api/v1/health |

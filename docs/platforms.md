@@ -52,3 +52,7 @@ PY
 ```
 
 真实 Frigate 流的单路、三路集成验收命令和实测边界见 [运行验收](validation.md)。
+
+`model.precision` 默认 `fp32`，可以显式选择 `tf32` 或 `fp16`，后端约束见 README。
+CUDA 使用 PyTorch 2.9+ 的 `fp32_precision` 接口；Orin 固定的 PyTorch 2.8 使用
+`allow_tf32` 接口，同一次运行不混用新旧接口。Orin 仍待实机验证。

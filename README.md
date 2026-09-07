@@ -92,3 +92,29 @@ uv build
 设置基准图时加载；未开启会话或未设置基准时只拉流缓存，等待候选回执时暂停该路检测。
 完整交互见 [Agent Server 接口说明](docs/api.md)。
 原生环境验收、性能测量与未验证项目见 [运行验收](docs/validation.md)。
+
+## 推理精度
+
+通过 TOML 的 `model.precision` 选择，默认 `fp32`。例如 Thor：
+
+```toml
+[model]
+path = "/path/to/local/clip"
+device = "cuda"
+precision = "tf32"
+```
+
+| 配置值 | 支持后端 | 行为 |
+| --- | --- | --- |
+| `fp32` | CPU、MPS、CUDA | FP32 权重和输入；CUDA 矩阵乘法及卷积禁用 TF32 |
+| `tf32` | CUDA | 权重和输入仍为 FP32，允许矩阵乘法及卷积使用 TF32 |
+| `fp16` | CUDA、MPS | 权重和输入使用 FP16；输出特征转换为 FP32 后归一化 |
+
+精度由所有摄像头共享，修改后需要重启；重载接口会返回 `restart_required`。
+`device = "auto"` 仍按原设备选择规则解析，不会为了精度改选后端；组合不支持时明确
+报错，不自动降级。健康接口的 `model.precision` 显示选择值，加载后的 `weight_dtype`
+显示实际权重类型（加载前为 null）。CUDA 精度开关是进程级设置，服务只持有一份共享模型。
+
+TF32、FP16 可能改变相似度，调整后应观察阈值附近的候选判断；目标 FPS 仍由
+`detection.inference_fps` 单独控制。原生验收脚本可传 `--precision tf32` 或
+`--precision fp16` 复测完整流程。
