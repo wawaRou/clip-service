@@ -27,6 +27,7 @@ orin = [
 
 [dependency-groups]
 dev = [
+    "matplotlib>=3.10,<4",
     "pyright>=1.1,<2",
     "pytest>=8,<9",
     "ruff>=0.12,<1",
@@ -74,7 +75,7 @@ line-length = 100
 select = ["E", "F", "I", "UP"]
 
 [tool.pyright]
-include = ["src"]
+include = ["src", "docs/validation/plot_thor_capacity.py"]
 venvPath = "."
 venv = ".venv"
 pythonVersion = "3.10"

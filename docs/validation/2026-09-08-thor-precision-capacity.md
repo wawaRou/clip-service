@@ -7,14 +7,26 @@
 [资源占用](2026-09-08-thor-figures/04-resource-usage.png)。
 图表由 [Matplotlib 脚本](plot_thor_capacity.py) 读取下方原始 JSON 生成。
 
-在项目根目录复现图表（只读已记录数据，不重新执行推理实验）：
+在项目根目录复现图表（只读已记录数据，不重新执行推理实验）。默认的 `dev` 依赖组
+已包含 Matplotlib，Thor 使用：
+
+```bash
+uv sync --locked --python /usr/bin/python3.12 --extra thor
+uv run --locked --extra thor python docs/validation/plot_thor_capacity.py
+```
+
+Mac / Orin 按 README 更换 Python 和 extra。VS Code 选择项目 `.venv` 后，也能解析
+绘图脚本的导入；Matplotlib 不属于服务运行时依赖，`--no-dev` 部署不会安装它。
+
+也可保留最初的独立环境方式，使用当时的 Matplotlib 版本：
 
 ```bash
 uv run --no-project --python 3.12 --with matplotlib==3.11.1 \
   python docs/validation/plot_thor_capacity.py
 ```
 
-绘图依赖位于 uv 的独立临时环境，不修改服务的 `.venv` 或锁文件。
+只有上面的 `--no-project --with` 方式将绘图依赖放在独立临时环境，不修改项目 `.venv`；
+该临时环境不能为选择了项目解释器的 VS Code 提供导入解析。
 本机中文字体使用 `/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc`；
 其他机器需提供可用的中文字体。可用 `--output-dir` 指定另一个输出目录。
 

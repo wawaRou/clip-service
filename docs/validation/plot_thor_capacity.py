@@ -1,7 +1,8 @@
 """Render the recorded Thor experiment; no inference or network requests are run.
 
-uv run --no-project --python 3.12 --with matplotlib==3.11.1 \
-    python docs/validation/plot_thor_capacity.py
+uv run --locked --extra thor python docs/validation/plot_thor_capacity.py
+
+Matplotlib is a development dependency. Use the matching platform extra.
 """
 
 import argparse

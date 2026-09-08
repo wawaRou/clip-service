@@ -91,6 +91,11 @@ uv build
 
 上述完整检查以 Mac 为例；其他机器替换为对应 extra，保留真实模型测试所需的推理依赖。
 
+默认安装的 `dev` 依赖组包含实验绘图所需的 Matplotlib，Pyright 同时检查服务源码和
+`docs/validation/plot_thor_capacity.py`。VS Code 应选择本项目 `.venv` 的 Python。
+生产部署可通过 `uv sync --locked --extra thor --no-dev` 排除开发工具和绘图依赖，
+其他平台替换对应 extra。
+
 新增公共业务依赖使用 `uv add`；开发工具使用 `uv add --group dev`。
 更新依赖后提交 `pyproject.toml` 与 `uv.lock`。推理依赖由平台 extra 统一管理，
 不在 `uv sync` 后另外手工覆盖 torch。
