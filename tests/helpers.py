@@ -42,6 +42,12 @@ class PixelEncoder:
     def encode_jpeg(self, jpeg):
         with Image.open(io.BytesIO(jpeg)) as image:
             value = image.getpixel((0, 0))[0]
+        return self._encode_value(value)
+
+    def encode_bgr(self, pixels):
+        return self._encode_value(int(pixels[0, 0, 2]))
+
+    def _encode_value(self, value):
         self.values.append(value)
         return np.array([1, 0] if value < 128 else [0, 1], dtype=np.float32)
 

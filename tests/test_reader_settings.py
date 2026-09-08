@@ -80,6 +80,29 @@ def test_smaller_history_preserves_recent_frames_without_reopening_stream():
         assert feed.releases == 0
 
 
+def test_only_history_samples_are_jpeg_encoded(monkeypatch):
+    import cv2
+
+    original = cv2.imencode
+    calls = []
+
+    def encode(*args):
+        calls.append(1)
+        return original(*args)
+
+    monkeypatch.setattr(cv2, "imencode", encode)
+    settings = DetectionConfig(ring_max_fps=10, candidate_frame_interval=0.1)
+    with running_reader(settings) as (reader, feed):
+        pixels = np.full((24, 32, 3), (10, 20, 30), dtype=np.uint8)
+        for _ in range(10):
+            feed.send_frame(reader, pixels)
+        latest = reader.latest_frame()
+        assert latest is not None
+        np.testing.assert_array_equal(latest.pixels, pixels)
+        assert len(calls) == len(reader.ring)
+        assert len(calls) < reader.health()["frames_received"]
+
+
 def test_faster_history_sampling_starts_on_the_next_frame():
     settings = DetectionConfig(ring_max_fps=10, candidate_frame_interval=0.1)
     with running_reader(settings) as (reader, feed):

@@ -21,6 +21,8 @@ class ImageEncoder(Protocol):
 
     def encode_jpeg(self, jpeg: bytes) -> np.ndarray: ...
 
+    def encode_bgr(self, pixels: np.ndarray) -> np.ndarray: ...
+
 
 class ClipEncoder:
     """Load one offline CLIP model on the first image encoding request."""
@@ -128,11 +130,21 @@ class ClipEncoder:
 
     def encode_jpeg(self, jpeg: bytes) -> np.ndarray:
         self.load()
-        import torch  # pyright: ignore[reportMissingImports]
         from PIL import Image
 
         with Image.open(io.BytesIO(jpeg)) as image:
-            inputs = self._processor(images=image.convert("RGB"), return_tensors="pt")
+            return self._encode_rgb(image.convert("RGB"))
+
+    def encode_bgr(self, pixels: np.ndarray) -> np.ndarray:
+        self.load()
+        import cv2
+
+        return self._encode_rgb(cv2.cvtColor(pixels, cv2.COLOR_BGR2RGB))
+
+    def _encode_rgb(self, image: Any) -> np.ndarray:
+        import torch  # pyright: ignore[reportMissingImports]
+
+        inputs = self._processor(images=image, return_tensors="pt")
         pixel_values = inputs["pixel_values"].to(device=self._device, dtype=self._model.dtype)
         with self._lock, torch.inference_mode():
             features = self._model.get_image_features(pixel_values=pixel_values)

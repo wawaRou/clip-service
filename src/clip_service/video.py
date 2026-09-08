@@ -8,6 +8,7 @@ import os
 import threading
 import time
 from collections.abc import Callable
+from dataclasses import dataclass
 from typing import Any, Protocol
 
 # Native FFmpeg diagnostics can contain credential-bearing stream URLs.
@@ -20,6 +21,24 @@ from .config import DetectionConfig  # noqa: E402
 from .frame_buffer import EncodedFrame, FrameRingBuffer  # noqa: E402
 
 LOGGER = logging.getLogger(__name__)
+
+
+@dataclass(frozen=True)
+class DecodedFrame:
+    timestamp: float
+    pixels: Any  # OpenCV BGR pixels; retained only for the latest frame.
+    sequence: int
+    stream_generation: int
+    received_monotonic: float
+    jpeg_quality: int
+
+    @property
+    def jpeg(self) -> bytes:
+        """Encode only for history sampling or an explicit latest-image request."""
+        ok, jpeg = cv2.imencode(".jpg", self.pixels, [cv2.IMWRITE_JPEG_QUALITY, self.jpeg_quality])
+        if not ok:
+            raise OSError("unable to encode camera frame")
+        return jpeg.tobytes()
 
 
 class Capture(Protocol):
@@ -67,7 +86,7 @@ class CameraReader:
         self._frames_received = 0
         self._last_error: str | None = None
         self._last_received_monotonic: float | None = None
-        self._latest: EncodedFrame | None = None
+        self._latest: DecodedFrame | None = None
         self._capture_settings: DetectionConfig | None = None
 
     @property
@@ -132,7 +151,7 @@ class CameraReader:
                 "last_error": self._last_error,
             }
 
-    def latest_frame(self) -> EncodedFrame | None:
+    def latest_frame(self) -> DecodedFrame | None:
         with self._lock:
             if (
                 not self._connected
@@ -169,21 +188,25 @@ class CameraReader:
                         self._connected = True
                         self._frames_received += 1
                         self._last_error = None
-                    ok, jpeg = cv2.imencode(
-                        ".jpg", pixels, [cv2.IMWRITE_JPEG_QUALITY, self.settings.jpeg_quality]
-                    )
-                    if not ok:
-                        raise OSError("unable to encode camera frame")
                     sequence += 1
                     with self._lock:
-                        frame = EncodedFrame(received_at, jpeg.tobytes(), sequence, generation, now)
+                        frame = DecodedFrame(
+                            received_at,
+                            pixels,
+                            sequence,
+                            generation,
+                            now,
+                            self.settings.jpeg_quality,
+                        )
                         self._latest = frame
                         self._last_received_monotonic = now
                         if buffer_rate != self.settings.ring_max_fps:
                             buffer_rate = self.settings.ring_max_fps
                             buffer_started_at = next_buffer_at = now
                         if now >= next_buffer_at:
-                            self.ring.append(frame)
+                            self.ring.append(
+                                EncodedFrame(received_at, frame.jpeg, sequence, generation, now)
+                            )
                             sample = math.floor((now - buffer_started_at) * buffer_rate) + 1
                             next_buffer_at = buffer_started_at + sample / buffer_rate
             except (OSError, cv2.error):

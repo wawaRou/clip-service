@@ -66,6 +66,12 @@ def test_offline_encoder_produces_repeatable_unit_image_embeddings(tiny_clip):
     assert np.linalg.norm(embedding) == pytest.approx(1)
     np.testing.assert_allclose(encoder.encode_jpeg(jpeg), embedding)
 
+    # The same decoded pixels must produce the same embedding through the raw path.
+    import cv2
+
+    pixels = cv2.imdecode(np.frombuffer(jpeg, dtype=np.uint8), cv2.IMREAD_COLOR)
+    np.testing.assert_allclose(encoder.encode_bgr(pixels), embedding, atol=1e-6)
+
 
 def test_precision_rejects_invalid_or_incompatible_modes(tmp_path):
     with pytest.raises(ValueError, match="precision"):

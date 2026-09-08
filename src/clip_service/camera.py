@@ -15,7 +15,7 @@ from .events import EventBroker
 from .frame_buffer import EncodedFrame
 from .model import ImageEncoder, PrecisionError
 from .storage import CandidateRecord, CandidateStore
-from .video import CameraReader
+from .video import CameraReader, DecodedFrame
 
 
 class Camera:
@@ -223,7 +223,7 @@ class Camera:
             revision = self._revision
             episode_id = self.episode_id
         started = time.monotonic()
-        embedding = self._encode(frame.jpeg)
+        embedding = self._encode(frame)
         finished = time.monotonic()
         with self._lock:
             self._completed_at.append(finished)
@@ -292,9 +292,13 @@ class Camera:
         while self._completed_at and self._completed_at[0] < now - 5:
             self._completed_at.popleft()
 
-    def _encode(self, jpeg: bytes):
+    def _encode(self, image: bytes | DecodedFrame):
         try:
-            embedding = self.encoder.encode_jpeg(jpeg)
+            embedding = (
+                self.encoder.encode_jpeg(image)
+                if isinstance(image, bytes)
+                else self.encoder.encode_bgr(image.pixels)
+            )
         except (OSError, ValueError, RuntimeError, ImportError) as error:
             with self._lock:
                 self._inference_error = (

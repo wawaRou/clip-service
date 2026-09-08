@@ -11,9 +11,9 @@ from tests.helpers import PixelEncoder, RunningService, VideoFeed
 
 
 class SlowPixelEncoder(PixelEncoder):
-    def encode_jpeg(self, jpeg):
+    def _encode_value(self, value):
         time.sleep(0.06)
-        return super().encode_jpeg(jpeg)
+        return super()._encode_value(value)
 
 
 class RunningCameras:

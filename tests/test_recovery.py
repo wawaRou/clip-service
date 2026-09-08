@@ -112,7 +112,7 @@ def test_restart_cancels_old_pending_and_agent_can_establish_new_session(tmp_pat
 @contextmanager
 def block_next_encode(encoder):
     """Hold one request at the external model boundary while another request completes."""
-    original = encoder.encode_jpeg
+    original = encoder._encode_value
     entered = threading.Event()
     release = threading.Event()
     claim = threading.Lock()
@@ -125,12 +125,12 @@ def block_next_encode(encoder):
             assert release.wait(3), "test did not release the blocked encoder"
         return original(jpeg)
 
-    encoder.encode_jpeg = encode
+    encoder._encode_value = encode
     try:
         yield entered
     finally:
         release.set()
-        encoder.encode_jpeg = original
+        encoder._encode_value = original
 
 
 def set_baseline(app, value):
