@@ -89,6 +89,7 @@ orin = [
     { name = "torchvision", version = "0.23.0", source = { registry = "https://pypi.jetson-ai-lab.io/jp6/cu126" }, marker = "python_full_version < '3.12' and sys_platform == 'linux'" },
 ]
 thor = [
+    { name = "nvidia-cusparselt-cu13", marker = "python_full_version >= '3.12' and sys_platform == 'linux'" },
     { name = "torch", version = "2.14.0+cu132", source = { registry = "https://download.pytorch.org/whl/cu132" }, marker = "python_full_version >= '3.12' and sys_platform == 'linux'" },
     { name = "torchvision", version = "0.29.0+cu132", source = { registry = "https://download.pytorch.org/whl/cu132" }, marker = "python_full_version >= '3.12' and sys_platform == 'linux'" },
 ]
@@ -105,6 +106,7 @@ dev = [
 [package.metadata]
 requires-dist = [
     { name = "numpy", specifier = ">=2,<3" },
+    { name = "nvidia-cusparselt-cu13", marker = "python_full_version == '3.12.*' and sys_platform == 'linux' and extra == 'thor'", path = "vendor/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_aarch64.whl" },
     { name = "opencv-python-headless", specifier = ">=4.11,<5" },
     { name = "pillow", specifier = ">=11,<13" },
     { name = "pydantic", specifier = ">=2.10,<3" },
@@ -700,9 +702,9 @@ wheels = [
 [[package]]
 name = "nvidia-cusparselt-cu13"
 version = "0.8.1"
-source = { registry = "https://pypi.org/simple" }
+source = { path = "vendor/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_aarch64.whl" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/46/e1/cdc1797eadf82d3a9a575a19b33fdc871a97edbec42c00b5b5e914f4aff4/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_aarch64.whl", hash = "sha256:4dca476c50bf4780d46cd0bfbd82e2bc10a08e4fef7950917ce8d7578d22a23f", size = 221051344, upload-time = "2025-09-05T18:49:51.289Z" },
+    { filename = "nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_aarch64.whl", hash = "sha256:e10d2e9eb418c133691964732c38b336baa48fb2bc3c7b9695fd0cc2fb5dd54e" },
 ]
 
 [[package]]

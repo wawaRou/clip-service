@@ -17,6 +17,7 @@ dependencies = [
 # Mac starts with the torch version present in the original project's environment.
 mac = ["torch==2.13.0 ; sys_platform == 'darwin'"]
 thor = [
+    "nvidia-cusparselt-cu13==0.8.1 ; sys_platform == 'linux' and python_version == '3.12'",
     "torch==2.14.0+cu132 ; sys_platform == 'linux' and python_version == '3.12'",
     "torchvision==0.29.0+cu132 ; sys_platform == 'linux' and python_version == '3.12'",
 ]
@@ -48,6 +49,14 @@ environments = [
 ]
 
 [tool.uv.sources]
+# Before the first Thor sync (or after deleting vendor/*.whl), run from the repo root:
+# /usr/bin/python3 scripts/repair_thor_wheel.py
+# This verifies the official 0.8.1 archive and repairs WHEEL/RECORD metadata only;
+# CUDA binaries are unchanged. The generated wheel is local and not tracked by Git.
+# Then run: uv sync --locked --python /usr/bin/python3.12 --extra thor
+nvidia-cusparselt-cu13 = [
+    { path = "vendor/nvidia_cusparselt_cu13-0.8.1-py3-none-manylinux2014_aarch64.whl", extra = "thor" },
+]
 torch = [
     { index = "pytorch-cu132", extra = "thor" },
     { index = "jetson-cu126", extra = "orin" },

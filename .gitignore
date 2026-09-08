@@ -13,3 +13,4 @@ build/
 config.local.*
 data/
 models/
+vendor/*.whl

@@ -1,0 +1,170 @@
+{
+  "started_at": 1788880645.9661684,
+  "platform": "Linux-6.8.12-1021-tegra-aarch64-with-glibc2.39",
+  "machine": "aarch64",
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "torch": "2.14.0+cu132",
+  "torch_cuda": "13.2",
+  "service_version": "0.1.0",
+  "gpu": "NVIDIA Thor",
+  "transformers": "5.16.1",
+  "opencv": "4.14.0.94",
+  "device": "cuda",
+  "precision": "fp32",
+  "model": "/home/xujiawang24/.cache/huggingface/hub/models--openai--clip-vit-base-patch16/snapshots/57c216476eefef5ab752ec549e440a49ae4ae5f3",
+  "frigate_url": "rtsp://192.168.3.245:8554",
+  "stream": "living_room_c225_sub",
+  "source_count": 1,
+  "target_fps_per_camera": 8.0,
+  "warmup_seconds": 2.0,
+  "measurement_seconds_per_phase": 5.0,
+  "stable_seconds": 0.3,
+  "candidate_frame_interval": 0.075,
+  "measurement": {
+    "throughput": "completed encoding counter delta / host monotonic elapsed time",
+    "latencies": "latest completion sampled every 0.2s, not all encoded frames; seconds",
+    "processing": "preprocessing + CLIP + feature processing; excludes candidate storage",
+    "notification": "successful candidate window's first low-similarity frame receive on CLIP host to local SSE receive; includes confirmation/storage/notification; excludes camera/Frigate transit",
+    "trigger": "synthetic black baseline against real stream; not physical scene change",
+    "three_camera_phase": "three logical readers of the same physical Frigate stream"
+  },
+  "phases": [
+    {
+      "logical_cameras": 1,
+      "added_camera_ids": [],
+      "throughput": {
+        "elapsed_seconds": 5.068499530199915,
+        "health_samples": 25,
+        "cameras": {
+          "camera_1": {
+            "target_fps": 8.0,
+            "actual_fps": 7.891881958687346,
+            "frames_processed_delta": 40,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 25,
+              "p50": 0.029996569734066725,
+              "p95": 0.05022467132657766,
+              "max": 0.0548905311152339
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 25,
+              "p50": 0.2581827328540385,
+              "p95": 0.30773725826293225,
+              "max": 0.32436172431334853
+            }
+          }
+        }
+      },
+      "candidate_notifications": {
+        "camera_1": {
+          "candidate_id": "5478e02f979c43a580489db278088822",
+          "started_at": 1788880661.3584073,
+          "sse_received_at": 1788880662.0406392,
+          "receive_to_sse_seconds": 0.6822319030761719,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        }
+      }
+    },
+    {
+      "logical_cameras": 3,
+      "added_camera_ids": [
+        "camera_2",
+        "camera_3"
+      ],
+      "throughput": {
+        "elapsed_seconds": 5.088423094712198,
+        "health_samples": 25,
+        "cameras": {
+          "camera_1": {
+            "target_fps": 8.0,
+            "actual_fps": 7.860981537004522,
+            "frames_processed_delta": 40,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 25,
+              "p50": 0.025416144635528326,
+              "p95": 0.03259234772995114,
+              "max": 0.04065125482156873
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 25,
+              "p50": 0.25542942294850945,
+              "p95": 0.33195276688784353,
+              "max": 0.33912695525214076
+            }
+          },
+          "camera_2": {
+            "target_fps": 8.0,
+            "actual_fps": 7.664456998579409,
+            "frames_processed_delta": 39,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 25,
+              "p50": 0.0251436079852283,
+              "p95": 0.032629577722400424,
+              "max": 0.03281289990991354
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 25,
+              "p50": 0.2502850159071386,
+              "p95": 0.2983706287108362,
+              "max": 0.3161422209814191
+            }
+          },
+          "camera_3": {
+            "target_fps": 8.0,
+            "actual_fps": 7.860981537004522,
+            "frames_processed_delta": 40,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 25,
+              "p50": 0.025435737799853086,
+              "p95": 0.03381943255662918,
+              "max": 0.03843865590170026
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 25,
+              "p50": 0.2521095587871969,
+              "p95": 0.3100525902584195,
+              "max": 0.3394899480044842
+            }
+          }
+        }
+      },
+      "candidate_notifications": {
+        "camera_1": {
+          "candidate_id": "886b5e57843243ee89f50d2efac3f672",
+          "started_at": 1788880675.175235,
+          "sse_received_at": 1788880675.724816,
+          "receive_to_sse_seconds": 0.5495810508728027,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        },
+        "camera_2": {
+          "candidate_id": "93be83e3d5fa4201872f9806f6df774f",
+          "started_at": 1788880675.1754322,
+          "sse_received_at": 1788880675.75667,
+          "receive_to_sse_seconds": 0.58123779296875,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        },
+        "camera_3": {
+          "candidate_id": "6d2b4723f87a4970b198688ea07b1b1f",
+          "started_at": 1788880675.2377942,
+          "sse_received_at": 1788880675.9193177,
+          "receive_to_sse_seconds": 0.6815235614776611,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        }
+      },
+      "remove_cameras_ended_sessions": true
+    }
+  ],
+  "completed_at": 1788880677.4388251
+}

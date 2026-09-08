@@ -1,0 +1,170 @@
+{
+  "started_at": 1788880697.6440008,
+  "platform": "Linux-6.8.12-1021-tegra-aarch64-with-glibc2.39",
+  "machine": "aarch64",
+  "python": "3.12.3 (main, Jun 19 2026, 12:46:00) [GCC 13.3.0]",
+  "torch": "2.14.0+cu132",
+  "torch_cuda": "13.2",
+  "service_version": "0.1.0",
+  "gpu": "NVIDIA Thor",
+  "transformers": "5.16.1",
+  "opencv": "4.14.0.94",
+  "device": "cuda",
+  "precision": "tf32",
+  "model": "/home/xujiawang24/.cache/huggingface/hub/models--openai--clip-vit-base-patch16/snapshots/57c216476eefef5ab752ec549e440a49ae4ae5f3",
+  "frigate_url": "rtsp://192.168.3.245:8554",
+  "stream": "living_room_c225_sub",
+  "source_count": 1,
+  "target_fps_per_camera": 8.0,
+  "warmup_seconds": 2.0,
+  "measurement_seconds_per_phase": 5.0,
+  "stable_seconds": 0.3,
+  "candidate_frame_interval": 0.075,
+  "measurement": {
+    "throughput": "completed encoding counter delta / host monotonic elapsed time",
+    "latencies": "latest completion sampled every 0.2s, not all encoded frames; seconds",
+    "processing": "preprocessing + CLIP + feature processing; excludes candidate storage",
+    "notification": "successful candidate window's first low-similarity frame receive on CLIP host to local SSE receive; includes confirmation/storage/notification; excludes camera/Frigate transit",
+    "trigger": "synthetic black baseline against real stream; not physical scene change",
+    "three_camera_phase": "three logical readers of the same physical Frigate stream"
+  },
+  "phases": [
+    {
+      "logical_cameras": 1,
+      "added_camera_ids": [],
+      "throughput": {
+        "elapsed_seconds": 5.083703805226833,
+        "health_samples": 25,
+        "cameras": {
+          "camera_1": {
+            "target_fps": 8.0,
+            "actual_fps": 7.868279021069997,
+            "frames_processed_delta": 40,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 25,
+              "p50": 0.019187157042324543,
+              "p95": 0.02590975137427449,
+              "max": 0.026156059931963682
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 25,
+              "p50": 0.24060929380357265,
+              "p95": 0.2851216129027307,
+              "max": 0.2876922311261296
+            }
+          }
+        }
+      },
+      "candidate_notifications": {
+        "camera_1": {
+          "candidate_id": "f61b7c113b43465085959244d56400a6",
+          "started_at": 1788880711.4731736,
+          "sse_received_at": 1788880712.0159357,
+          "receive_to_sse_seconds": 0.542762041091919,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        }
+      }
+    },
+    {
+      "logical_cameras": 3,
+      "added_camera_ids": [
+        "camera_2",
+        "camera_3"
+      ],
+      "throughput": {
+        "elapsed_seconds": 5.064448405057192,
+        "health_samples": 25,
+        "cameras": {
+          "camera_1": {
+            "target_fps": 8.0,
+            "actual_fps": 7.89819478860863,
+            "frames_processed_delta": 40,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 25,
+              "p50": 0.023764147888869047,
+              "p95": 0.025733107514679433,
+              "max": 0.0265665790066123
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 25,
+              "p50": 0.2425818000920117,
+              "p95": 0.3062459217384456,
+              "max": 0.3352385018952191
+            }
+          },
+          "camera_2": {
+            "target_fps": 8.0,
+            "actual_fps": 7.89819478860863,
+            "frames_processed_delta": 40,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 25,
+              "p50": 0.02297558495774865,
+              "p95": 0.02512341560795903,
+              "max": 0.026956734247505665
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 25,
+              "p50": 0.23780067870393395,
+              "p95": 0.31157699702307573,
+              "max": 0.3319854689761996
+            }
+          },
+          "camera_3": {
+            "target_fps": 8.0,
+            "actual_fps": 7.89819478860863,
+            "frames_processed_delta": 40,
+            "stale_health_samples": 0,
+            "processing_seconds": {
+              "samples": 25,
+              "p50": 0.023572306148707867,
+              "p95": 0.026357206609100105,
+              "max": 0.029729691799730062
+            },
+            "receive_to_encoding_seconds": {
+              "samples": 25,
+              "p50": 0.23319720616564155,
+              "p95": 0.27660493832081556,
+              "max": 0.3006226820871234
+            }
+          }
+        }
+      },
+      "candidate_notifications": {
+        "camera_1": {
+          "candidate_id": "5a8189d162514a0f96127adb4844e7f8",
+          "started_at": 1788880727.0761054,
+          "sse_received_at": 1788880727.6431317,
+          "receive_to_sse_seconds": 0.5670263767242432,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        },
+        "camera_3": {
+          "candidate_id": "1f363fe3cf5741bcacb20b58f24d39ad",
+          "started_at": 1788880727.1336823,
+          "sse_received_at": 1788880727.7179832,
+          "receive_to_sse_seconds": 0.5843009948730469,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        },
+        "camera_2": {
+          "candidate_id": "379a13f48bbe41d68c8974ff7ce11b30",
+          "started_at": 1788880727.1323712,
+          "sse_received_at": 1788880727.7530074,
+          "receive_to_sse_seconds": 0.6206362247467041,
+          "five_jpegs_readable": true,
+          "pending_reconciled": true,
+          "ack_idempotent": true
+        }
+      },
+      "remove_cameras_ended_sessions": true
+    }
+  ],
+  "completed_at": 1788880729.345986
+}

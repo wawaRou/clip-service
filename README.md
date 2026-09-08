@@ -43,7 +43,8 @@ Frigate 需要配置对应 go2rtc 转发流，默认 RTSP 端口 8554 必须能�
 缓存帧数和帧年龄。按 Ctrl+C 关闭服务。
 
 当前使用 OpenCV 的 FFmpeg 后端软件解码，尚未启用 GPU 硬件解码。
-HTTP/SSE 默认只监听本机，不提供认证或 TLS；跨机器部署应限制在可信网络，
+HTTP/SSE 内置默认只监听本机；示例配置使用 `0.0.0.0` 监听所有 IPv4 接口。
+服务不提供认证或 TLS；跨机器部署应限制在可信网络，
 并通过访问控制或带认证的反向代理保护接口。
 
 配置以全局默认值为基础，`cameras` 中可覆盖检测参数。删除全部 `[cameras.<标识>]`
@@ -72,7 +73,7 @@ Agent Server 开启会话并设置基准。模型、监听地址、数据目录�
 | 平台 | Python | 安装命令 | 运行命令 |
 | --- | --- | --- | --- |
 | Apple Silicon Mac | 3.12 | `uv sync --locked --python 3.12 --extra mac` | `uv run --locked --extra mac clip-service --config config.local.toml` |
-| Jetson Thor | 3.12 | `uv sync --locked --python /usr/bin/python3.12 --extra thor` | `uv run --locked --extra thor clip-service --config config.local.toml` |
+| Jetson Thor | 3.12 | 先执行下方 wheel 准备命令，再 `uv sync --locked --python /usr/bin/python3.12 --extra thor` | `uv run --locked --extra thor clip-service --config config.local.toml` |
 | Jetson Orin | 3.10 | `uv sync --locked --python /usr/bin/python3.10 --extra orin` | `uv run --locked --extra orin clip-service --config config.local.toml` |
 
 三组 extra 互斥，不使用 `--all-extras`。未提交统一的 `.python-version`，避免 Mac / Thor
@@ -93,8 +94,24 @@ uv build
 
 默认安装的 `dev` 依赖组包含实验绘图所需的 Matplotlib，Pyright 同时检查服务源码和
 `docs/validation/plot_thor_capacity.py`。VS Code 应选择本项目 `.venv` 的 Python。
-生产部署可通过 `uv sync --locked --extra thor --no-dev` 排除开发工具和绘图依赖，
-其他平台替换对应 extra。
+Thor 首次安装（或删除本地 `vendor/*.whl` 后）先执行：
+
+```bash
+/usr/bin/python3 scripts/repair_thor_wheel.py
+```
+
+脚本校验官方 cuSPARSELt 0.8.1 原包并修正平台元数据，不改变 CUDA 二进制。
+生成文件不提交 Git；新机器必须先准备，再执行 uv。详见
+[Thor wheel 修复](docs/platforms.md#thor-wheel-元数据修复)。
+
+生产部署需在同步和运行时都保留 `--no-dev`，排除开发工具和绘图依赖；Thor 示例：
+
+```bash
+uv sync --locked --extra thor --no-dev
+uv run --locked --extra thor --no-dev clip-service --config config.local.toml
+```
+
+其他平台替换对应 extra。省略运行命令中的 `--no-dev` 会重新同步默认开发依赖。
 
 新增公共业务依赖使用 `uv add`；开发工具使用 `uv add --group dev`。
 更新依赖后提交 `pyproject.toml` 与 `uv.lock`。推理依赖由平台 extra 统一管理，
