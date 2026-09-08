@@ -1,0 +1,4814 @@
+{
+  "started_at": 1788858869.7391086,
+  "workload": {
+    "vlm_model": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+    "images_per_request": 5,
+    "image_source": "Five most recent real JPEG ring frames; refreshed for each request",
+    "resolution": [
+      1280,
+      720
+    ],
+    "concurrent_requests": 1,
+    "arrival_policy": "Continuous back-to-back requests",
+    "max_completion_tokens": 256,
+    "response_format": "json_object",
+    "thinking": false,
+    "target_clip_fps": 30,
+    "queue_capacity": 6,
+    "physical_streams": 1,
+    "measurement_seconds": 25
+  },
+  "phases": [
+    {
+      "precision": null,
+      "clip_active": false,
+      "logical_readers": 1,
+      "seconds": 25.01218240102753,
+      "cameras": {
+        "camera_1": {
+          "receive_fps": 25.267687156081056,
+          "inference_fps": 0.0,
+          "dropped_frames": 0,
+          "queue_start": 0,
+          "queue_end": 0,
+          "max_sampled_queue": 0,
+          "stale_samples": 0,
+          "latency_ms": null,
+          "processing_ms": null
+        }
+      },
+      "machine_samples": [
+        {
+          "timestamp": 1788858943.1133754,
+          "gpu": {
+            "temperature_c": 48.0,
+            "utilization_percent": 0.0,
+            "power_w": 21.25
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22594.98828125
+        },
+        {
+          "timestamp": 1788858944.1610072,
+          "gpu": {
+            "temperature_c": 54.0,
+            "utilization_percent": 97.0,
+            "power_w": 55.06
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22594.16796875
+        },
+        {
+          "timestamp": 1788858945.233421,
+          "gpu": {
+            "temperature_c": 51.0,
+            "utilization_percent": 97.0,
+            "power_w": 35.41
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22597.3984375
+        },
+        {
+          "timestamp": 1788858946.3005152,
+          "gpu": {
+            "temperature_c": 51.0,
+            "utilization_percent": 97.0,
+            "power_w": 29.51
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22596.046875
+        },
+        {
+          "timestamp": 1788858947.3503265,
+          "gpu": {
+            "temperature_c": 54.0,
+            "utilization_percent": 98.0,
+            "power_w": 51.1
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22543.203125
+        },
+        {
+          "timestamp": 1788858948.4135425,
+          "gpu": {
+            "temperature_c": 52.0,
+            "utilization_percent": 98.0,
+            "power_w": 47.98
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22530.83984375
+        },
+        {
+          "timestamp": 1788858949.4765174,
+          "gpu": {
+            "temperature_c": 52.0,
+            "utilization_percent": 97.0,
+            "power_w": 30.29
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22520.5234375
+        },
+        {
+          "timestamp": 1788858950.5287745,
+          "gpu": {
+            "temperature_c": 56.0,
+            "utilization_percent": 97.0,
+            "power_w": 51.13
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22423.0390625
+        },
+        {
+          "timestamp": 1788858951.5862536,
+          "gpu": {
+            "temperature_c": 53.0,
+            "utilization_percent": 97.0,
+            "power_w": 50.34
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22429.53125
+        },
+        {
+          "timestamp": 1788858952.640469,
+          "gpu": {
+            "temperature_c": 52.0,
+            "utilization_percent": 97.0,
+            "power_w": 30.69
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22444.296875
+        },
+        {
+          "timestamp": 1788858953.6970403,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 98.0,
+            "power_w": 51.52
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22395.76171875
+        },
+        {
+          "timestamp": 1788858954.749915,
+          "gpu": {
+            "temperature_c": 53.0,
+            "utilization_percent": 98.0,
+            "power_w": 50.73
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22402.47265625
+        },
+        {
+          "timestamp": 1788858955.8028843,
+          "gpu": {
+            "temperature_c": 53.0,
+            "utilization_percent": 98.0,
+            "power_w": 30.69
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22408.296875
+        },
+        {
+          "timestamp": 1788858956.8563547,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 98.0,
+            "power_w": 51.52
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22413.25
+        },
+        {
+          "timestamp": 1788858957.9139385,
+          "gpu": {
+            "temperature_c": 54.0,
+            "utilization_percent": 98.0,
+            "power_w": 46.8
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22405.625
+        },
+        {
+          "timestamp": 1788858958.9641702,
+          "gpu": {
+            "temperature_c": 54.0,
+            "utilization_percent": 98.0,
+            "power_w": 30.28
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22397.44140625
+        },
+        {
+          "timestamp": 1788858960.0085235,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 97.0,
+            "power_w": 51.89
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22267.6015625
+        },
+        {
+          "timestamp": 1788858961.0597148,
+          "gpu": {
+            "temperature_c": 54.0,
+            "utilization_percent": 97.0,
+            "power_w": 48.77
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22277.39453125
+        },
+        {
+          "timestamp": 1788858962.111725,
+          "gpu": {
+            "temperature_c": 54.0,
+            "utilization_percent": 98.0,
+            "power_w": 30.69
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22275.91796875
+        },
+        {
+          "timestamp": 1788858963.1717887,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 98.0,
+            "power_w": 52.31
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22169.203125
+        },
+        {
+          "timestamp": 1788858964.2294366,
+          "gpu": {
+            "temperature_c": 55.0,
+            "utilization_percent": 97.0,
+            "power_w": 43.26
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22164.39453125
+        },
+        {
+          "timestamp": 1788858965.2848048,
+          "gpu": {
+            "temperature_c": 55.0,
+            "utilization_percent": 97.0,
+            "power_w": 30.29
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22143.75
+        },
+        {
+          "timestamp": 1788858966.3271725,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 98.0,
+            "power_w": 53.09
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22081.8671875
+        },
+        {
+          "timestamp": 1788858967.3883543,
+          "gpu": {
+            "temperature_c": 55.0,
+            "utilization_percent": 97.0,
+            "power_w": 40.9
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            }
+          ],
+          "available_memory_mib": 22066.65234375
+        }
+      ],
+      "vlm_requests": [
+        {
+          "started": 2358619.984454143,
+          "finished": 2358623.606940688,
+          "seconds": 3.622486545238644,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4692,
+            "completion_tokens": 224,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358623.613696028,
+          "finished": 2358626.826900824,
+          "seconds": 3.213204795960337,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4628,
+            "completion_tokens": 160,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358626.833706571,
+          "finished": 2358629.993709369,
+          "seconds": 3.160002798307687,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4639,
+            "completion_tokens": 171,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358630.000654217,
+          "finished": 2358633.072108532,
+          "seconds": 3.071454314980656,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4625,
+            "completion_tokens": 157,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358633.078817927,
+          "finished": 2358636.264915871,
+          "seconds": 3.1860979441553354,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4649,
+            "completion_tokens": 181,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358636.271930108,
+          "finished": 2358639.292721641,
+          "seconds": 3.0207915329374373,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4631,
+            "completion_tokens": 163,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358639.299311527,
+          "finished": 2358642.37679845,
+          "seconds": 3.0774869229644537,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4633,
+            "completion_tokens": 165,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        }
+      ],
+      "vlm_warm_request": {
+        "started": 2358548.80541192,
+        "finished": 2358616.770607831,
+        "seconds": 67.96519591100514,
+        "usage": {
+          "prompt_tokens": 4468,
+          "total_tokens": 4653,
+          "completion_tokens": 185,
+          "prompt_tokens_details": null,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "valid_json": true
+      },
+      "total_clip_fps": 0.0,
+      "vlm_summary": {
+        "completed_requests": 7,
+        "valid_json_responses": 7,
+        "request_seconds": {
+          "min": 3.0207915329374373,
+          "p50": 3.160002798307687,
+          "p95": 3.4997020204551514,
+          "max": 3.622486545238644
+        },
+        "prompt_tokens": {
+          "min": 4468.0,
+          "p50": 4468.0,
+          "p95": 4468.0,
+          "max": 4468.0
+        },
+        "completion_tokens": {
+          "min": 157.0,
+          "p50": 165.0,
+          "p95": 211.09999999999997,
+          "max": 224.0
+        },
+        "completed_output_tokens_per_window_second": 48.81621205312496
+      }
+    },
+    {
+      "precision": "tf32",
+      "clip_active": true,
+      "logical_readers": 1,
+      "seconds": 25.018317608628422,
+      "cameras": {
+        "camera_1": {
+          "receive_fps": 24.9816958029363,
+          "inference_fps": 24.9816958029363,
+          "dropped_frames": 0,
+          "queue_start": 0,
+          "queue_end": 1,
+          "max_sampled_queue": 3,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 18.990985117852688,
+            "p50": 38.15876413136721,
+            "p95": 82.65215829014785,
+            "max": 141.42562076449394
+          },
+          "processing_ms": {
+            "min": 10.149111039936543,
+            "p50": 18.295662943273783,
+            "p95": 24.164481926709417,
+            "max": 71.29483902826905
+          }
+        }
+      },
+      "machine_samples": [
+        {
+          "timestamp": 1788858980.421568,
+          "gpu": {
+            "temperature_c": 55.0,
+            "utilization_percent": 97.0,
+            "power_w": 31.08
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20697.62109375
+        },
+        {
+          "timestamp": 1788858981.4683,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 6.0,
+            "power_w": 43.65
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20699.59765625
+        },
+        {
+          "timestamp": 1788858982.5279603,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 98.0,
+            "power_w": 56.22
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20690.578125
+        },
+        {
+          "timestamp": 1788858983.5865993,
+          "gpu": {
+            "temperature_c": 55.0,
+            "utilization_percent": 97.0,
+            "power_w": 33.44
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20673.91796875
+        },
+        {
+          "timestamp": 1788858984.629525,
+          "gpu": {
+            "temperature_c": 54.0,
+            "utilization_percent": 2.0,
+            "power_w": 26.75
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20711.2578125
+        },
+        {
+          "timestamp": 1788858985.6853998,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 97.0,
+            "power_w": 53.46
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20473.3671875
+        },
+        {
+          "timestamp": 1788858986.75238,
+          "gpu": {
+            "temperature_c": 56.0,
+            "utilization_percent": 97.0,
+            "power_w": 41.29
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20486.45703125
+        },
+        {
+          "timestamp": 1788858987.8039744,
+          "gpu": {
+            "temperature_c": 56.0,
+            "utilization_percent": 97.0,
+            "power_w": 30.29
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20480.76171875
+        },
+        {
+          "timestamp": 1788858988.8601925,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 98.0,
+            "power_w": 44.03
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20421.7578125
+        },
+        {
+          "timestamp": 1788858989.9153597,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 98.0,
+            "power_w": 55.82
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20504.60546875
+        },
+        {
+          "timestamp": 1788858990.9662995,
+          "gpu": {
+            "temperature_c": 56.0,
+            "utilization_percent": 97.0,
+            "power_w": 33.43
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20484.91015625
+        },
+        {
+          "timestamp": 1788858992.0285196,
+          "gpu": {
+            "temperature_c": 56.0,
+            "utilization_percent": 97.0,
+            "power_w": 29.9
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20463.6328125
+        },
+        {
+          "timestamp": 1788858993.0865674,
+          "gpu": {
+            "temperature_c": 54.0,
+            "utilization_percent": 1.0,
+            "power_w": 12.2
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20533.515625
+        },
+        {
+          "timestamp": 1788858994.1392949,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 98.0,
+            "power_w": 29.5
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20698.5078125
+        },
+        {
+          "timestamp": 1788858995.1840844,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 97.0,
+            "power_w": 53.07
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20697.6484375
+        },
+        {
+          "timestamp": 1788858996.2540772,
+          "gpu": {
+            "temperature_c": 56.0,
+            "utilization_percent": 96.0,
+            "power_w": 35.4
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20676.28515625
+        },
+        {
+          "timestamp": 1788858997.2968798,
+          "gpu": {
+            "temperature_c": 55.0,
+            "utilization_percent": 98.0,
+            "power_w": 26.36
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20557.71484375
+        },
+        {
+          "timestamp": 1788858998.366712,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 98.0,
+            "power_w": 41.29
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20405.9609375
+        },
+        {
+          "timestamp": 1788858999.454516,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 97.0,
+            "power_w": 53.86
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20415.65234375
+        },
+        {
+          "timestamp": 1788859000.5188901,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 97.0,
+            "power_w": 33.05
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20411.71875
+        },
+        {
+          "timestamp": 1788859001.576307,
+          "gpu": {
+            "temperature_c": 55.0,
+            "utilization_percent": 97.0,
+            "power_w": 22.04
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20385.6796875
+        },
+        {
+          "timestamp": 1788859002.6435435,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 98.0,
+            "power_w": 54.67
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20373.515625
+        },
+        {
+          "timestamp": 1788859003.7129958,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 97.0,
+            "power_w": 39.72
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20353.43359375
+        },
+        {
+          "timestamp": 1788859004.7938256,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 97.0,
+            "power_w": 30.69
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20363.015625
+        }
+      ],
+      "vlm_requests": [
+        {
+          "started": 2358654.371086654,
+          "finished": 2358657.901201223,
+          "seconds": 3.530114569235593,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4631,
+            "completion_tokens": 163,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358657.908311061,
+          "finished": 2358661.559323256,
+          "seconds": 3.6510121948085725,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4634,
+            "completion_tokens": 166,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358661.565234143,
+          "finished": 2358665.29186595,
+          "seconds": 3.7266318071633577,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4649,
+            "completion_tokens": 181,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358665.297627551,
+          "finished": 2358669.300433871,
+          "seconds": 4.002806319855154,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4678,
+            "completion_tokens": 210,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358669.306152139,
+          "finished": 2358674.218241718,
+          "seconds": 4.912089579273015,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4620,
+            "completion_tokens": 152,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358674.222857394,
+          "finished": 2358678.36504634,
+          "seconds": 4.142188946250826,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4629,
+            "completion_tokens": 161,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358678.371807615,
+          "finished": 2358681.887602902,
+          "seconds": 3.5157952872104943,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4623,
+            "completion_tokens": 155,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        }
+      ],
+      "vlm_warm_request": {
+        "started": 2358650.799202778,
+        "finished": 2358654.36615832,
+        "seconds": 3.566955542191863,
+        "usage": {
+          "prompt_tokens": 4468,
+          "total_tokens": 4626,
+          "completion_tokens": 158,
+          "prompt_tokens_details": null,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "valid_json": true
+      },
+      "total_clip_fps": 24.9816958029363,
+      "vlm_summary": {
+        "completed_requests": 7,
+        "valid_json_responses": 7,
+        "request_seconds": {
+          "min": 3.5157952872104943,
+          "p50": 3.7266318071633577,
+          "p95": 4.681119389366358,
+          "max": 4.912089579273015
+        },
+        "prompt_tokens": {
+          "min": 4468.0,
+          "p50": 4468.0,
+          "p95": 4468.0,
+          "max": 4468.0
+        },
+        "completion_tokens": {
+          "min": 152.0,
+          "p50": 163.0,
+          "p95": 201.29999999999998,
+          "max": 210.0
+        },
+        "completed_output_tokens_per_window_second": 47.48520738222132
+      }
+    },
+    {
+      "precision": "tf32",
+      "clip_active": true,
+      "logical_readers": 2,
+      "seconds": 25.00197743717581,
+      "cameras": {
+        "camera_1": {
+          "receive_fps": 24.99802271922213,
+          "inference_fps": 24.958025882871375,
+          "dropped_frames": 1,
+          "queue_start": 2,
+          "queue_end": 1,
+          "max_sampled_queue": 6,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 25.477799121290445,
+            "p50": 86.97783178649843,
+            "p95": 187.23535046447066,
+            "max": 254.22315811738372
+          },
+          "processing_ms": {
+            "min": 9.651769883930683,
+            "p50": 16.29045349545777,
+            "p95": 22.88891584612429,
+            "max": 36.792409140616655
+          }
+        },
+        "camera_2": {
+          "receive_fps": 24.99802271922213,
+          "inference_fps": 24.99802271922213,
+          "dropped_frames": 0,
+          "queue_start": 1,
+          "queue_end": 2,
+          "max_sampled_queue": 6,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 23.559459019452333,
+            "p50": 77.69746729172766,
+            "p95": 204.3455363484099,
+            "max": 244.86205587163568
+          },
+          "processing_ms": {
+            "min": 9.567390661686659,
+            "p50": 16.372759360820055,
+            "p95": 23.141132201999426,
+            "max": 28.555460274219513
+          }
+        }
+      },
+      "machine_samples": [
+        {
+          "timestamp": 1788859021.6126776,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 97.0,
+            "power_w": 34.62
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20343.9609375
+        },
+        {
+          "timestamp": 1788859022.6768854,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 98.0,
+            "power_w": 30.69
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20316.76171875
+        },
+        {
+          "timestamp": 1788859023.7502863,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 97.0,
+            "power_w": 43.65
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20052.9609375
+        },
+        {
+          "timestamp": 1788859024.817391,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 98.0,
+            "power_w": 50.34
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20010.578125
+        },
+        {
+          "timestamp": 1788859025.8957093,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 97.0,
+            "power_w": 35.41
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19998.625
+        },
+        {
+          "timestamp": 1788859026.9580002,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 97.0,
+            "power_w": 30.69
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19998.25390625
+        },
+        {
+          "timestamp": 1788859028.0177662,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 5.0,
+            "power_w": 40.9
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20238.21875
+        },
+        {
+          "timestamp": 1788859029.0657094,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 98.0,
+            "power_w": 51.1
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20224.6953125
+        },
+        {
+          "timestamp": 1788859030.1328862,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 96.0,
+            "power_w": 36.97
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20185.04296875
+        },
+        {
+          "timestamp": 1788859031.182599,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 98.0,
+            "power_w": 31.08
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20186.62109375
+        },
+        {
+          "timestamp": 1788859032.2557244,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 97.0,
+            "power_w": 45.23
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20020.84375
+        },
+        {
+          "timestamp": 1788859033.315002,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 98.0,
+            "power_w": 53.07
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 20004.16796875
+        },
+        {
+          "timestamp": 1788859034.3866777,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 97.0,
+            "power_w": 34.61
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19991.2890625
+        },
+        {
+          "timestamp": 1788859035.452914,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 97.0,
+            "power_w": 30.69
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19978.5078125
+        },
+        {
+          "timestamp": 1788859036.50788,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 97.0,
+            "power_w": 49.55
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19979.125
+        },
+        {
+          "timestamp": 1788859037.5848963,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 98.0,
+            "power_w": 53.49
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19945.48046875
+        },
+        {
+          "timestamp": 1788859038.6638827,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 98.0,
+            "power_w": 33.05
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19932.140625
+        },
+        {
+          "timestamp": 1788859039.7177463,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 98.0,
+            "power_w": 28.72
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19942.62109375
+        },
+        {
+          "timestamp": 1788859040.7762265,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 97.0,
+            "power_w": 48.77
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19781.02734375
+        },
+        {
+          "timestamp": 1788859041.8485866,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 97.0,
+            "power_w": 51.91
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19778.828125
+        },
+        {
+          "timestamp": 1788859042.9433162,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 98.0,
+            "power_w": 32.25
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19751.69140625
+        },
+        {
+          "timestamp": 1788859044.0180938,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 97.0,
+            "power_w": 30.29
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19745.05078125
+        },
+        {
+          "timestamp": 1788859045.0834405,
+          "gpu": {
+            "temperature_c": 63.0,
+            "utilization_percent": 97.0,
+            "power_w": 47.17
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19742.92578125
+        },
+        {
+          "timestamp": 1788859046.1432142,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 97.0,
+            "power_w": 53.07
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19736.03125
+        }
+      ],
+      "vlm_requests": [
+        {
+          "started": 2358695.585760576,
+          "finished": 2358700.02657653,
+          "seconds": 4.440815954003483,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4637,
+            "completion_tokens": 169,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358700.03409586,
+          "finished": 2358704.149865874,
+          "seconds": 4.115770014002919,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4631,
+            "completion_tokens": 163,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358704.155801318,
+          "finished": 2358708.49184295,
+          "seconds": 4.33604163210839,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4625,
+            "completion_tokens": 157,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358708.498997808,
+          "finished": 2358712.633338556,
+          "seconds": 4.13434074819088,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4628,
+            "completion_tokens": 160,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358712.640596053,
+          "finished": 2358716.656616734,
+          "seconds": 4.016020680777729,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4636,
+            "completion_tokens": 168,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358716.65934822,
+          "finished": 2358721.149452671,
+          "seconds": 4.490104450844228,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4661,
+            "completion_tokens": 193,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        }
+      ],
+      "vlm_warm_request": {
+        "started": 2358690.920194161,
+        "finished": 2358695.582203971,
+        "seconds": 4.662009810097516,
+        "usage": {
+          "prompt_tokens": 4468,
+          "total_tokens": 4669,
+          "completion_tokens": 201,
+          "prompt_tokens_details": null,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "valid_json": true
+      },
+      "total_clip_fps": 49.9560486020935,
+      "vlm_summary": {
+        "completed_requests": 6,
+        "valid_json_responses": 6,
+        "request_seconds": {
+          "min": 4.016020680777729,
+          "p50": 4.235191190149635,
+          "p95": 4.477782326634042,
+          "max": 4.490104450844228
+        },
+        "prompt_tokens": {
+          "min": 4468.0,
+          "p50": 4468.0,
+          "p95": 4468.0,
+          "max": 4468.0
+        },
+        "completion_tokens": {
+          "min": 157.0,
+          "p50": 165.5,
+          "p95": 187.0,
+          "max": 193.0
+        },
+        "completed_output_tokens_per_window_second": 40.39680471426296
+      }
+    },
+    {
+      "precision": "tf32",
+      "clip_active": true,
+      "logical_readers": 3,
+      "seconds": 25.010460746008903,
+      "cameras": {
+        "camera_1": {
+          "receive_fps": 24.98954362924864,
+          "inference_fps": 19.471852395910542,
+          "dropped_frames": 138,
+          "queue_start": 5,
+          "queue_end": 5,
+          "max_sampled_queue": 6,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 87.2986069880426,
+            "p50": 228.93498744815588,
+            "p95": 261.8251411477104,
+            "max": 284.95059069246054
+          },
+          "processing_ms": {
+            "min": 7.829441223293543,
+            "p50": 15.026845969259739,
+            "p95": 20.774972974322736,
+            "max": 25.833772029727697
+          }
+        },
+        "camera_2": {
+          "receive_fps": 24.98954362924864,
+          "inference_fps": 19.471852395910542,
+          "dropped_frames": 138,
+          "queue_start": 5,
+          "queue_end": 5,
+          "max_sampled_queue": 6,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 127.3903171531856,
+            "p50": 227.3472365923226,
+            "p95": 261.665977910161,
+            "max": 310.6797900982201
+          },
+          "processing_ms": {
+            "min": 7.5210342183709145,
+            "p50": 14.980077277868986,
+            "p95": 20.809052418917418,
+            "max": 27.00193738564849
+          }
+        },
+        "camera_3": {
+          "receive_fps": 24.98954362924864,
+          "inference_fps": 19.471852395910542,
+          "dropped_frames": 138,
+          "queue_start": 6,
+          "queue_end": 6,
+          "max_sampled_queue": 6,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 99.45602202787995,
+            "p50": 227.80018812045455,
+            "p95": 261.04507790878415,
+            "max": 291.74062283709645
+          },
+          "processing_ms": {
+            "min": 7.536089979112148,
+            "p50": 14.895512256771326,
+            "p95": 20.614727213978767,
+            "max": 29.635174199938774
+          }
+        }
+      },
+      "machine_samples": [
+        {
+          "timestamp": 1788859063.964152,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 97.0,
+            "power_w": 38.56
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19860.27734375
+        },
+        {
+          "timestamp": 1788859065.022684,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 97.0,
+            "power_w": 31.48
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19837.125
+        },
+        {
+          "timestamp": 1788859066.1021245,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 98.0,
+            "power_w": 49.55
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19684.09765625
+        },
+        {
+          "timestamp": 1788859067.1715162,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 98.0,
+            "power_w": 52.68
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19681.0703125
+        },
+        {
+          "timestamp": 1788859068.2469363,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 98.0,
+            "power_w": 33.44
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19682.8046875
+        },
+        {
+          "timestamp": 1788859069.3064277,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 37.0,
+            "power_w": 29.51
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19507.95703125
+        },
+        {
+          "timestamp": 1788859070.373847,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 98.0,
+            "power_w": 49.93
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19504.578125
+        },
+        {
+          "timestamp": 1788859071.448036,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 98.0,
+            "power_w": 47.17
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19503.09375
+        },
+        {
+          "timestamp": 1788859072.5311732,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 98.0,
+            "power_w": 31.85
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19489.8671875
+        },
+        {
+          "timestamp": 1788859073.603619,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 45.0,
+            "power_w": 43.26
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19432.9375
+        },
+        {
+          "timestamp": 1788859074.6764596,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 97.0,
+            "power_w": 50.71
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19408.9609375
+        },
+        {
+          "timestamp": 1788859075.748006,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 98.0,
+            "power_w": 36.97
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19407.24609375
+        },
+        {
+          "timestamp": 1788859076.8177156,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 97.0,
+            "power_w": 31.07
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19404.32421875
+        },
+        {
+          "timestamp": 1788859077.8754504,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 98.0,
+            "power_w": 45.23
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19302.69921875
+        },
+        {
+          "timestamp": 1788859078.9399292,
+          "gpu": {
+            "temperature_c": 65.0,
+            "utilization_percent": 98.0,
+            "power_w": 51.91
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19319.859375
+        },
+        {
+          "timestamp": 1788859080.0166488,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 97.0,
+            "power_w": 35.4
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19312.76171875
+        },
+        {
+          "timestamp": 1788859081.106201,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 97.0,
+            "power_w": 31.07
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19301.5390625
+        },
+        {
+          "timestamp": 1788859082.155332,
+          "gpu": {
+            "temperature_c": 63.0,
+            "utilization_percent": 98.0,
+            "power_w": 44.81
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19302.8671875
+        },
+        {
+          "timestamp": 1788859083.2277591,
+          "gpu": {
+            "temperature_c": 63.0,
+            "utilization_percent": 98.0,
+            "power_w": 50.32
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19298.76953125
+        },
+        {
+          "timestamp": 1788859084.304513,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 97.0,
+            "power_w": 36.58
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19287.20703125
+        },
+        {
+          "timestamp": 1788859085.3773158,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 97.0,
+            "power_w": 31.07
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19338.38671875
+        },
+        {
+          "timestamp": 1788859086.430936,
+          "gpu": {
+            "temperature_c": 64.0,
+            "utilization_percent": 97.0,
+            "power_w": 50.32
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19198.65625
+        },
+        {
+          "timestamp": 1788859087.4856088,
+          "gpu": {
+            "temperature_c": 64.0,
+            "utilization_percent": 98.0,
+            "power_w": 51.91
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19186.421875
+        },
+        {
+          "timestamp": 1788859088.553395,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 96.0,
+            "power_w": 33.43
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 789984,
+              "name": ".venv/bin/python",
+              "memory_mib": 964.0
+            }
+          ],
+          "available_memory_mib": 19180.05078125
+        }
+      ],
+      "vlm_requests": [
+        {
+          "started": 2358737.944049948,
+          "finished": 2358742.185473663,
+          "seconds": 4.241423714905977,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4606,
+            "completion_tokens": 138,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358742.18795538,
+          "finished": 2358746.025542397,
+          "seconds": 3.8375870171003044,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4605,
+            "completion_tokens": 137,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358746.030193649,
+          "finished": 2358749.910071514,
+          "seconds": 3.8798778648488224,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4601,
+            "completion_tokens": 133,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358749.916834984,
+          "finished": 2358754.115254065,
+          "seconds": 4.198419081047177,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4623,
+            "completion_tokens": 155,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358754.118251597,
+          "finished": 2358758.40818061,
+          "seconds": 4.289929012767971,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4642,
+            "completion_tokens": 174,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358758.41465246,
+          "finished": 2358762.396150082,
+          "seconds": 3.9814976220950484,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4610,
+            "completion_tokens": 142,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        }
+      ],
+      "vlm_warm_request": {
+        "started": 2358733.200513939,
+        "finished": 2358737.940397352,
+        "seconds": 4.7398834130726755,
+        "usage": {
+          "prompt_tokens": 4468,
+          "total_tokens": 4655,
+          "completion_tokens": 187,
+          "prompt_tokens_details": null,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "valid_json": true
+      },
+      "total_clip_fps": 58.41555718773162,
+      "vlm_summary": {
+        "completed_requests": 6,
+        "valid_json_responses": 6,
+        "request_seconds": {
+          "min": 3.8375870171003044,
+          "p50": 4.089958351571113,
+          "p95": 4.277802688302472,
+          "max": 4.289929012767971
+        },
+        "prompt_tokens": {
+          "min": 4468.0,
+          "p50": 4468.0,
+          "p95": 4468.0,
+          "max": 4468.0
+        },
+        "completion_tokens": {
+          "min": 133.0,
+          "p50": 140.0,
+          "p95": 169.25,
+          "max": 174.0
+        },
+        "completed_output_tokens_per_window_second": 35.14529416017529
+      }
+    },
+    {
+      "precision": "fp16",
+      "clip_active": true,
+      "logical_readers": 1,
+      "seconds": 25.001932227052748,
+      "cameras": {
+        "camera_1": {
+          "receive_fps": 24.998067922275766,
+          "inference_fps": 24.318120474789865,
+          "dropped_frames": 17,
+          "queue_start": 2,
+          "queue_end": 1,
+          "max_sampled_queue": 6,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 19.322657026350498,
+            "p50": 41.518382262438536,
+            "p95": 86.6111423354594,
+            "max": 895.0896179303527
+          },
+          "processing_ms": {
+            "min": 10.165383107960224,
+            "p50": 17.253954894840717,
+            "p95": 22.630553320050232,
+            "max": 863.8357119634748
+          }
+        }
+      },
+      "machine_samples": [
+        {
+          "timestamp": 1788859180.8083012,
+          "gpu": {
+            "temperature_c": 55.0,
+            "utilization_percent": 96.0,
+            "power_w": 30.29
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19579.8515625
+        },
+        {
+          "timestamp": 1788859181.8685946,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 97.0,
+            "power_w": 44.05
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19783.90625
+        },
+        {
+          "timestamp": 1788859182.910816,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 97.0,
+            "power_w": 55.43
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19760.4453125
+        },
+        {
+          "timestamp": 1788859183.9719753,
+          "gpu": {
+            "temperature_c": 56.0,
+            "utilization_percent": 98.0,
+            "power_w": 32.25
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19734.34375
+        },
+        {
+          "timestamp": 1788859185.0344453,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 3.0,
+            "power_w": 40.51
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19709.75390625
+        },
+        {
+          "timestamp": 1788859186.0857549,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 98.0,
+            "power_w": 56.61
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19716.7421875
+        },
+        {
+          "timestamp": 1788859187.159868,
+          "gpu": {
+            "temperature_c": 56.0,
+            "utilization_percent": 97.0,
+            "power_w": 33.44
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19707.77734375
+        },
+        {
+          "timestamp": 1788859188.2256558,
+          "gpu": {
+            "temperature_c": 55.0,
+            "utilization_percent": 0.0,
+            "power_w": 18.5
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19660.734375
+        },
+        {
+          "timestamp": 1788859189.309266,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 75.0,
+            "power_w": 24.39
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19328.7421875
+        },
+        {
+          "timestamp": 1788859190.370165,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 98.0,
+            "power_w": 53.86
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19397.85546875
+        },
+        {
+          "timestamp": 1788859191.425734,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 98.0,
+            "power_w": 35.02
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19360.953125
+        },
+        {
+          "timestamp": 1788859192.486685,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 97.0,
+            "power_w": 29.51
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19343.71875
+        },
+        {
+          "timestamp": 1788859193.5660465,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 98.0,
+            "power_w": 51.52
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19547.79296875
+        },
+        {
+          "timestamp": 1788859194.6332562,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 98.0,
+            "power_w": 46.8
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19541.015625
+        },
+        {
+          "timestamp": 1788859195.7032008,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 98.0,
+            "power_w": 30.69
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19542.94921875
+        },
+        {
+          "timestamp": 1788859196.7658217,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 12.0,
+            "power_w": 14.56
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19371.83984375
+        },
+        {
+          "timestamp": 1788859197.826527,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 97.0,
+            "power_w": 54.27
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19357.39453125
+        },
+        {
+          "timestamp": 1788859198.899709,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 97.0,
+            "power_w": 36.58
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19338.5234375
+        },
+        {
+          "timestamp": 1788859199.962771,
+          "gpu": {
+            "temperature_c": 57.0,
+            "utilization_percent": 97.0,
+            "power_w": 25.18
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19413.6015625
+        },
+        {
+          "timestamp": 1788859201.0228927,
+          "gpu": {
+            "temperature_c": 63.0,
+            "utilization_percent": 98.0,
+            "power_w": 54.25
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19179.40234375
+        },
+        {
+          "timestamp": 1788859202.1038518,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 98.0,
+            "power_w": 40.52
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19201.0
+        },
+        {
+          "timestamp": 1788859203.1694489,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 98.0,
+            "power_w": 29.51
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19279.44921875
+        },
+        {
+          "timestamp": 1788859204.2284477,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 98.0,
+            "power_w": 51.52
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19182.2421875
+        },
+        {
+          "timestamp": 1788859205.2973282,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 97.0,
+            "power_w": 45.23
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19159.56640625
+        }
+      ],
+      "vlm_requests": [
+        {
+          "started": 2358854.755349498,
+          "finished": 2358858.131096272,
+          "seconds": 3.375746774021536,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4630,
+            "completion_tokens": 162,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358858.135944839,
+          "finished": 2358861.479083788,
+          "seconds": 3.3431389490142465,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4621,
+            "completion_tokens": 153,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358861.486333314,
+          "finished": 2358864.938072735,
+          "seconds": 3.4517394211143255,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4624,
+            "completion_tokens": 156,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358864.944220253,
+          "finished": 2358869.667791414,
+          "seconds": 4.723571161273867,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4659,
+            "completion_tokens": 191,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358869.67638878,
+          "finished": 2358872.913475265,
+          "seconds": 3.2370864846743643,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4620,
+            "completion_tokens": 152,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358872.921377346,
+          "finished": 2358876.859969864,
+          "seconds": 3.9385925182141364,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4622,
+            "completion_tokens": 154,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358876.867105723,
+          "finished": 2358880.21044488,
+          "seconds": 3.3433391572907567,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4613,
+            "completion_tokens": 145,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        }
+      ],
+      "vlm_warm_request": {
+        "started": 2358851.020689057,
+        "finished": 2358854.751878207,
+        "seconds": 3.7311891498975456,
+        "usage": {
+          "prompt_tokens": 4468,
+          "total_tokens": 4634,
+          "completion_tokens": 166,
+          "prompt_tokens_details": null,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "valid_json": true
+      },
+      "total_clip_fps": 24.318120474789865,
+      "vlm_summary": {
+        "completed_requests": 7,
+        "valid_json_responses": 7,
+        "request_seconds": {
+          "min": 3.2370864846743643,
+          "p50": 3.375746774021536,
+          "p95": 4.488077568355947,
+          "max": 4.723571161273867
+        },
+        "prompt_tokens": {
+          "min": 4468.0,
+          "p50": 4468.0,
+          "p95": 4468.0,
+          "max": 4468.0
+        },
+        "completion_tokens": {
+          "min": 145.0,
+          "p50": 154.0,
+          "p95": 182.29999999999998,
+          "max": 191.0
+        },
+        "completed_output_tokens_per_window_second": 44.51655935598868
+      }
+    },
+    {
+      "precision": "fp16",
+      "clip_active": true,
+      "logical_readers": 2,
+      "seconds": 25.029093265067786,
+      "cameras": {
+        "camera_1": {
+          "receive_fps": 25.01089405718448,
+          "inference_fps": 24.9709405523008,
+          "dropped_frames": 0,
+          "queue_start": 0,
+          "queue_end": 1,
+          "max_sampled_queue": 4,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 23.05167866870761,
+            "p50": 59.01038506999612,
+            "p95": 130.1170612219721,
+            "max": 176.63461109623313
+          },
+          "processing_ms": {
+            "min": 9.333107154816389,
+            "p50": 15.123497229069471,
+            "p95": 20.984607888385643,
+            "max": 29.06114188954234
+          }
+        },
+        "camera_2": {
+          "receive_fps": 25.050847562068164,
+          "inference_fps": 25.01089405718448,
+          "dropped_frames": 0,
+          "queue_start": 0,
+          "queue_end": 2,
+          "max_sampled_queue": 5,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 35.506428219377995,
+            "p50": 75.5092091858387,
+            "p95": 143.5074150795117,
+            "max": 204.40981909632683
+          },
+          "processing_ms": {
+            "min": 8.988319896161556,
+            "p50": 15.142390038818121,
+            "p95": 20.587202976457775,
+            "max": 25.57605504989624
+          }
+        }
+      },
+      "machine_samples": [
+        {
+          "timestamp": 1788859218.9100313,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 97.0,
+            "power_w": 31.48
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18936.55859375
+        },
+        {
+          "timestamp": 1788859219.974737,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 96.0,
+            "power_w": 29.51
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18974.32421875
+        },
+        {
+          "timestamp": 1788859221.0493202,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 98.0,
+            "power_w": 50.71
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19178.60546875
+        },
+        {
+          "timestamp": 1788859222.121714,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 98.0,
+            "power_w": 46.39
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19159.99609375
+        },
+        {
+          "timestamp": 1788859223.1914926,
+          "gpu": {
+            "temperature_c": 59.0,
+            "utilization_percent": 97.0,
+            "power_w": 30.67
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19164.9375
+        },
+        {
+          "timestamp": 1788859224.2496035,
+          "gpu": {
+            "temperature_c": 58.0,
+            "utilization_percent": 6.0,
+            "power_w": 24.79
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19178.05859375
+        },
+        {
+          "timestamp": 1788859225.320533,
+          "gpu": {
+            "temperature_c": 63.0,
+            "utilization_percent": 98.0,
+            "power_w": 51.5
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18963.265625
+        },
+        {
+          "timestamp": 1788859226.4007587,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 98.0,
+            "power_w": 42.87
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18959.87109375
+        },
+        {
+          "timestamp": 1788859227.4739919,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 98.0,
+            "power_w": 31.08
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18941.51953125
+        },
+        {
+          "timestamp": 1788859228.5362732,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 98.0,
+            "power_w": 44.03
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18812.28515625
+        },
+        {
+          "timestamp": 1788859229.589406,
+          "gpu": {
+            "temperature_c": 64.0,
+            "utilization_percent": 97.0,
+            "power_w": 55.04
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18951.55859375
+        },
+        {
+          "timestamp": 1788859230.6478071,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 96.0,
+            "power_w": 33.44
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18933.9609375
+        },
+        {
+          "timestamp": 1788859231.7148135,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 98.0,
+            "power_w": 29.9
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18944.0625
+        },
+        {
+          "timestamp": 1788859232.7682588,
+          "gpu": {
+            "temperature_c": 65.0,
+            "utilization_percent": 98.0,
+            "power_w": 50.73
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18911.203125
+        },
+        {
+          "timestamp": 1788859233.828969,
+          "gpu": {
+            "temperature_c": 64.0,
+            "utilization_percent": 98.0,
+            "power_w": 54.27
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18903.17578125
+        },
+        {
+          "timestamp": 1788859234.8878398,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 97.0,
+            "power_w": 31.48
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18885.30859375
+        },
+        {
+          "timestamp": 1788859235.9595976,
+          "gpu": {
+            "temperature_c": 64.0,
+            "utilization_percent": 2.0,
+            "power_w": 40.9
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18823.49609375
+        },
+        {
+          "timestamp": 1788859237.0211406,
+          "gpu": {
+            "temperature_c": 64.0,
+            "utilization_percent": 98.0,
+            "power_w": 53.07
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18833.24609375
+        },
+        {
+          "timestamp": 1788859238.1038876,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 97.0,
+            "power_w": 35.4
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18806.8046875
+        },
+        {
+          "timestamp": 1788859239.1518059,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 98.0,
+            "power_w": 27.55
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18843.73046875
+        },
+        {
+          "timestamp": 1788859240.2090623,
+          "gpu": {
+            "temperature_c": 64.0,
+            "utilization_percent": 98.0,
+            "power_w": 50.71
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18747.00390625
+        },
+        {
+          "timestamp": 1788859241.2798123,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 96.0,
+            "power_w": 47.19
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18750.68359375
+        },
+        {
+          "timestamp": 1788859242.336968,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 97.0,
+            "power_w": 31.09
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18754.0390625
+        },
+        {
+          "timestamp": 1788859243.399327,
+          "gpu": {
+            "temperature_c": 64.0,
+            "utilization_percent": 98.0,
+            "power_w": 50.71
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 19008.921875
+        }
+      ],
+      "vlm_requests": [
+        {
+          "started": 2358892.87487243,
+          "finished": 2358896.97508487,
+          "seconds": 4.100212439894676,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4657,
+            "completion_tokens": 189,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358896.978958911,
+          "finished": 2358901.124653738,
+          "seconds": 4.145694827195257,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4651,
+            "completion_tokens": 183,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358901.127301919,
+          "finished": 2358904.82600971,
+          "seconds": 3.698707791045308,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4637,
+            "completion_tokens": 169,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358904.832874681,
+          "finished": 2358908.867542886,
+          "seconds": 4.034668205305934,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4663,
+            "completion_tokens": 195,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358908.873383442,
+          "finished": 2358912.464647511,
+          "seconds": 3.591264069080353,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4627,
+            "completion_tokens": 159,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358912.469983346,
+          "finished": 2358916.087814043,
+          "seconds": 3.6178306969814003,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4618,
+            "completion_tokens": 150,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358916.100212035,
+          "finished": 2358919.462552489,
+          "seconds": 3.3623404540121555,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4606,
+            "completion_tokens": 138,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        }
+      ],
+      "vlm_warm_request": {
+        "started": 2358889.027337094,
+        "finished": 2358892.870590084,
+        "seconds": 3.8432529903948307,
+        "usage": {
+          "prompt_tokens": 4468,
+          "total_tokens": 4626,
+          "completion_tokens": 158,
+          "prompt_tokens_details": null,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "valid_json": true
+      },
+      "total_clip_fps": 49.981834609485276,
+      "vlm_summary": {
+        "completed_requests": 7,
+        "valid_json_responses": 7,
+        "request_seconds": {
+          "min": 3.3623404540121555,
+          "p50": 3.698707791045308,
+          "p95": 4.132050111005083,
+          "max": 4.145694827195257
+        },
+        "prompt_tokens": {
+          "min": 4468.0,
+          "p50": 4468.0,
+          "p95": 4468.0,
+          "max": 4468.0
+        },
+        "completion_tokens": {
+          "min": 138.0,
+          "p50": 169.0,
+          "p95": 193.2,
+          "max": 195.0
+        },
+        "completed_output_tokens_per_window_second": 47.26499627739496
+      }
+    },
+    {
+      "precision": "fp16",
+      "clip_active": true,
+      "logical_readers": 3,
+      "seconds": 25.011483559850603,
+      "cameras": {
+        "camera_1": {
+          "receive_fps": 24.988521712613405,
+          "inference_fps": 20.630523525933626,
+          "dropped_frames": 108,
+          "queue_start": 5,
+          "queue_end": 6,
+          "max_sampled_queue": 6,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 138.23992712423205,
+            "p50": 217.2069635707885,
+            "p95": 258.5812992649153,
+            "max": 294.16377702727914
+          },
+          "processing_ms": {
+            "min": 8.00847914069891,
+            "p50": 13.78463371656835,
+            "p95": 20.506056235171847,
+            "max": 30.63710406422615
+          }
+        },
+        "camera_2": {
+          "receive_fps": 24.988521712613405,
+          "inference_fps": 20.630523525933626,
+          "dropped_frames": 109,
+          "queue_start": 5,
+          "queue_end": 5,
+          "max_sampled_queue": 6,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 138.39111244305968,
+            "p50": 220.94033379107714,
+            "p95": 260.48836507834494,
+            "max": 302.6848151348531
+          },
+          "processing_ms": {
+            "min": 7.8902579843997955,
+            "p50": 13.939386699348688,
+            "p95": 20.280757127329707,
+            "max": 25.493463035672903
+          }
+        },
+        "camera_3": {
+          "receive_fps": 24.988521712613405,
+          "inference_fps": 20.630523525933626,
+          "dropped_frames": 109,
+          "queue_start": 6,
+          "queue_end": 6,
+          "max_sampled_queue": 6,
+          "stale_samples": 0,
+          "latency_ms": {
+            "min": 127.1415427327156,
+            "p50": 220.94409726560116,
+            "p95": 259.29713319055736,
+            "max": 288.79904793575406
+          },
+          "processing_ms": {
+            "min": 7.584238890558481,
+            "p50": 13.75766471028328,
+            "p95": 21.210702788084745,
+            "max": 26.076017878949642
+          }
+        }
+      },
+      "machine_samples": [
+        {
+          "timestamp": 1788859259.345726,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 98.0,
+            "power_w": 33.05
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18483.29296875
+        },
+        {
+          "timestamp": 1788859260.4155438,
+          "gpu": {
+            "temperature_c": 63.0,
+            "utilization_percent": 2.0,
+            "power_w": 34.62
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18502.23046875
+        },
+        {
+          "timestamp": 1788859261.4775538,
+          "gpu": {
+            "temperature_c": 64.0,
+            "utilization_percent": 98.0,
+            "power_w": 53.07
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18486.73828125
+        },
+        {
+          "timestamp": 1788859262.5347848,
+          "gpu": {
+            "temperature_c": 61.0,
+            "utilization_percent": 98.0,
+            "power_w": 37.75
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18529.6015625
+        },
+        {
+          "timestamp": 1788859263.5982618,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 98.0,
+            "power_w": 28.72
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18544.6015625
+        },
+        {
+          "timestamp": 1788859264.683647,
+          "gpu": {
+            "temperature_c": 64.0,
+            "utilization_percent": 98.0,
+            "power_w": 50.71
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18437.73828125
+        },
+        {
+          "timestamp": 1788859265.7408156,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 97.0,
+            "power_w": 49.12
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18440.07421875
+        },
+        {
+          "timestamp": 1788859266.8146944,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 98.0,
+            "power_w": 31.85
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18428.5546875
+        },
+        {
+          "timestamp": 1788859267.8698087,
+          "gpu": {
+            "temperature_c": 64.0,
+            "utilization_percent": 98.0,
+            "power_w": 42.87
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18318.0546875
+        },
+        {
+          "timestamp": 1788859268.933216,
+          "gpu": {
+            "temperature_c": 65.0,
+            "utilization_percent": 98.0,
+            "power_w": 53.46
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18284.76953125
+        },
+        {
+          "timestamp": 1788859270.0001705,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 97.0,
+            "power_w": 35.41
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18265.90625
+        },
+        {
+          "timestamp": 1788859271.0684383,
+          "gpu": {
+            "temperature_c": 60.0,
+            "utilization_percent": 97.0,
+            "power_w": 24.0
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18625.94921875
+        },
+        {
+          "timestamp": 1788859272.1329532,
+          "gpu": {
+            "temperature_c": 67.0,
+            "utilization_percent": 98.0,
+            "power_w": 53.09
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18480.16015625
+        },
+        {
+          "timestamp": 1788859273.200133,
+          "gpu": {
+            "temperature_c": 63.0,
+            "utilization_percent": 98.0,
+            "power_w": 42.85
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18454.55078125
+        },
+        {
+          "timestamp": 1788859274.2666469,
+          "gpu": {
+            "temperature_c": 62.0,
+            "utilization_percent": 97.0,
+            "power_w": 31.48
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18451.34375
+        },
+        {
+          "timestamp": 1788859275.32834,
+          "gpu": {
+            "temperature_c": 67.0,
+            "utilization_percent": 80.0,
+            "power_w": 35.0
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18351.234375
+        },
+        {
+          "timestamp": 1788859276.3851988,
+          "gpu": {
+            "temperature_c": 65.0,
+            "utilization_percent": 98.0,
+            "power_w": 53.46
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18346.87890625
+        },
+        {
+          "timestamp": 1788859277.4608388,
+          "gpu": {
+            "temperature_c": 63.0,
+            "utilization_percent": 97.0,
+            "power_w": 38.16
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18337.7109375
+        },
+        {
+          "timestamp": 1788859278.5427423,
+          "gpu": {
+            "temperature_c": 63.0,
+            "utilization_percent": 97.0,
+            "power_w": 31.08
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18336.71484375
+        },
+        {
+          "timestamp": 1788859279.6023605,
+          "gpu": {
+            "temperature_c": 65.0,
+            "utilization_percent": 15.0,
+            "power_w": 42.08
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18207.921875
+        },
+        {
+          "timestamp": 1788859280.6807518,
+          "gpu": {
+            "temperature_c": 66.0,
+            "utilization_percent": 98.0,
+            "power_w": 53.46
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18191.875
+        },
+        {
+          "timestamp": 1788859281.7453732,
+          "gpu": {
+            "temperature_c": 63.0,
+            "utilization_percent": 98.0,
+            "power_w": 36.18
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18188.2890625
+        },
+        {
+          "timestamp": 1788859282.8091757,
+          "gpu": {
+            "temperature_c": 63.0,
+            "utilization_percent": 98.0,
+            "power_w": 31.07
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18192.6484375
+        },
+        {
+          "timestamp": 1788859283.8765278,
+          "gpu": {
+            "temperature_c": 66.0,
+            "utilization_percent": 98.0,
+            "power_w": 44.81
+          },
+          "apps": [
+            {
+              "pid": 763986,
+              "name": "VLLM::EngineCore",
+              "memory_mib": 84567.0
+            },
+            {
+              "pid": 791425,
+              "name": ".venv/bin/python",
+              "memory_mib": 646.0
+            }
+          ],
+          "available_memory_mib": 18195.2109375
+        }
+      ],
+      "vlm_requests": [
+        {
+          "started": 2358933.320924825,
+          "finished": 2358936.993673918,
+          "seconds": 3.6727490928024054,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4620,
+            "completion_tokens": 152,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358937.004350709,
+          "finished": 2358940.559400595,
+          "seconds": 3.555049885995686,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4610,
+            "completion_tokens": 142,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358940.566428826,
+          "finished": 2358944.301469213,
+          "seconds": 3.735040386673063,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4627,
+            "completion_tokens": 159,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358944.307497685,
+          "finished": 2358947.875873443,
+          "seconds": 3.5683757583610713,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4612,
+            "completion_tokens": 144,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358947.882001332,
+          "finished": 2358951.902084395,
+          "seconds": 4.020083062816411,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4644,
+            "completion_tokens": 176,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358951.912105585,
+          "finished": 2358956.059616656,
+          "seconds": 4.147511071059853,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4658,
+            "completion_tokens": 190,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        },
+        {
+          "started": 2358956.065547333,
+          "finished": 2358960.166095121,
+          "seconds": 4.100547787733376,
+          "usage": {
+            "prompt_tokens": 4468,
+            "total_tokens": 4662,
+            "completion_tokens": 194,
+            "prompt_tokens_details": null,
+            "completion_tokens_details": {
+              "reasoning_tokens": 0
+            }
+          },
+          "finish_reason": "stop",
+          "valid_json": true
+        }
+      ],
+      "vlm_warm_request": {
+        "started": 2358929.227489575,
+        "finished": 2358933.314487169,
+        "seconds": 4.086997594218701,
+        "usage": {
+          "prompt_tokens": 4468,
+          "total_tokens": 4628,
+          "completion_tokens": 160,
+          "prompt_tokens_details": null,
+          "completion_tokens_details": {
+            "reasoning_tokens": 0
+          }
+        },
+        "finish_reason": "stop",
+        "valid_json": true
+      },
+      "total_clip_fps": 61.89157057780088,
+      "vlm_summary": {
+        "completed_requests": 7,
+        "valid_json_responses": 7,
+        "request_seconds": {
+          "min": 3.555049885995686,
+          "p50": 3.735040386673063,
+          "p95": 4.13342208606191,
+          "max": 4.147511071059853
+        },
+        "prompt_tokens": {
+          "min": 4468.0,
+          "p50": 4468.0,
+          "p95": 4468.0,
+          "max": 4468.0
+        },
+        "completion_tokens": {
+          "min": 142.0,
+          "p50": 159.0,
+          "p95": 192.8,
+          "max": 194.0
+        },
+        "completed_output_tokens_per_window_second": 46.25875139438993
+      }
+    }
+  ],
+  "notes": [
+    "Resumed FP16 after RTSP interruption before its first valid measurement; benchmark now waits for five fresh ring JPEGs following reconnect. TF32 phases retained."
+  ],
+  "completed_at": 1788859287.5146842
+}

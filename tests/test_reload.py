@@ -127,6 +127,33 @@ def test_reload_adds_camera_without_restarting_existing_session_or_loading_anoth
         assert app.candidate("door")["episode_id"] == "motion-door"
 
 
+@pytest.mark.parametrize("change", ["removed", "disabled", "restart"])
+def test_acknowledged_candidate_retry_does_not_require_a_configured_camera(tmp_path, change):
+    with RunningReload(tmp_path) as app:
+        app.begin("room")
+        app.feeds["room_sub"].value = 255
+        candidate = app.candidate("room")
+        endpoint = f"/api/v1/candidates/{candidate['candidate_id']}/ack"
+        body = {"episode_id": "motion-room", "triggered_vlm": True}
+        status, acknowledged = app.request("POST", endpoint, body | {"baseline": jpeg_source(255)})
+        assert status == 200 and acknowledged["status"] == "acknowledged"
+        cameras = {"room": {"stream": "room_sub", "enabled": False}} if change == "disabled" else {}
+        if change != "restart":
+            assert app.reload(configuration(cameras))[0] == 200
+            assert app.health() == {}
+            assert app.request("POST", endpoint, body | {"baseline": {"type": "invalid"}}) == (
+                200,
+                acknowledged,
+            )
+            for conflict in ({"episode_id": "another"}, {"triggered_vlm": False}):
+                status, result = app.request("POST", endpoint, body | conflict)
+                assert status == 409 and result["error"]["code"] == "ack_conflict"
+    if change == "restart":
+        with RunningReload(tmp_path, configuration({})) as restarted:
+            assert restarted.health() == {}
+            assert restarted.request("POST", endpoint, body) == (200, acknowledged)
+
+
 def test_unchanged_configuration_is_a_noop(tmp_path):
     with RunningReload(tmp_path) as app:
         app.begin("room")

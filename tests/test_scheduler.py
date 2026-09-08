@@ -3,100 +3,66 @@ import pytest
 from clip_service.scheduler import FrameScheduler
 
 
-def test_cameras_with_equal_rates_keep_the_same_schedule():
-    scheduler = FrameScheduler({"entrance": 5, "room": 5}, now=0.0)
-
-    assert scheduler.due(0.0) == ["entrance", "room"]
-    # Reading due work does not consume it.
-    assert scheduler.due(0.0) == ["entrance", "room"]
-    scheduler.complete("entrance", now=0.03)
-    scheduler.complete("room", now=0.07)
-
-    assert scheduler.due(0.19) == []
-    assert scheduler.delay(0.19) == pytest.approx(0.01)
-    assert scheduler.due(0.2) == ["entrance", "room"]
-
-    scheduler.complete("entrance", now=0.23)
-    scheduler.complete("room", now=0.27)
-    assert scheduler.delay(0.3) == pytest.approx(0.1)
-    assert scheduler.due(0.4) == ["entrance", "room"]
+def test_only_ready_cameras_are_due_and_empty_sources_do_not_spin():
+    scheduler = FrameScheduler({"door": 25, "room": 25}, now=0)
+    assert scheduler.due(0, ready=[]) == []
+    assert scheduler.delay(0, ready=[]) == 0.1
+    assert scheduler.due(0.01, ready=["room"]) == ["room"]
 
 
-def test_late_completion_skips_missed_periods_without_moving_the_schedule():
-    scheduler = FrameScheduler({"entrance": 5}, now=0.0)
-    scheduler.complete("entrance", now=0.55)
-
-    assert scheduler.due(0.55) == []
-    assert scheduler.delay(0.55) == pytest.approx(0.05)
-    assert scheduler.due(0.61) == ["entrance"]
-
-    scheduler.complete("entrance", now=1.0)
-    assert scheduler.due(1.0) == []
-    assert scheduler.delay(1.0) == pytest.approx(0.2)
+def test_rate_limit_is_measured_from_start_without_waiting_an_extra_period():
+    scheduler = FrameScheduler({"room": 25}, now=0)
+    scheduler.started("room", now=0.01)
+    assert scheduler.due(0.035, ready=["room"]) == []
+    assert scheduler.delay(0.035, ready=["room"]) == pytest.approx(0.015)
+    assert scheduler.due(0.051, ready=["room"]) == ["room"]
 
 
-def test_equal_deadlines_prioritize_the_camera_that_waited_longest():
-    scheduler = FrameScheduler({"entrance": 5, "room": 5}, now=0.0)
-    scheduler.complete("room", now=0.03)
-    scheduler.complete("entrance", now=0.07)
-
-    assert scheduler.due(0.2) == ["room", "entrance"]
-
-
-def test_slow_inference_does_not_starve_any_camera():
-    scheduler = FrameScheduler({"entrance": 10, "room": 10, "garden": 10}, now=0.0)
-    completed = []
-    for now in [0.0, 0.35, 0.7, 1.05, 1.4, 1.75]:
-        camera = scheduler.due(now)[0]
-        completed.append(camera)
-        scheduler.complete(camera, now=now + 0.35)
-
-    assert completed == ["entrance", "room", "garden", "entrance", "room", "garden"]
+def test_slow_inference_can_continue_immediately_without_catching_up_missed_ticks():
+    scheduler = FrameScheduler({"room": 25}, now=0)
+    scheduler.started("room", now=0)
+    assert scheduler.due(0.1, ready=["room"]) == ["room"]
+    scheduler.started("room", now=0.1)
+    assert scheduler.due(0.1, ready=["room"]) == []
+    assert scheduler.delay(0.1, ready=["room"]) == pytest.approx(0.04)
 
 
-def test_camera_rate_overrides_have_independent_periods():
-    scheduler = FrameScheduler({"entrance": 4, "room": 2}, now=10.0)
-    scheduler.complete("entrance", now=10.03)
-    scheduler.complete("room", now=10.07)
-
-    assert scheduler.due(10.25) == ["entrance"]
-    scheduler.complete("entrance", now=10.3)
-    assert scheduler.due(10.5) == ["room", "entrance"]
-    assert scheduler.delay(10.6) == 0.0
-
-
-def test_reloading_rates_preserves_unchanged_schedules_and_applies_changes():
-    scheduler = FrameScheduler({"entrance": 4, "room": 2, "removed": 5}, now=10.0)
-    scheduler.complete("entrance", now=10.03)
-    scheduler.complete("room", now=10.07)
-
-    scheduler.set_rates({"entrance": 4, "room": 4, "garden": 2}, now=10.1)
-
-    assert scheduler.due(10.1) == ["room", "garden"]
-    scheduler.complete("room", now=10.12)
-    scheduler.complete("garden", now=10.14)
-    assert scheduler.due(10.25) == ["entrance"]
-    assert scheduler.due(10.36) == ["entrance", "room"]
-    scheduler.complete("entrance", now=10.36)
-    scheduler.complete("room", now=10.37)
-    assert scheduler.due(10.6) == ["entrance", "garden", "room"]
+def test_busy_cameras_take_turns_even_with_different_deadlines():
+    scheduler = FrameScheduler({"door": 100, "room": 25, "yard": 25}, now=0)
+    selected = []
+    for now in [0, 0.05, 0.1, 0.15, 0.2, 0.25]:
+        name = scheduler.due(now, ready=["door", "room", "yard"])[0]
+        selected.append(name)
+        scheduler.started(name, now)
+    assert selected == ["door", "room", "yard", "door", "room", "yard"]
 
 
-def test_empty_schedule_can_accept_cameras_and_become_empty_again():
-    scheduler = FrameScheduler({}, now=0.0)
-    assert scheduler.due(0.0) == []
-    assert scheduler.delay(0.0) == 0.1
+def test_missing_or_rate_limited_camera_does_not_hold_up_another():
+    scheduler = FrameScheduler({"door": 10, "room": 2}, now=0)
+    scheduler.started("room", now=0)
+    scheduler.started("door", now=0)
+    assert scheduler.due(0.11, ready=["door", "room"]) == ["door"]
+    assert scheduler.due(1, ready=["door"]) == ["door"]
 
-    scheduler.set_rates({"entrance": 5}, now=10.0)
-    assert scheduler.due(10.0) == ["entrance"]
+
+def test_reload_preserves_unchanged_limits_and_resets_changed_or_added_cameras():
+    scheduler = FrameScheduler({"door": 4, "room": 2, "removed": 5}, now=10)
+    scheduler.started("door", now=10.03)
+    scheduler.started("room", now=10.07)
+    scheduler.set_rates({"door": 4, "room": 4, "yard": 2}, now=10.1)
+    ready = ["door", "room", "yard"]
+    assert scheduler.due(10.1, ready=ready) == ["room", "yard"]
+    scheduler.started("room", now=10.12)
+    scheduler.started("yard", now=10.14)
+    assert scheduler.due(10.29, ready=ready) == ["door"]
+    assert scheduler.delay(10.2, ready=["door"]) == pytest.approx(0.08)
+
+
+def test_reload_to_and_from_empty_registry():
+    scheduler = FrameScheduler({}, now=0)
+    assert scheduler.due(0, ready=[]) == []
+    scheduler.set_rates({"door": 5}, now=10)
+    assert scheduler.due(10, ready=["door"]) == ["door"]
     scheduler.set_rates({}, now=10.1)
-    assert scheduler.due(11.0) == []
-    assert scheduler.delay(11.0) == 0.1
-
-
-def test_fractional_periods_remain_due_on_the_original_time_grid():
-    scheduler = FrameScheduler({"entrance": 5}, now=0.0)
-    for now in [0.0, 0.2, 0.4, 0.6, 0.8, 1.0]:
-        assert scheduler.due(now) == ["entrance"]
-        scheduler.complete("entrance", now=now)
-        assert scheduler.due(now) == []
+    assert scheduler.due(11, ready=[]) == []
+    assert scheduler.delay(11, ready=[]) == 0.1

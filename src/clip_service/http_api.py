@@ -198,6 +198,12 @@ class RequestHandler(BaseHTTPRequestHandler):
             if not isinstance(triggered_vlm, bool):
                 raise ServiceError("triggered_vlm must be a boolean")
             candidate_id = match.group(1)
+            completed = self.server.service.store.get_acknowledged(
+                candidate_id, episode_id, triggered_vlm
+            )
+            if completed is not None:
+                self._json(200, completed.to_api())
+                return
             record = self.server.service.store.get(candidate_id)
             if record is None:
                 raise ServiceError("candidate not found", 404, "candidate_not_found")

@@ -49,9 +49,9 @@ def wait_for(predicate):
 
 
 @contextmanager
-def running_reader(settings):
+def running_reader(settings, **kwargs):
     feed = ControlledFeed()
-    reader = CameraReader("room", "rtsp://localhost:8554/room_sub", settings, feed.open)
+    reader = CameraReader("room", "rtsp://localhost:8554/room_sub", settings, feed.open, **kwargs)
     reader.start()
     try:
         yield reader, feed
@@ -78,6 +78,71 @@ def test_smaller_history_preserves_recent_frames_without_reopening_stream():
         assert reader.source_url == "rtsp://localhost:8554/room_sub"
         assert len(feed.opens) == 1
         assert feed.releases == 0
+
+
+def test_inference_queue_keeps_a_small_burst_in_order_and_notifies_consumer():
+    available = threading.Event()
+    with running_reader(DetectionConfig(), on_frame=available.set) as (reader, feed):
+        reader.reset_inference(True)
+        available.clear()
+        feed.send_frame(reader)
+        feed.send_frame(reader)
+        assert available.is_set()
+        assert reader.has_inference_frame()
+        assert reader.pop_inference_frame().sequence == 1
+        assert reader.pop_inference_frame().sequence == 2
+        assert reader.pop_inference_frame() is None
+        assert not reader.has_inference_frame()
+        assert reader.latest_frame().sequence == 2
+
+
+def test_full_inference_queue_discards_oldest_frames_and_counts_drops():
+    with running_reader(DetectionConfig()) as (reader, feed):
+        reader.reset_inference(True)
+        for _ in range(8):
+            feed.send_frame(reader)
+        assert reader.health()["inference_queue_depth"] == 6
+        assert reader.health()["inference_frames_dropped"] == 2
+        assert [reader.pop_inference_frame().sequence for _ in range(6)] == [3, 4, 5, 6, 7, 8]
+        assert reader.pop_inference_frame() is None
+
+
+def test_pausing_inference_clears_queued_frames_but_keeps_jpeg_history():
+    with running_reader(DetectionConfig()) as (reader, feed):
+        reader.reset_inference(True)
+        feed.send_frame(reader)
+        reader.reset_inference(False)
+        feed.send_frame(reader)
+        assert reader.pop_inference_frame() is None
+        assert len(reader.ring) > 0
+        reader.reset_inference(True)
+        assert not reader.has_inference_frame()
+        feed.send_frame(reader)
+        assert reader.pop_inference_frame().sequence == 3
+
+
+def test_queue_discards_expired_frames_even_when_latest_frame_is_fresh():
+    with running_reader(DetectionConfig(frame_max_age_seconds=0.03)) as (reader, feed):
+        reader.reset_inference(True)
+        feed.send_frame(reader)
+        time.sleep(0.04)
+        feed.send_frame(reader)
+        assert reader.pop_inference_frame().sequence == 2
+        assert reader.pop_inference_frame() is None
+        assert reader.health()["inference_frames_dropped"] == 1
+
+
+def test_disconnect_discards_pending_frames_before_reconnected_stream():
+    with running_reader(DetectionConfig(reconnect_delay_seconds=0.01)) as (reader, feed):
+        reader.reset_inference(True)
+        feed.send_frame(reader)
+        feed.frames.put(None)
+        wait_for(lambda: len(feed.opens) == 2)
+        assert reader.pop_inference_frame() is None
+        feed.send_frame(reader)
+        frame = reader.pop_inference_frame()
+        assert frame.sequence == 2
+        assert frame.stream_generation == 2
 
 
 def test_only_history_samples_are_jpeg_encoded(monkeypatch):

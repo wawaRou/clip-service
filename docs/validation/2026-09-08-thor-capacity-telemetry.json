@@ -1,0 +1,7163 @@
+[
+  {
+    "timestamp": 1788858624.2180629,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 44.0,
+      "power_w": 15.34
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21560236,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858625.3021579,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 32.0,
+      "power_w": 14.56
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21557992,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858626.3584733,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 33.0,
+      "power_w": 14.95
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21546128,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858627.410601,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 31.0,
+      "power_w": 16.14
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21559452,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858628.4653122,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 30.0,
+      "power_w": 15.74
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21564864,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858629.523114,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 44.0,
+      "power_w": 15.35
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21556988,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858630.5768747,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 46.0,
+      "power_w": 15.74
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21560376,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858631.6256082,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 41.0,
+      "power_w": 15.35
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21564544,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858632.6812503,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 41.0,
+      "power_w": 15.74
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21567312,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858633.7298558,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 47.0,
+      "power_w": 15.34
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21560456,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858634.7796712,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 26.0,
+      "power_w": 14.95
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21549528,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858635.8326068,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 48.0,
+      "power_w": 14.56
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21553164,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858636.8818922,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 47.0,
+      "power_w": 13.77
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21554876,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858637.9342027,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 49.0,
+      "power_w": 13.38
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21580412,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858638.9930415,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 14.0,
+      "power_w": 13.77
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21566572,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858640.0527115,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 41.0,
+      "power_w": 15.74
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21577852,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858641.1079628,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 37.0,
+      "power_w": 14.95
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21563840,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858642.1631997,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 0.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21740568,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858643.2156563,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 0.0,
+      "power_w": 3.54
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21737984,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858644.2697484,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 0.0,
+      "power_w": 3.15
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21730124,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858645.3240051,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.76
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21736300,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858646.3795476,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21723332,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858647.448187,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21711236,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858648.5150485,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21695100,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858649.5799606,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21658980,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858650.6467354,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21638752,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858651.7115536,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21565628,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858652.778592,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21540764,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858653.8405986,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 20.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21418244,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858654.895125,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 12.0,
+      "power_w": 13.38
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21371968,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858655.9649138,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 4.0,
+      "power_w": 14.96
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21367176,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858657.0170238,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 9.0,
+      "power_w": 15.35
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21353608,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858658.0879,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 35.0,
+      "power_w": 15.35
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21352848,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858659.1468413,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 45.0,
+      "power_w": 14.56
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21361924,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858660.2035675,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 4.0,
+      "power_w": 12.99
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21357540,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858661.263816,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 43.0,
+      "power_w": 12.99
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21372104,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858662.3232477,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 30.0,
+      "power_w": 11.41
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21390892,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858663.3830884,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 44.0,
+      "power_w": 11.8
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21369844,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858664.4418883,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 26.0,
+      "power_w": 12.59
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21347560,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858665.497407,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 37.0,
+      "power_w": 12.98
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21357564,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858666.5581036,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 9.0,
+      "power_w": 13.78
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21352316,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858667.6101937,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 10.0,
+      "power_w": 15.74
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21345528,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858668.667102,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 24.0,
+      "power_w": 15.74
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21363820,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858669.7266028,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 30.0,
+      "power_w": 14.96
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21358200,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858670.7829385,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 40.0,
+      "power_w": 14.56
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21369684,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858671.8342535,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 1.0,
+      "power_w": 14.16
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21373384,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858672.8938508,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 9.0,
+      "power_w": 12.2
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21369096,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858673.953004,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 43.0,
+      "power_w": 11.81
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21367728,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858675.0121932,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 46.0,
+      "power_w": 13.78
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21360508,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858676.0679572,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 31.0,
+      "power_w": 14.56
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21341772,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858677.1233003,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 42.0,
+      "power_w": 13.78
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21351440,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858678.186454,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 56.0,
+      "power_w": 12.59
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21344428,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858679.2434611,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 56.0,
+      "power_w": 13.78
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21341968,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858680.2940445,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 33.0,
+      "power_w": 14.56
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21349048,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858681.3543556,
+    "gpu": {
+      "temperature_c": 48.0,
+      "utilization_percent": 34.0,
+      "power_w": 14.56
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21352960,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858682.4136174,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 43.0,
+      "power_w": 12.2
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21342700,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858683.4739683,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 31.0,
+      "power_w": 11.81
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 966.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21334036,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858684.5343072,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 36.0,
+      "power_w": 7.48
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21721808,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858685.5944061,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 41.0,
+      "power_w": 9.84
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21722020,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858686.6605108,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 41.0,
+      "power_w": 10.63
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21733760,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858687.7298286,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 26.0,
+      "power_w": 10.63
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21723252,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858688.7868204,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 33.0,
+      "power_w": 10.63
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21720968,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858689.8476906,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 38.0,
+      "power_w": 11.02
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21728436,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858690.9112616,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 40.0,
+      "power_w": 10.23
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21726488,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858691.9675498,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 31.0,
+      "power_w": 9.45
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21718184,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858693.10455,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 28.0,
+      "power_w": 9.84
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21712636,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858694.1626482,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 28.0,
+      "power_w": 9.45
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21706952,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858695.2218578,
+    "gpu": {
+      "temperature_c": 49.0,
+      "utilization_percent": 59.0,
+      "power_w": 27.93
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21698112,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858696.2816331,
+    "gpu": {
+      "temperature_c": 49.0,
+      "utilization_percent": 59.0,
+      "power_w": 31.08
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21693824,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858697.3418193,
+    "gpu": {
+      "temperature_c": 49.0,
+      "utilization_percent": 59.0,
+      "power_w": 31.48
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21696020,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858698.3987205,
+    "gpu": {
+      "temperature_c": 49.0,
+      "utilization_percent": 59.0,
+      "power_w": 31.48
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21696848,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858699.4556777,
+    "gpu": {
+      "temperature_c": 50.0,
+      "utilization_percent": 59.0,
+      "power_w": 31.46
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21698044,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858700.5084386,
+    "gpu": {
+      "temperature_c": 50.0,
+      "utilization_percent": 59.0,
+      "power_w": 31.46
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21699480,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858701.5675876,
+    "gpu": {
+      "temperature_c": 50.0,
+      "utilization_percent": 59.0,
+      "power_w": 31.48
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21698824,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858702.626418,
+    "gpu": {
+      "temperature_c": 50.0,
+      "utilization_percent": 60.0,
+      "power_w": 31.48
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21699196,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858703.685809,
+    "gpu": {
+      "temperature_c": 49.0,
+      "utilization_percent": 60.0,
+      "power_w": 25.18
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21698856,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858704.742381,
+    "gpu": {
+      "temperature_c": 48.0,
+      "utilization_percent": 0.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21698704,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858705.8009992,
+    "gpu": {
+      "temperature_c": 48.0,
+      "utilization_percent": 0.0,
+      "power_w": 3.94
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21684288,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858706.8675947,
+    "gpu": {
+      "temperature_c": 48.0,
+      "utilization_percent": 0.0,
+      "power_w": 3.15
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21679748,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858707.9351904,
+    "gpu": {
+      "temperature_c": 48.0,
+      "utilization_percent": 23.0,
+      "power_w": 5.12
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21667708,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858709.0049288,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 57.0,
+      "power_w": 5.12
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21655720,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858710.0764012,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 27.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21666000,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858711.1457245,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 25.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21664832,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858712.213464,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 32.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21662948,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858713.2793257,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 32.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21658044,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858714.3421712,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 0.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21650488,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858715.4090703,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 35.0,
+      "power_w": 5.12
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21643352,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858716.480185,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 33.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21653040,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858717.5446842,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 59.0,
+      "power_w": 5.12
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21652604,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858718.616739,
+    "gpu": {
+      "temperature_c": 47.0,
+      "utilization_percent": 32.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21635492,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858719.6922016,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 10.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21628528,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858720.7631774,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 19.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21617196,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858721.8395905,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 15.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21623272,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858722.9135554,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 63.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21684764,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858723.9853392,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 27.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21661104,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858725.0661676,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 25.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21645296,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858726.1533558,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 20.0,
+      "power_w": 5.12
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21630688,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858727.2399518,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 23.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21631196,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858728.3246188,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 25.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21637580,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858729.395138,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 35.0,
+      "power_w": 5.12
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21632420,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858730.460708,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 0.0,
+      "power_w": 5.12
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21622280,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858731.5420969,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 10.0,
+      "power_w": 5.12
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21677972,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858732.6092832,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 11.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21675144,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858733.6850884,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 10.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21667660,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858734.752322,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 23.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21652596,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858735.821158,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 44.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21645264,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858736.8934343,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 57.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21639500,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858737.9751334,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.76
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21727852,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858739.048549,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21729816,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858740.1180277,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21724752,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858741.1887238,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21713632,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858742.257043,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21694368,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858743.3301055,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21693392,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858744.402779,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 35.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21669612,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858745.4635563,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 4.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21632156,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858746.530301,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 52.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21631716,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858747.5962489,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 17.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21606084,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858748.6662064,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 11.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21589764,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858749.7420547,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 28.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21588300,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858750.8181021,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 34.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21585408,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858751.89799,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 51.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21568836,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858752.9765158,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 44.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21558668,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858754.0524893,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 7.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21594084,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858755.1290388,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 30.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21584656,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858756.2064738,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 25.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21582420,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858757.2830853,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 50.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21578860,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858758.363196,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 23.0,
+      "power_w": 6.69
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21588860,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858759.4355612,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 35.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21578808,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858760.5182154,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 6.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21581580,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858761.5947897,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 18.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21580720,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858762.6754262,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 25.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21581108,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858763.755514,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 17.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21593368,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858764.830966,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 10.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21580456,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858765.9094203,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 39.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21573572,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858766.9909186,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 29.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21579764,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858768.0654206,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 32.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21566280,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858769.1402097,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 21.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21559556,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858770.2153716,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 27.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21567036,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858771.2876303,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 53.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21547852,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858772.3621185,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 39.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21548236,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858773.4428568,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 18.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21556452,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858774.5200489,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 4.0,
+      "power_w": 2.76
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21705880,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858775.5925398,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21697564,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858776.6687508,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 2.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21693764,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858777.7478707,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21676444,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858778.8263183,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21676188,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858779.901046,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21654780,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858780.9762592,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21633868,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858782.058834,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 39.0,
+      "power_w": 4.72
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21550636,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858783.126547,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 35.0,
+      "power_w": 7.08
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21544668,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858784.2030916,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 45.0,
+      "power_w": 6.69
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21529892,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858785.281795,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 38.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21522272,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858786.3566482,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 23.0,
+      "power_w": 6.69
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21518724,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858787.4291217,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 39.0,
+      "power_w": 7.08
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21511880,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858788.5010936,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 45.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21507832,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858789.5762343,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 24.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21504004,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858790.6529748,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 30.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21513100,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858791.7211437,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 57.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21511616,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858792.794049,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 43.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21518480,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858793.857667,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 30.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21522756,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858794.936905,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 46.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21510436,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858796.0095057,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 27.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21495848,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858797.0829365,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 55.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21489236,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858798.1530795,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 9.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21496968,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858799.2238631,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 19.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21497660,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858800.297867,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 41.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21514396,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858801.3794603,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 48.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21507360,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858802.4576845,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 41.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21482496,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858803.5328078,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 29.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21474212,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858804.6101139,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 56.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21466276,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858805.6875532,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 35.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21463480,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858806.7589889,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 35.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21466080,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858807.8287988,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 32.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21465236,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858808.9059467,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 46.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21476056,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858809.9713173,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 50.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21475920,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858811.049265,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 40.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21480104,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858812.120461,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 5.0,
+      "power_w": 3.15
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21678352,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858813.190816,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21668444,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858814.2636588,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21666568,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858815.3365526,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21650944,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858816.4149709,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21643636,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858817.489629,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21634736,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858818.5562522,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21632856,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858819.6316972,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21608344,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858820.709178,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21597052,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858821.7989018,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21570280,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858822.8879478,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21560456,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858823.9706776,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 56.0,
+      "power_w": 3.94
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21438680,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858825.054171,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 35.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21404984,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858826.134238,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 52.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21393504,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858827.208265,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 29.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21399060,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858828.2874758,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 50.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21387120,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858829.3652594,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 50.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21386408,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858830.4444277,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 55.0,
+      "power_w": 6.69
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21359976,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858831.5213,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 34.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21350652,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858832.6012821,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 25.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21358400,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858833.6739144,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 31.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21346620,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858834.7461634,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 49.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21336012,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858835.8222907,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 43.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21331788,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858836.900602,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 35.0,
+      "power_w": 6.69
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21346464,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858837.976184,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 22.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21344716,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858839.0576122,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 53.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21340300,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858840.13745,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 42.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21342032,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858841.215868,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 45.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21354308,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858842.2993271,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 34.0,
+      "power_w": 7.08
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21352080,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858843.3730025,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 43.0,
+      "power_w": 6.69
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21343820,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858844.4466033,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 39.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21319080,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858845.5356593,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 23.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21387804,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858846.6111724,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 18.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21381384,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858847.6837118,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 36.0,
+      "power_w": 6.3
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21398904,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858848.7520382,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 58.0,
+      "power_w": 5.9
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21365460,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858849.8317044,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 44.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21357868,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858850.9094234,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 24.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21343004,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858851.9865394,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 59.0,
+      "power_w": 5.51
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21349468,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858853.0635004,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 42.0,
+      "power_w": 6.69
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 648.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 21351060,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858854.1412642,
+    "gpu": {
+      "temperature_c": 46.0,
+      "utilization_percent": 0.0,
+      "power_w": 3.94
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": ".venv/bin/python",
+        "memory_mib": 328.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 22019876,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  },
+  {
+    "timestamp": 1788858855.206823,
+    "gpu": {
+      "temperature_c": 45.0,
+      "utilization_percent": 0.0,
+      "power_w": 2.36
+    },
+    "compute_apps": [
+      {
+        "pid": 763986,
+        "name": "VLLM::EngineCore",
+        "memory_mib": 84567.0
+      },
+      {
+        "pid": 787708,
+        "name": "[No data]",
+        "memory_mib": 328.0
+      }
+    ],
+    "memory_kib": {
+      "MemTotal": 128828752,
+      "MemAvailable": 23410100,
+      "SwapTotal": 2097148,
+      "SwapFree": 2050812
+    },
+    "vllm": {
+      "num_requests_running": 0.0,
+      "num_requests_waiting": 0.0,
+      "generation_tokens_total": 0.0,
+      "prompt_tokens_total": 0.0,
+      "kv_cache_usage_perc": 0.0
+    }
+  }
+]

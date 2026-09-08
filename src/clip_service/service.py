@@ -40,6 +40,7 @@ class ClipService:
         self.store.cleanup()
         self.events = EventBroker()
         self._stop = threading.Event()
+        self._wake_inference = threading.Event()
         self._inference: threading.Thread | None = None
         self._next_cleanup_at = time.monotonic()
         self._maintenance_error: str | None = None
@@ -57,7 +58,11 @@ class ClipService:
 
     def _new_camera(self, name: str, config: ServiceConfig) -> Camera:
         reader = CameraReader(
-            name, config.camera_url(name), config.camera_settings(name), self._capture_factory
+            name,
+            config.camera_url(name),
+            config.camera_settings(name),
+            self._capture_factory,
+            on_frame=self._wake_inference.set,
         )
         return Camera(reader, self.encoder, self.store, self.events)
 
@@ -88,6 +93,7 @@ class ClipService:
     def close(self) -> None:
         with self._reload_lock:
             self._stop.set()
+            self._wake_inference.set()
             self.events.close()
             self._close_readers(
                 [camera.reader for camera in self._camera_snapshot().values()]
@@ -137,6 +143,7 @@ class ClipService:
                         self.config = config
                     finally:
                         self._scheduler.set_rates(self._rates(), now=time.monotonic())
+                        self._wake_inference.set()
                 self._close_readers(self._retired_readers)
                 self._retired_readers.clear()
             except (OSError, RuntimeError) as error:
@@ -186,29 +193,27 @@ class ClipService:
 
     def _detect(self) -> None:
         while not self._stop.is_set():
+            # Clear before checking queues so arrivals during selection cannot be lost.
+            self._wake_inference.clear()
             self._maintain_candidates()
             with self._registry_lock:
-                due = [
-                    (name, self.cameras[name], self.cameras[name].settings.inference_fps)
-                    for name in self._scheduler.due(time.monotonic())
+                ready = [
+                    name for name, camera in self.cameras.items() if camera.has_inference_frame()
                 ]
-            for name, camera, rate in due:
-                if self._stop.is_set():
-                    return
+                now = time.monotonic()
+                due = self._scheduler.due(now, ready)
+                if due:
+                    name = due[0]
+                    camera = self.cameras[name]
+                    self._scheduler.started(name, now)
+                delay = min(0.1, self._scheduler.delay(now, ready))
+            if due:
                 try:
-                    camera.process_latest()
+                    camera.process_next()
                 except (ServiceError, OSError) as error:
                     logging.getLogger(__name__).warning("camera %s: %s", camera.name, error)
-                finally:
-                    with self._registry_lock:
-                        if (
-                            self.cameras.get(name) is camera
-                            and camera.settings.inference_fps == rate
-                        ):
-                            self._scheduler.complete(name, time.monotonic())
-            with self._registry_lock:
-                delay = min(0.1, self._scheduler.delay(time.monotonic()))
-            self._stop.wait(delay)
+                continue
+            self._wake_inference.wait(delay)
 
     def pending_candidates(self) -> list[dict[str, Any]]:
         candidates = (camera.pending_candidate() for camera in self._camera_snapshot().values())

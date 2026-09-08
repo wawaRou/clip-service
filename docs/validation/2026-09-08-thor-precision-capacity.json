@@ -1,0 +1,939 @@
+{
+  "started_at": 1788858506.603733,
+  "platform": "Linux-6.8.12-1021-tegra-aarch64-with-glibc2.39",
+  "torch": "2.14.0+cu132",
+  "opencv": "4.14.0",
+  "cuda": "13.2",
+  "gpu": "NVIDIA Thor",
+  "model": "openai/clip-vit-base-patch16",
+  "batch_size": 1,
+  "stream": "rtsp://192.168.3.245:8554/living_room_c225_sub",
+  "queue_capacity": 6,
+  "inference_fps_limit": 30,
+  "ring_max_fps": 30,
+  "physical_sources": 1,
+  "logical_cameras": "Independent decoders reading the same Frigate stream",
+  "gpu_forward_scope": "Preprocessed input already on GPU; image features only, synchronized per iteration",
+  "encode_scope": "BGR -> RGB -> image preprocessing -> GPU image features -> CPU normalized vector; no decode/JPEG",
+  "live_scope": "Unmodified ClipService, OpenCV software decode, JPEG ring, active episodes, threshold -1",
+  "latency_sampling": "Health sampled every 20ms, only distinct completed counters; not every frame",
+  "clock_policy": "No CPU/GPU clock or power settings changed; existing vLLM process retained",
+  "environment_before": "Tue Sep  8 17:08:26 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 595.78                 Driver Version: 595.78         CUDA Version: 13.2     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA Thor                    Off |   00000000:01:00.0 Off |                  N/A |\n| N/A   42C  N/A               2W /  N/A  | Not Supported          |      0%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            7540      G   /usr/lib/xorg/Xorg                      225MiB |\n|    0   N/A  N/A            7868      G   /usr/bin/gnome-shell                     81MiB |\n|    0   N/A  N/A           11182      G   /usr/bin/gnome-control-center            21MiB |\n|    0   N/A  N/A          763986      C   VLLM::EngineCore                      84567MiB |\n+-----------------------------------------------------------------------------------------+\n",
+  "precisions": {
+    "tf32": {
+      "weight_dtype": "float32",
+      "live": [
+        {
+          "logical_readers": 2,
+          "seconds": 25.011216215323657,
+          "health_samples": 1109,
+          "cameras": {
+            "camera_1": {
+              "received_frames": 625,
+              "processed_frames": 628,
+              "receive_fps": 24.98878881455914,
+              "inference_fps": 25.108735000869025,
+              "dropped_frames": 0,
+              "drop_fraction": 0.0,
+              "queue_start": 2,
+              "queue_end": 0,
+              "max_sampled_queue": 4,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 628,
+              "processing_ms": {
+                "p50": 13.979062205180526,
+                "p95": 16.763166012242436,
+                "max": 23.381683975458145
+              },
+              "latency_ms": {
+                "p50": 59.531900798901916,
+                "p95": 118.6269882833585,
+                "max": 160.8974258415401
+              }
+            },
+            "camera_2": {
+              "received_frames": 625,
+              "processed_frames": 626,
+              "receive_fps": 24.98878881455914,
+              "inference_fps": 25.028770876662435,
+              "dropped_frames": 0,
+              "drop_fraction": 0.0,
+              "queue_start": 2,
+              "queue_end": 1,
+              "max_sampled_queue": 5,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 626,
+              "processing_ms": {
+                "p50": 13.792603509500623,
+                "p95": 16.313886968418956,
+                "max": 19.980416167527437
+              },
+              "latency_ms": {
+                "p50": 65.19509549252689,
+                "p95": 134.5758696552366,
+                "max": 180.8791272342205
+              }
+            }
+          },
+          "total_inference_fps": 50.13750587753146,
+          "total_receive_fps": 49.97757762911828
+        },
+        {
+          "logical_readers": 3,
+          "seconds": 25.020643494091928,
+          "health_samples": 1111,
+          "cameras": {
+            "camera_1": {
+              "received_frames": 625,
+              "processed_frames": 621,
+              "receive_fps": 24.97937353799793,
+              "inference_fps": 24.819505547354744,
+              "dropped_frames": 3,
+              "drop_fraction": 0.0048,
+              "queue_start": 3,
+              "queue_end": 3,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 621,
+              "processing_ms": {
+                "p50": 11.245829984545708,
+                "p95": 14.550625812262297,
+                "max": 24.03511991724372
+              },
+              "latency_ms": {
+                "p50": 144.07983515411615,
+                "p95": 224.403013009578,
+                "max": 253.71512491256
+              }
+            },
+            "camera_2": {
+              "received_frames": 625,
+              "processed_frames": 622,
+              "receive_fps": 24.97937353799793,
+              "inference_fps": 24.859472545015542,
+              "dropped_frames": 3,
+              "drop_fraction": 0.0048,
+              "queue_start": 2,
+              "queue_end": 3,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 622,
+              "processing_ms": {
+                "p50": 11.31339999847114,
+                "p95": 13.892331370152531,
+                "max": 17.65701686963439
+              },
+              "latency_ms": {
+                "p50": 129.16823686100543,
+                "p95": 212.076998851262,
+                "max": 254.25342423841357
+              }
+            },
+            "camera_3": {
+              "received_frames": 625,
+              "processed_frames": 621,
+              "receive_fps": 24.97937353799793,
+              "inference_fps": 24.819505547354744,
+              "dropped_frames": 3,
+              "drop_fraction": 0.0048,
+              "queue_start": 2,
+              "queue_end": 3,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 621,
+              "processing_ms": {
+                "p50": 11.335014831274748,
+                "p95": 14.106201939284801,
+                "max": 20.733100827783346
+              },
+              "latency_ms": {
+                "p50": 118.0228372104466,
+                "p95": 200.1433284021914,
+                "max": 256.20198622345924
+              }
+            }
+          },
+          "total_inference_fps": 74.49848363972504,
+          "total_receive_fps": 74.93812061399379
+        },
+        {
+          "logical_readers": 4,
+          "seconds": 25.010968050919473,
+          "health_samples": 1079,
+          "cameras": {
+            "camera_1": {
+              "received_frames": 624,
+              "processed_frames": 490,
+              "receive_fps": 24.94905430008176,
+              "inference_fps": 19.59140481897446,
+              "dropped_frames": 134,
+              "drop_fraction": 0.21474358974358973,
+              "queue_start": 5,
+              "queue_end": 5,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 490,
+              "processing_ms": {
+                "p50": 10.998175712302327,
+                "p95": 15.850937762297685,
+                "max": 22.133441176265478
+              },
+              "latency_ms": {
+                "p50": 224.98461650684476,
+                "p95": 259.8745860159397,
+                "max": 288.9089812524617
+              }
+            },
+            "camera_2": {
+              "received_frames": 624,
+              "processed_frames": 490,
+              "receive_fps": 24.94905430008176,
+              "inference_fps": 19.59140481897446,
+              "dropped_frames": 134,
+              "drop_fraction": 0.21474358974358973,
+              "queue_start": 5,
+              "queue_end": 5,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 490,
+              "processing_ms": {
+                "p50": 10.890268022194505,
+                "p95": 13.689122302457688,
+                "max": 24.13789089769125
+              },
+              "latency_ms": {
+                "p50": 224.5238097384572,
+                "p95": 256.28224303945893,
+                "max": 276.68294683098793
+              }
+            },
+            "camera_3": {
+              "received_frames": 625,
+              "processed_frames": 491,
+              "receive_fps": 24.989036758895995,
+              "inference_fps": 19.631387277788694,
+              "dropped_frames": 134,
+              "drop_fraction": 0.2144,
+              "queue_start": 5,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 491,
+              "processing_ms": {
+                "p50": 10.973842814564705,
+                "p95": 14.060070039704442,
+                "max": 22.938319947570562
+              },
+              "latency_ms": {
+                "p50": 225.5363930016756,
+                "p95": 257.31169315986335,
+                "max": 292.7394760772586
+              }
+            },
+            "camera_4": {
+              "received_frames": 625,
+              "processed_frames": 490,
+              "receive_fps": 24.989036758895995,
+              "inference_fps": 19.59140481897446,
+              "dropped_frames": 134,
+              "drop_fraction": 0.2144,
+              "queue_start": 5,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 490,
+              "processing_ms": {
+                "p50": 10.859462898224592,
+                "p95": 13.98302256129682,
+                "max": 21.59009361639619
+              },
+              "latency_ms": {
+                "p50": 224.20021914876997,
+                "p95": 259.5012964913621,
+                "max": 286.93130798637867
+              }
+            }
+          },
+          "total_inference_fps": 78.40560173471208,
+          "total_receive_fps": 99.87618211795551
+        },
+        {
+          "logical_readers": 6,
+          "seconds": 25.00967718474567,
+          "health_samples": 1031,
+          "cameras": {
+            "camera_1": {
+              "received_frames": 624,
+              "processed_frames": 298,
+              "receive_fps": 24.950342037225525,
+              "inference_fps": 11.91538770367501,
+              "dropped_frames": 326,
+              "drop_fraction": 0.5224358974358975,
+              "queue_start": 6,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 298,
+              "processing_ms": {
+                "p50": 11.232278076931834,
+                "p95": 16.442278330214318,
+                "max": 24.333911947906017
+              },
+              "latency_ms": {
+                "p50": 236.7602945305407,
+                "p95": 282.2906600544229,
+                "max": 308.14066296443343
+              }
+            },
+            "camera_2": {
+              "received_frames": 625,
+              "processed_frames": 298,
+              "receive_fps": 24.99032655972108,
+              "inference_fps": 11.91538770367501,
+              "dropped_frames": 326,
+              "drop_fraction": 0.5216,
+              "queue_start": 5,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 298,
+              "processing_ms": {
+                "p50": 11.040088953450322,
+                "p95": 15.30778573360294,
+                "max": 25.11467132717371
+              },
+              "latency_ms": {
+                "p50": 236.51840910315514,
+                "p95": 278.2448047073558,
+                "max": 317.8914990276098
+              }
+            },
+            "camera_3": {
+              "received_frames": 625,
+              "processed_frames": 298,
+              "receive_fps": 24.99032655972108,
+              "inference_fps": 11.91538770367501,
+              "dropped_frames": 327,
+              "drop_fraction": 0.5232,
+              "queue_start": 6,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 298,
+              "processing_ms": {
+                "p50": 11.219231644645333,
+                "p95": 16.221890132874247,
+                "max": 22.29285193607211
+              },
+              "latency_ms": {
+                "p50": 240.26914266869426,
+                "p95": 280.3770170547068,
+                "max": 303.8862287066877
+              }
+            },
+            "camera_4": {
+              "received_frames": 625,
+              "processed_frames": 298,
+              "receive_fps": 24.99032655972108,
+              "inference_fps": 11.91538770367501,
+              "dropped_frames": 326,
+              "drop_fraction": 0.5216,
+              "queue_start": 5,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 298,
+              "processing_ms": {
+                "p50": 11.11457939259708,
+                "p95": 16.441780910827212,
+                "max": 26.161473244428635
+              },
+              "latency_ms": {
+                "p50": 238.03335591219366,
+                "p95": 279.46049170568585,
+                "max": 309.6768450923264
+              }
+            },
+            "camera_5": {
+              "received_frames": 625,
+              "processed_frames": 299,
+              "receive_fps": 24.99032655972108,
+              "inference_fps": 11.955372226170564,
+              "dropped_frames": 326,
+              "drop_fraction": 0.5216,
+              "queue_start": 5,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 299,
+              "processing_ms": {
+                "p50": 11.042352765798569,
+                "p95": 15.058227162808175,
+                "max": 18.966093193739653
+              },
+              "latency_ms": {
+                "p50": 236.39001557603478,
+                "p95": 276.7387476749718,
+                "max": 290.9672441892326
+              }
+            },
+            "camera_6": {
+              "received_frames": 625,
+              "processed_frames": 298,
+              "receive_fps": 24.99032655972108,
+              "inference_fps": 11.91538770367501,
+              "dropped_frames": 326,
+              "drop_fraction": 0.5216,
+              "queue_start": 5,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 298,
+              "processing_ms": {
+                "p50": 11.139680398628116,
+                "p95": 15.541060827672482,
+                "max": 21.227318327873945
+              },
+              "latency_ms": {
+                "p50": 234.47547061368823,
+                "p95": 279.32790231425315,
+                "max": 297.1808388829231
+              }
+            }
+          },
+          "total_inference_fps": 71.53231074454561,
+          "total_receive_fps": 149.9019748358309
+        }
+      ],
+      "encode_bgr": {
+        "rounds": [
+          {
+            "frames": 334,
+            "seconds": 3.008668177295476,
+            "fps": 111.01257444090632
+          },
+          {
+            "frames": 328,
+            "seconds": 3.0080875800922513,
+            "fps": 109.03937843124268
+          },
+          {
+            "frames": 329,
+            "seconds": 3.0080940746702254,
+            "fps": 109.37157942311627
+          }
+        ],
+        "median_fps": 109.37157942311627,
+        "duration_ms": {
+          "p50": 9.070917963981628,
+          "p95": 10.158450808376074,
+          "max": 12.777887750416994
+        }
+      },
+      "gpu_forward": {
+        "rounds": [
+          {
+            "frames": 862,
+            "seconds": 3.0007568108849227,
+            "fps": 287.2608659499456
+          },
+          {
+            "frames": 864,
+            "seconds": 3.001219096593559,
+            "fps": 287.8830142659883
+          },
+          {
+            "frames": 864,
+            "seconds": 3.0008198278956115,
+            "fps": 287.92131802391424
+          }
+        ],
+        "median_fps": 287.8830142659883,
+        "duration_ms": {
+          "p50": 3.458990715444088,
+          "p95": 3.542181313969195,
+          "max": 5.062993615865707
+        }
+      }
+    },
+    "fp16": {
+      "weight_dtype": "float16",
+      "live": [
+        {
+          "logical_readers": 2,
+          "seconds": 25.019766973797232,
+          "health_samples": 1109,
+          "cameras": {
+            "camera_1": {
+              "received_frames": 625,
+              "processed_frames": 625,
+              "receive_fps": 24.980248643184872,
+              "inference_fps": 24.980248643184872,
+              "dropped_frames": 0,
+              "drop_fraction": 0.0,
+              "queue_start": 0,
+              "queue_end": 0,
+              "max_sampled_queue": 4,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 625,
+              "processing_ms": {
+                "p50": 14.07274603843689,
+                "p95": 16.875922679901123,
+                "max": 24.15329683572054
+              },
+              "latency_ms": {
+                "p50": 61.298692133277655,
+                "p95": 104.06916821375488,
+                "max": 135.20531076937914
+              }
+            },
+            "camera_2": {
+              "received_frames": 625,
+              "processed_frames": 624,
+              "receive_fps": 24.980248643184872,
+              "inference_fps": 24.940280245355776,
+              "dropped_frames": 0,
+              "drop_fraction": 0.0,
+              "queue_start": 0,
+              "queue_end": 1,
+              "max_sampled_queue": 4,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 624,
+              "processing_ms": {
+                "p50": 14.142221538349986,
+                "p95": 16.644490230828524,
+                "max": 21.49155316874385
+              },
+              "latency_ms": {
+                "p50": 49.73363014869392,
+                "p95": 106.28484995104374,
+                "max": 155.06477002054453
+              }
+            }
+          },
+          "total_inference_fps": 49.920528888540645,
+          "total_receive_fps": 49.960497286369744
+        },
+        {
+          "logical_readers": 3,
+          "seconds": 25.012513305060565,
+          "health_samples": 1097,
+          "cameras": {
+            "camera_1": {
+              "received_frames": 625,
+              "processed_frames": 609,
+              "receive_fps": 24.987492955118157,
+              "inference_fps": 24.34781313546713,
+              "dropped_frames": 15,
+              "drop_fraction": 0.024,
+              "queue_start": 3,
+              "queue_end": 3,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 609,
+              "processing_ms": {
+                "p50": 11.883723083883524,
+                "p95": 14.834626484662294,
+                "max": 21.192925982177258
+              },
+              "latency_ms": {
+                "p50": 180.45135494321585,
+                "p95": 241.8042709119618,
+                "max": 265.3246899135411
+              }
+            },
+            "camera_2": {
+              "received_frames": 625,
+              "processed_frames": 610,
+              "receive_fps": 24.987492955118157,
+              "inference_fps": 24.38779312419532,
+              "dropped_frames": 15,
+              "drop_fraction": 0.024,
+              "queue_start": 3,
+              "queue_end": 4,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 610,
+              "processing_ms": {
+                "p50": 11.827126611024141,
+                "p95": 14.549948694184422,
+                "max": 18.550153821706772
+              },
+              "latency_ms": {
+                "p50": 178.6922726314515,
+                "p95": 238.92839462496337,
+                "max": 283.55124359950423
+              }
+            },
+            "camera_3": {
+              "received_frames": 625,
+              "processed_frames": 610,
+              "receive_fps": 24.987492955118157,
+              "inference_fps": 24.38779312419532,
+              "dropped_frames": 15,
+              "drop_fraction": 0.024,
+              "queue_start": 4,
+              "queue_end": 4,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 610,
+              "processing_ms": {
+                "p50": 11.777125531807542,
+                "p95": 14.496014127507804,
+                "max": 17.629885114729404
+              },
+              "latency_ms": {
+                "p50": 183.46356693655252,
+                "p95": 237.60070214048028,
+                "max": 272.9536681436002
+              }
+            }
+          },
+          "total_inference_fps": 73.12339938385777,
+          "total_receive_fps": 74.96247886535447
+        },
+        {
+          "logical_readers": 4,
+          "seconds": 25.012389474082738,
+          "health_samples": 1067,
+          "cameras": {
+            "camera_1": {
+              "received_frames": 625,
+              "processed_frames": 436,
+              "receive_fps": 24.987616662838654,
+              "inference_fps": 17.431361383996247,
+              "dropped_frames": 189,
+              "drop_fraction": 0.3024,
+              "queue_start": 5,
+              "queue_end": 5,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 436,
+              "processing_ms": {
+                "p50": 12.261941563338041,
+                "p95": 16.758233308792114,
+                "max": 22.718867752701044
+              },
+              "latency_ms": {
+                "p50": 228.82259846664965,
+                "p95": 265.50514402333647,
+                "max": 287.8066813573241
+              }
+            },
+            "camera_2": {
+              "received_frames": 625,
+              "processed_frames": 435,
+              "receive_fps": 24.987616662838654,
+              "inference_fps": 17.391381197335704,
+              "dropped_frames": 189,
+              "drop_fraction": 0.3024,
+              "queue_start": 5,
+              "queue_end": 5,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 435,
+              "processing_ms": {
+                "p50": 12.062160298228264,
+                "p95": 15.316672762855886,
+                "max": 23.93255103379488
+              },
+              "latency_ms": {
+                "p50": 231.34347703307867,
+                "p95": 266.4068611338734,
+                "max": 300.60808965936303
+              }
+            },
+            "camera_3": {
+              "received_frames": 625,
+              "processed_frames": 436,
+              "receive_fps": 24.987616662838654,
+              "inference_fps": 17.431361383996247,
+              "dropped_frames": 188,
+              "drop_fraction": 0.3008,
+              "queue_start": 4,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 436,
+              "processing_ms": {
+                "p50": 12.201784178614616,
+                "p95": 15.488349599763751,
+                "max": 23.366589099168777
+              },
+              "latency_ms": {
+                "p50": 231.16138274781406,
+                "p95": 266.7573861544952,
+                "max": 295.4521179199219
+              }
+            },
+            "camera_4": {
+              "received_frames": 625,
+              "processed_frames": 436,
+              "receive_fps": 24.987616662838654,
+              "inference_fps": 17.431361383996247,
+              "dropped_frames": 188,
+              "drop_fraction": 0.3008,
+              "queue_start": 5,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 436,
+              "processing_ms": {
+                "p50": 12.103395303711295,
+                "p95": 14.886963763274252,
+                "max": 18.233925104141235
+              },
+              "latency_ms": {
+                "p50": 230.43702566064894,
+                "p95": 268.2962102117017,
+                "max": 306.47903913632035
+              }
+            }
+          },
+          "total_inference_fps": 69.68546534932445,
+          "total_receive_fps": 99.95046665135462
+        },
+        {
+          "logical_readers": 6,
+          "seconds": 25.000188409350812,
+          "health_samples": 1032,
+          "cameras": {
+            "camera_1": {
+              "received_frames": 625,
+              "processed_frames": 290,
+              "receive_fps": 24.9998115920691,
+              "inference_fps": 11.599912578720062,
+              "dropped_frames": 335,
+              "drop_fraction": 0.536,
+              "queue_start": 6,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 290,
+              "processing_ms": {
+                "p50": 11.697105364874005,
+                "p95": 16.017123567871753,
+                "max": 30.22656822577119
+              },
+              "latency_ms": {
+                "p50": 239.20852784067392,
+                "p95": 282.07429556641733,
+                "max": 301.58639373257756
+              }
+            },
+            "camera_2": {
+              "received_frames": 625,
+              "processed_frames": 290,
+              "receive_fps": 24.9998115920691,
+              "inference_fps": 11.599912578720062,
+              "dropped_frames": 335,
+              "drop_fraction": 0.536,
+              "queue_start": 6,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 290,
+              "processing_ms": {
+                "p50": 11.666249018162489,
+                "p95": 16.289850370958447,
+                "max": 30.192763078957796
+              },
+              "latency_ms": {
+                "p50": 239.2641135957092,
+                "p95": 284.43509829230607,
+                "max": 303.52332815527916
+              }
+            },
+            "camera_3": {
+              "received_frames": 625,
+              "processed_frames": 290,
+              "receive_fps": 24.9998115920691,
+              "inference_fps": 11.599912578720062,
+              "dropped_frames": 335,
+              "drop_fraction": 0.536,
+              "queue_start": 6,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 290,
+              "processing_ms": {
+                "p50": 11.775360442698002,
+                "p95": 15.997237549163406,
+                "max": 22.51735283061862
+              },
+              "latency_ms": {
+                "p50": 237.93060588650405,
+                "p95": 283.5803665686399,
+                "max": 300.1685426570475
+              }
+            },
+            "camera_4": {
+              "received_frames": 625,
+              "processed_frames": 290,
+              "receive_fps": 24.9998115920691,
+              "inference_fps": 11.599912578720062,
+              "dropped_frames": 335,
+              "drop_fraction": 0.536,
+              "queue_start": 6,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 290,
+              "processing_ms": {
+                "p50": 11.694781482219696,
+                "p95": 14.933623000979424,
+                "max": 21.224150899797678
+              },
+              "latency_ms": {
+                "p50": 237.22351645119488,
+                "p95": 279.11547659896314,
+                "max": 300.7558318786323
+              }
+            },
+            "camera_5": {
+              "received_frames": 625,
+              "processed_frames": 290,
+              "receive_fps": 24.9998115920691,
+              "inference_fps": 11.599912578720062,
+              "dropped_frames": 334,
+              "drop_fraction": 0.5344,
+              "queue_start": 5,
+              "queue_end": 6,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 290,
+              "processing_ms": {
+                "p50": 11.659356066957116,
+                "p95": 15.446402551606297,
+                "max": 24.055923335254192
+              },
+              "latency_ms": {
+                "p50": 236.32445163093507,
+                "p95": 276.2967712478712,
+                "max": 302.85191303119063
+              }
+            },
+            "camera_6": {
+              "received_frames": 625,
+              "processed_frames": 290,
+              "receive_fps": 24.9998115920691,
+              "inference_fps": 11.599912578720062,
+              "dropped_frames": 335,
+              "drop_fraction": 0.536,
+              "queue_start": 5,
+              "queue_end": 5,
+              "max_sampled_queue": 6,
+              "stale_samples": 0,
+              "errors": [],
+              "completion_samples": 290,
+              "processing_ms": {
+                "p50": 11.553591815754771,
+                "p95": 15.643914719112217,
+                "max": 32.8792012296617
+              },
+              "latency_ms": {
+                "p50": 237.42903000675142,
+                "p95": 278.3916841261089,
+                "max": 297.4425368010998
+              }
+            }
+          },
+          "total_inference_fps": 69.59947547232036,
+          "total_receive_fps": 149.9988695524146
+        }
+      ],
+      "cosine_to_tf32_same_30_frames": {
+        "p50": 0.9999974370002747,
+        "p95": 0.9999983310699463,
+        "max": 0.9999986290931702
+      },
+      "cosine_to_tf32_min": 0.9999955296516418,
+      "encode_bgr": {
+        "rounds": [
+          {
+            "frames": 366,
+            "seconds": 3.0057356390170753,
+            "fps": 121.76719577364028
+          },
+          {
+            "frames": 367,
+            "seconds": 3.002904023975134,
+            "fps": 122.21502820931948
+          },
+          {
+            "frames": 364,
+            "seconds": 3.005460283253342,
+            "fps": 121.11289642662598
+          }
+        ],
+        "median_fps": 121.76719577364028,
+        "duration_ms": {
+          "p50": 8.045932743698359,
+          "p95": 9.85282827168703,
+          "max": 11.324387975037098
+        }
+      },
+      "gpu_forward": {
+        "rounds": [
+          {
+            "frames": 1068,
+            "seconds": 3.0000680601224303,
+            "fps": 355.9919237153626
+          },
+          {
+            "frames": 1076,
+            "seconds": 3.0019933129660785,
+            "fps": 358.4285132656984
+          },
+          {
+            "frames": 1078,
+            "seconds": 3.0004726671613753,
+            "fps": 359.2767272297307
+          }
+        ],
+        "median_fps": 358.4285132656984,
+        "duration_ms": {
+          "p50": 2.7817850932478905,
+          "p95": 2.8826424153521657,
+          "max": 3.2421499490737915
+        }
+      }
+    }
+  },
+  "frame_shape": [
+    720,
+    1280,
+    3
+  ],
+  "completed_at": 1788858854.0173538,
+  "environment_after": "Tue Sep  8 17:14:14 2026       \n+-----------------------------------------------------------------------------------------+\n| NVIDIA-SMI 595.78                 Driver Version: 595.78         CUDA Version: 13.2     |\n+-----------------------------------------+------------------------+----------------------+\n| GPU  Name                 Persistence-M | Bus-Id          Disp.A | Volatile Uncorr. ECC |\n| Fan  Temp   Perf          Pwr:Usage/Cap |           Memory-Usage | GPU-Util  Compute M. |\n|                                         |                        |               MIG M. |\n|=========================================+========================+======================|\n|   0  NVIDIA Thor                    Off |   00000000:01:00.0 Off |                  N/A |\n| N/A   46C  N/A               4W /  N/A  | Not Supported          |     40%      Default |\n|                                         |                        |             Disabled |\n+-----------------------------------------+------------------------+----------------------+\n\n+-----------------------------------------------------------------------------------------+\n| Processes:                                                                              |\n|  GPU   GI   CI              PID   Type   Process name                        GPU Memory |\n|        ID   ID                                                               Usage      |\n|=========================================================================================|\n|    0   N/A  N/A            7540      G   /usr/lib/xorg/Xorg                      225MiB |\n|    0   N/A  N/A            7868      G   /usr/bin/gnome-shell                     81MiB |\n|    0   N/A  N/A           11182      G   /usr/bin/gnome-control-center            21MiB |\n|    0   N/A  N/A          763986      C   VLLM::EngineCore                      84567MiB |\n|    0   N/A  N/A          787708      C   .venv/bin/python                        328MiB |\n+-----------------------------------------------------------------------------------------+\n"
+}

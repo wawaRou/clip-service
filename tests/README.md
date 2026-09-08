@@ -12,6 +12,13 @@
 CUDA 测试在 Mac 上跳过，MPS 测试在 Jetson 上跳过，这是平台差异；应单独记录
 跳过原因。pytest 不需要下载 Hugging Face 预训练模型。
 
+帧驱动调度的定向回归：
+`uv run --locked --extra thor pytest tests/test_scheduler.py tests/test_reader_settings.py tests/test_frame_driven.py tests/test_multi_camera.py`。
+覆盖到帧唤醒、突发帧顺序、多路轮转、限频、队列丢帧、断流恢复和会话状态隔离。
+
+`tests/test_reload.py` 与 `tests/test_recovery.py` 还覆盖摄像头删除、禁用或服务重启后
+的已完成回执重试，确认返回持久化结果、拒绝冲突且不重新应用基准。
+
 真实硬件与 Frigate 流验收通过
 `uv run --locked --extra mac python tests/manual_native.py --help` 查看参数；它需要
 相应平台 extra、本地 CLIP 模型和可用转发流，不属于普通 pytest 自动回归。

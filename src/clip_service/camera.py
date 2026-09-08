@@ -43,7 +43,6 @@ class Camera:
         self._lock = threading.RLock()
         self._revision = 0
         self._retired = False
-        self._last_sequence = 0
         self._stream_generation = 0
         self._inference_error: str | None = None
         self._storage_error: str | None = None
@@ -56,6 +55,14 @@ class Camera:
     @property
     def pending_candidate_id(self) -> str | None:
         return self._pending.candidate_id if self._pending else None
+
+    def _reset_inference(self) -> None:
+        self.reader.reset_inference(
+            not self._retired
+            and self.episode_id is not None
+            and self.detector.baseline is not None
+            and self.pending_candidate_id is None
+        )
 
     def pending_candidate(self) -> CandidateRecord | None:
         with self._lock:
@@ -76,6 +83,7 @@ class Camera:
             self._pending = None
             self.detector.acknowledge()
             self._revision += 1
+            self._reset_inference()
 
     def start_episode(self, episode_id: str) -> None:
         if not episode_id:
@@ -90,6 +98,7 @@ class Camera:
             self.episode_id = episode_id
             self.detector.clear_baseline()
             self._revision += 1
+            self._reset_inference()
 
     def update_settings(self, settings: DetectionConfig) -> None:
         """Keep the active baseline and frozen candidate; restart unconfirmed tracking."""
@@ -102,6 +111,7 @@ class Camera:
             self.detector.frame_count = settings.candidate_frame_count
             self.detector.reset_tracking()
             self._revision += 1
+            self._reset_inference()
 
     def retire(self, reason: str) -> None:
         """End a camera removed or replaced by configuration, invalidating in-flight work."""
@@ -111,6 +121,7 @@ class Camera:
                 self.stop_episode(episode_id)
             self._retired = True
             self._revision += 1
+            self._reset_inference()
             self.reader.request_stop()
             if episode_id is not None:
                 self.events.publish(
@@ -129,6 +140,7 @@ class Camera:
             self._pending = None
             self.detector.clear_baseline()
             self._revision += 1
+            self._reset_inference()
 
     def set_baseline(self, episode_id: str, jpeg: bytes) -> None:
         with self._lock:
@@ -139,6 +151,7 @@ class Camera:
             self._require_revision(episode_id, revision)
             self.detector.set_baseline(embedding)
             self._revision += 1
+            self._reset_inference()
 
     def latest_jpeg(self) -> bytes:
         frame = self.reader.latest_frame()
@@ -176,7 +189,7 @@ class Camera:
         baseline_jpeg: bytes | None,
     ) -> CandidateRecord:
         with self._lock:
-            completed = self._acknowledged(candidate_id, episode_id, triggered_vlm)
+            completed = self.store.get_acknowledged(candidate_id, episode_id, triggered_vlm)
             if completed is not None:
                 return completed
             self.expire_candidate()
@@ -184,7 +197,7 @@ class Camera:
             revision = self._revision
         embedding = self._encode(baseline_jpeg) if baseline_jpeg is not None else None
         with self._lock:
-            completed = self._acknowledged(candidate_id, episode_id, triggered_vlm)
+            completed = self.store.get_acknowledged(candidate_id, episode_id, triggered_vlm)
             if completed is not None:
                 return completed
             self.expire_candidate()
@@ -200,9 +213,17 @@ class Camera:
             self.detector.acknowledge()
             self._pending = None
             self._revision += 1
+            self._reset_inference()
             return record
 
-    def process_latest(self) -> None:
+    def has_inference_frame(self) -> bool:
+        with self._lock:
+            if self.reader.latest_frame() is None:
+                self.detector.reset_tracking()
+                return False
+            return self.reader.has_inference_frame()
+
+    def process_next(self) -> None:
         with self._lock:
             if (
                 self.episode_id is None
@@ -210,16 +231,13 @@ class Camera:
                 or self.pending_candidate_id
             ):
                 return
-            frame = self.reader.latest_frame()
+            frame = self.reader.pop_inference_frame()
             if frame is None:
                 self.detector.reset_tracking()
                 return
             if frame.stream_generation != self._stream_generation:
                 self.detector.reset_tracking()
                 self._stream_generation = frame.stream_generation
-            if frame.sequence == self._last_sequence:
-                return
-            self._last_sequence = frame.sequence
             revision = self._revision
             episode_id = self.episode_id
         started = time.monotonic()
@@ -255,6 +273,7 @@ class Camera:
             self._storage_error = None
             self._pending = record
             self._revision += 1
+            self._reset_inference()
             self.events.publish("candidate_change", record.to_api())
 
     def health(self) -> dict[str, Any]:
@@ -273,6 +292,8 @@ class Camera:
                     else 0.0,
                     "measurement_seconds": measurement_seconds,
                     "frames_processed": self._frames_processed,
+                    "queue_depth": status.pop("inference_queue_depth"),
+                    "frames_dropped": status.pop("inference_frames_dropped"),
                     "last_processing_seconds": self._last_processing_seconds,
                     "last_frame_latency_seconds": self._last_frame_latency_seconds,
                 },
@@ -326,17 +347,3 @@ class Camera:
         self._require_episode(episode_id)
         if self.pending_candidate_id != candidate_id:
             raise ServiceError("candidate is not pending", 409, "candidate_not_pending")
-
-    def _acknowledged(
-        self, candidate_id: str, episode_id: str, triggered_vlm: bool
-    ) -> CandidateRecord | None:
-        record = self.store.get(candidate_id)
-        if record is None:
-            raise ServiceError("candidate not found", 404, "candidate_not_found")
-        if record.status != "acknowledged":
-            return None
-        if record.episode_id != episode_id or record.triggered_vlm != triggered_vlm:
-            raise ServiceError(
-                "acknowledgement conflicts with the completed result", 409, "ack_conflict"
-            )
-        return record

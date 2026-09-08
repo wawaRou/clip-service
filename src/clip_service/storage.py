@@ -11,6 +11,8 @@ from dataclasses import asdict, dataclass, replace
 from pathlib import Path
 from typing import TYPE_CHECKING
 
+from .errors import ServiceError
+
 if TYPE_CHECKING:
     from .detector import CandidateDecision
 
@@ -136,6 +138,21 @@ class CandidateStore:
                 return (self.root / candidate_id / f"frame-{index}.jpg").read_bytes()
             except FileNotFoundError:
                 return None
+
+    def get_acknowledged(
+        self, candidate_id: str, episode_id: str, triggered_vlm: bool
+    ) -> CandidateRecord | None:
+        """Resolve retries from persisted state, even when the camera no longer exists."""
+        record = self.get(candidate_id)
+        if record is None:
+            raise ServiceError("candidate not found", 404, "candidate_not_found")
+        if record.status != "acknowledged":
+            return None
+        if record.episode_id != episode_id or record.triggered_vlm != triggered_vlm:
+            raise ServiceError(
+                "acknowledgement conflicts with the completed result", 409, "ack_conflict"
+            )
+        return record
 
     def update_status(
         self, candidate_id: str, *, status: str, triggered_vlm: bool | None

@@ -7,6 +7,7 @@ import math
 import os
 import threading
 import time
+from collections import deque
 from collections.abc import Callable
 from dataclasses import dataclass
 from typing import Any, Protocol
@@ -26,7 +27,7 @@ LOGGER = logging.getLogger(__name__)
 @dataclass(frozen=True)
 class DecodedFrame:
     timestamp: float
-    pixels: Any  # OpenCV BGR pixels; retained only for the latest frame.
+    pixels: Any  # OpenCV BGR pixels shared by latest-frame access and the bounded queue.
     sequence: int
     stream_generation: int
     received_monotonic: float
@@ -72,6 +73,8 @@ class CameraReader:
         url: str,
         settings: DetectionConfig,
         capture_factory: CaptureFactory = open_capture,
+        *,
+        on_frame: Callable[[], None] | None = None,
     ) -> None:
         self.name = name
         self.settings = settings
@@ -88,6 +91,35 @@ class CameraReader:
         self._last_received_monotonic: float | None = None
         self._latest: DecodedFrame | None = None
         self._capture_settings: DetectionConfig | None = None
+        self._on_frame = on_frame
+        self._inference_enabled = False
+        self._inference_frames: deque[DecodedFrame] = deque(maxlen=6)
+        self._inference_frames_dropped = 0
+
+    def reset_inference(self, enabled: bool) -> None:
+        """Start a new detection revision without retaining frames from the old one."""
+        with self._lock:
+            self._inference_enabled = enabled
+            self._inference_frames_dropped += len(self._inference_frames)
+            self._inference_frames.clear()
+
+    def _prune_inference_frames(self) -> None:
+        cutoff = time.monotonic() - self.settings.frame_max_age_seconds
+        while self._inference_frames and (
+            not self._connected or self._inference_frames[0].received_monotonic < cutoff
+        ):
+            self._inference_frames.popleft()
+            self._inference_frames_dropped += 1
+
+    def has_inference_frame(self) -> bool:
+        with self._lock:
+            self._prune_inference_frames()
+            return bool(self._inference_frames)
+
+    def pop_inference_frame(self) -> DecodedFrame | None:
+        with self._lock:
+            self._prune_inference_frames()
+            return self._inference_frames.popleft() if self._inference_frames else None
 
     @property
     def source_url(self) -> str:
@@ -133,6 +165,7 @@ class CameraReader:
 
     def health(self) -> dict[str, Any]:
         with self._lock:
+            self._prune_inference_frames()
             age = (
                 None
                 if self._last_received_monotonic is None
@@ -149,6 +182,8 @@ class CameraReader:
                 or age is None
                 or age > self.settings.frame_max_age_seconds,
                 "last_error": self._last_error,
+                "inference_queue_depth": len(self._inference_frames),
+                "inference_frames_dropped": self._inference_frames_dropped,
             }
 
     def latest_frame(self) -> DecodedFrame | None:
@@ -209,6 +244,14 @@ class CameraReader:
                             )
                             sample = math.floor((now - buffer_started_at) * buffer_rate) + 1
                             next_buffer_at = buffer_started_at + sample / buffer_rate
+                        if self._inference_enabled:
+                            self._prune_inference_frames()
+                            if len(self._inference_frames) == self._inference_frames.maxlen:
+                                self._inference_frames_dropped += 1
+                            self._inference_frames.append(frame)
+                        notify = self._inference_enabled
+                    if notify and self._on_frame is not None:
+                        self._on_frame()
             except (OSError, cv2.error):
                 # Decoder exception text may contain authentication data.
                 with self._lock:
@@ -222,6 +265,8 @@ class CameraReader:
                     self._last_received_monotonic = None
                     self._latest = None
                     self._capture_settings = None
+                    self._inference_frames_dropped += len(self._inference_frames)
+                    self._inference_frames.clear()
                     self.ring.clear()
             while not self._stop.is_set():
                 with self._lock:

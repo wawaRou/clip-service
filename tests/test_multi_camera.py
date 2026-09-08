@@ -129,11 +129,12 @@ def test_overloaded_encoder_serves_every_camera_and_skips_old_frames(tmp_path):
         latest = {name: feed.value for name, feed in app.feeds.items()}
         app.wait_for(lambda: app.latest_values() == latest)
         boundary = len(app.encoder.values)
+        queued = sum(row["inference"]["queue_depth"] for row in app.health().values())
         app.wait_for(lambda: all(app.counts()[name] >= count + 3 for name, count in counts.items()))
         processed = app.encoder.values[boundary:]
         assert set(latest.values()) <= set(processed)
-        # Only the single inference already in flight may finish with an older frame.
-        assert sum(value not in latest.values() for value in processed) <= 1
+        # Only bounded queued frames and the single in-flight frame may be older.
+        assert sum(value not in latest.values() for value in processed) <= queued + 1
 
 
 def test_one_subscription_receives_independent_candidates_from_multiple_cameras(tmp_path):
