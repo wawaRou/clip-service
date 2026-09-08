@@ -57,7 +57,7 @@ class RunningService:
         path = directory / "service.toml"
         path.write_text(
             '[frigate]\nrtsp_base_url="rtsp://localhost:8554"\n'
-            "[detection]\nstable_seconds=0.2\ncandidate_frame_interval=0.05\n"
+            "[detection]\nstable_seconds=0.2\n"
             "inference_fps=20\nring_max_fps=40\nreconnect_delay_seconds=0.05\n"
             + settings
             + '\n[cameras.room]\nstream="room_sub"\n'

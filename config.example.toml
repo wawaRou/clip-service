@@ -28,8 +28,8 @@ rtsp_base_url = "rtsp://frigate.local:8554" # 必填；CLIP_FRIGATE_URL 可覆�
 # 以下均为各摄像头共享的默认值，可在各自的 cameras 表中覆盖。
 inference_fps = 8 # 每路推理调度 FPS 上限，> 0；实际速率取决于硬件、源帧率和总负载。
 similarity_threshold = 0.9 # 相似度阈值，[-1, 1]。
-stable_seconds = 0.3 # 变化持续确认时间（秒），>= 0 且小于 ring_seconds。
-candidate_frame_interval = 0.075 # 候选五帧间隔（秒），至少为 1 / ring_max_fps。
+stable_seconds = 1.0 # 持续变化窗口（秒）；确认后从这段窗口内均匀选 5 帧，间隔自动为窗口 / 4。
+# 必须 > 0、< ring_seconds 且 >= 4 / ring_max_fps；不再支持 candidate_frame_interval。
 candidate_frame_count = 5 # 当前协议固定为 5，不支持其他值。
 ring_seconds = 7.0 # 短时帧缓存跨度（秒），> 0，必须大于候选五帧的总跨度。
 ring_max_fps = 30.0 # 缓存采样 FPS 上限，> 0。
@@ -50,8 +50,7 @@ enabled = true # 是否启用，默认 true。
 # 可覆盖 [detection] 中的任意同名项；省略则继承全局默认。
 # inference_fps = 8
 # similarity_threshold = 0.9
-# stable_seconds = 0.3
-# candidate_frame_interval = 0.075
+# stable_seconds = 1.0
 # candidate_frame_count = 5
 # ring_seconds = 7.0
 # ring_max_fps = 30.0

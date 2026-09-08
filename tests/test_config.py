@@ -18,6 +18,10 @@ class ConfigTests(unittest.TestCase):
             config = load_config(path, environ={})
             self.assertEqual(config.server.port, 18080)
             self.assertEqual(config.camera_settings("living_room").inference_fps, 8)
+            settings = config.camera_settings("living_room")
+            self.assertEqual(settings.stable_seconds, 1.0)
+            self.assertEqual(settings.candidate_frame_count, 5)
+            self.assertNotIn("candidate_frame_interval", settings.model_dump())
             self.assertEqual(
                 config.camera_url("living_room"),
                 "rtsp://frigate.local:8554/living_room_sub",
@@ -115,9 +119,14 @@ class ConfigTests(unittest.TestCase):
     def test_camera_sampling_and_candidate_window_must_fit_the_buffer(self):
         cases = [
             ("[detection]\ncandidate_frame_interval = 0.01\n", "candidate_frame_interval"),
-            ("[detection]\ncandidate_frame_interval = 2\n", "candidate_frame_interval"),
+            (
+                '[cameras.door]\nstream = "door"\ncandidate_frame_interval = 0.25\n',
+                "candidate_frame_interval",
+            ),
+            ("[detection]\nstable_seconds = 0\n", "stable_seconds"),
+            ("[detection]\nstable_seconds = 0.1\n", "stable_seconds"),
             ("[detection]\nstable_seconds = 7\n", "stable_seconds"),
-            ("[cameras.door]\nring_seconds = 0.2\n", "cameras.door"),
+            ('[cameras.door]\nstream = "door"\nring_seconds = 0.2\n', "cameras.door"),
         ]
         with TemporaryDirectory() as directory:
             path = Path(directory) / "clip.toml"

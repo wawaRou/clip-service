@@ -56,10 +56,16 @@ class FrameRingBuffer:
             return tuple(self._frames)
 
     def nearest_many(
-        self, timestamps: list[float], *, max_distance: float | None = None
+        self,
+        timestamps: list[float],
+        *,
+        max_distance: float | None = None,
+        window: tuple[float, float] | None = None,
     ) -> list[EncodedFrame] | None:
         with self._lock:
             frames = list(self._frames)
+        if window is not None:
+            frames = [frame for frame in frames if window[0] <= frame.timestamp <= window[1]]
         if not frames:
             return None
         frame_times = [frame.timestamp for frame in frames]

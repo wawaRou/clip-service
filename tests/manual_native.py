@@ -56,7 +56,7 @@ def configure(args, path, port, cameras, threshold):
         f"precision = {quote(args.precision)}\n"
         f"[frigate]\nrtsp_base_url = {quote(args.frigate_url)}\n"
         f"[detection]\ninference_fps = {args.fps}\nsimilarity_threshold = {threshold}\n"
-        "stable_seconds = 0.3\ncandidate_frame_interval = 0.075\n"
+        "stable_seconds = 1.0\n"
         + ("[cameras]\n" if not cameras else "")
         + "".join(f"[cameras.{name}]\nstream = {quote(args.stream)}\n" for name in cameras),
         encoding="utf-8",
@@ -358,8 +358,7 @@ def main():
         "target_fps_per_camera": args.fps,
         "warmup_seconds": args.warmup,
         "measurement_seconds_per_phase": args.seconds,
-        "stable_seconds": 0.3,
-        "candidate_frame_interval": 0.075,
+        "stable_seconds": 1.0,
         "measurement": {
             "throughput": "completed encoding counter delta / host monotonic elapsed time",
             "latencies": "latest completion sampled every 0.2s, not all encoded frames; seconds",

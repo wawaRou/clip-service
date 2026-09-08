@@ -66,16 +66,23 @@ curl -H 'Content-Type: application/json' \
 
 此例用候选的最后一张图作为新基准；triggered_vlm 应填写 Agent Server 的实际决策。
 
-自动候选从本轮变化起始时刻开始，按 `candidate_frame_interval` 选取 5 个不同帧，
-同时满足持续变化确认和五帧时间跨度后才发出通知；历史帧不足时不会发送不完整候选。
+自动候选只有一个时间窗口参数 `stable_seconds`，默认 1 秒。从首次检测到与基准
+不同的时刻 t 开始，连续检测结果保持低相似度达到 n 秒后，才确认变化；若中途恢复
+到基准附近则重新计时。随后在 [t, t+n] 内，按 t、t+n/4、t+n/2、t+3n/4、t+n
+五个目标时刻选取不同的 JPEG 帧。历史帧不足时不会发送不完整候选。
+这里的连续指 CLIP 实际采样的检测结果，不保证未推理帧也发生了变化。
 
 时间窗请求包含 episode_id、window_start、window_end、frame_count（1—9）。返回均匀
 目标时刻附近的 JPEG base64；单帧取窗口中点，缺失任一目标帧返回 503。时间戳为
 CLIP 主机收到画面的 Unix 秒数，不代表摄像头采集时间；跨机器调用应使用一致时钟，
 并考虑 Frigate 转发与网络延迟。`frame_window_max_distance_seconds` 仅控制该时间窗
-接口的选帧容差；自动候选五帧的容差为 `max(candidate_frame_interval / 2, 0.075)` 秒。
+接口的选帧容差；自动候选五帧的容差为 `max(stable_seconds / 8, 0.075)` 秒，
+且所有图片必须位于本轮变化窗口内，不使用窗口外的图片补齐。
 
-默认确认时间为 0.3 秒、五帧间隔为 0.075 秒，均可通过 detection 配置覆盖。这些是
+`stable_seconds` 同时决定确认时长和取图跨度，没有第二个等待时间。必须大于零、
+小于 `ring_seconds`，且至少覆盖四个缓存采样间隔（`4 / ring_max_fps`）。
+旧配置需删除全局和各摄像头的 `candidate_frame_interval`，它不再受支持；只设置
+`stable_seconds` 为希望的窗口长度。实际通知还受推理调度和处理延迟影响。这些是
 可运行的初始值，仍须用真实画面验证误报和延迟。模型不可用时基准请求返回 503，
 健康信息包含该路 inference_error；修复模型环境后可重试设置基准。
 

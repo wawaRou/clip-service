@@ -7,11 +7,30 @@ from clip_service.frame_buffer import EncodedFrame, FrameRingBuffer
 
 
 class CandidateDetectorTests(unittest.TestCase):
+    def test_five_frames_span_the_entire_configured_change_window(self):
+        self.detector.stable_seconds = 2.0
+        divergent = np.array([0.0, 1.0])
+        decision = None
+        for index in range(9):
+            timestamp = index / 4
+            self.ring.append(EncodedFrame(timestamp, b"frame", index))
+            decision = self.detector.observe(timestamp, divergent, self.ring)
+            if timestamp < 2.0:
+                self.assertIsNone(decision)
+        self.assertIsNotNone(decision)
+        self.assertEqual([f.timestamp for f in decision.frames], [0, 0.5, 1, 1.5, 2])
+
+    def test_frames_outside_change_window_cannot_complete_candidate(self):
+        divergent = np.array([0.0, 1.0])
+        self.detector.observe(0, divergent, self.ring)
+        for index, timestamp in enumerate([-0.01, 0.25, 0.5, 0.75, 1.01]):
+            self.ring.append(EncodedFrame(timestamp, b"frame", index))
+        self.assertIsNone(self.detector.observe(1.1, divergent, self.ring))
+
     def setUp(self) -> None:
         self.detector = CandidateDetector(
             similarity_threshold=0.8,
             stable_seconds=1.0,
-            frame_interval=0.25,
             frame_count=5,
         )
         self.detector.set_baseline(np.array([1.0, 0.0]))

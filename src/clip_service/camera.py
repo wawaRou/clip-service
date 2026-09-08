@@ -37,7 +37,6 @@ class Camera:
         self.detector = CandidateDetector(
             similarity_threshold=self.settings.similarity_threshold,
             stable_seconds=self.settings.stable_seconds,
-            frame_interval=self.settings.candidate_frame_interval,
             frame_count=self.settings.candidate_frame_count,
         )
         self._lock = threading.RLock()
@@ -107,7 +106,6 @@ class Camera:
             self.settings = settings
             self.detector.similarity_threshold = settings.similarity_threshold
             self.detector.stable_seconds = settings.stable_seconds
-            self.detector.frame_interval = settings.candidate_frame_interval
             self.detector.frame_count = settings.candidate_frame_count
             self.detector.reset_tracking()
             self._revision += 1

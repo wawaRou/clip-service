@@ -91,8 +91,7 @@ class FrigateConfig(ConfigModel):
 class DetectionConfig(ConfigModel):
     inference_fps: float = Field(default=8, gt=0)
     similarity_threshold: float = Field(default=0.9, ge=-1, le=1)
-    stable_seconds: float = Field(default=0.3, ge=0)
-    candidate_frame_interval: float = Field(default=0.075, gt=0)
+    stable_seconds: float = Field(default=1.0, gt=0)
     candidate_frame_count: Literal[5] = 5
     ring_seconds: float = Field(default=7, gt=0)
     ring_max_fps: float = Field(default=30, gt=0)
@@ -106,11 +105,8 @@ class DetectionConfig(ConfigModel):
 
     @model_validator(mode="after")
     def check_buffer_window(self):
-        if self.candidate_frame_interval < 1 / self.ring_max_fps:
-            raise ValueError("candidate_frame_interval must be at least 1 / ring_max_fps")
-        span = self.candidate_frame_interval * (self.candidate_frame_count - 1)
-        if span >= self.ring_seconds:
-            raise ValueError("candidate_frame_interval and count must span less than ring_seconds")
+        if self.stable_seconds / (self.candidate_frame_count - 1) < 1 / self.ring_max_fps:
+            raise ValueError("stable_seconds must cover four ring sampling intervals")
         if self.stable_seconds >= self.ring_seconds:
             raise ValueError("stable_seconds must be less than ring_seconds")
         return self
@@ -122,7 +118,6 @@ class CameraConfig(ConfigModel):
     inference_fps: float | None = None
     similarity_threshold: float | None = None
     stable_seconds: float | None = None
-    candidate_frame_interval: float | None = None
     candidate_frame_count: int | None = None
     ring_seconds: float | None = None
     ring_max_fps: float | None = None

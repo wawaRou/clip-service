@@ -134,7 +134,6 @@ def test_stale_stream_cannot_confirm_a_change_using_tracking_from_before_the_gap
                 update={
                     "similarity_threshold": 0.9,
                     "stable_seconds": 0.4,
-                    "candidate_frame_interval": 0.05,
                     "frame_max_age_seconds": 0.1,
                 }
             )

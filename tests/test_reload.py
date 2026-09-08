@@ -23,7 +23,6 @@ def configuration(cameras=None, *, detection=None, root="", extra="", frigate=""
         cameras = {"room": {"stream": "room_sub"}}
     settings = {
         "stable_seconds": 0.2,
-        "candidate_frame_interval": 0.05,
         "inference_fps": 20,
         "ring_max_fps": 40,
         "reconnect_delay_seconds": 0.05,

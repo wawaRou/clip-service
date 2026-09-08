@@ -34,12 +34,10 @@ class CandidateDetector:
         *,
         similarity_threshold: float,
         stable_seconds: float,
-        frame_interval: float,
         frame_count: int,
     ) -> None:
         self.similarity_threshold = similarity_threshold
         self.stable_seconds = stable_seconds
-        self.frame_interval = frame_interval
         self.frame_count = frame_count
         self.baseline: np.ndarray | None = None
         self.pending = False
@@ -87,13 +85,12 @@ class CandidateDetector:
         if timestamp - self._run_started_at < self.stable_seconds:
             return None
 
-        targets = [
-            self._run_started_at + index * self.frame_interval for index in range(self.frame_count)
-        ]
-        tolerance = max(self.frame_interval / 2.0, 0.075)
-        if timestamp < targets[-1]:
-            return None
-        frames = ring.nearest_many(targets, max_distance=tolerance)
+        interval = self.stable_seconds / (self.frame_count - 1)
+        targets = [self._run_started_at + index * interval for index in range(self.frame_count)]
+        tolerance = max(interval / 2.0, 0.075)
+        frames = ring.nearest_many(
+            targets, max_distance=tolerance, window=(targets[0], targets[-1])
+        )
         if frames is None or len({frame.timestamp for frame in frames}) != self.frame_count:
             # This historical window can no longer be completed after a gap or eviction.
             if timestamp >= targets[-1] + tolerance:

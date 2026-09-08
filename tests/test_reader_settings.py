@@ -70,7 +70,7 @@ def test_smaller_history_preserves_recent_frames_without_reopening_stream():
         latest = reader.latest_frame()
 
         reader.update_settings(
-            DetectionConfig(ring_seconds=0.5, ring_max_fps=10, candidate_frame_interval=0.1)
+            DetectionConfig(ring_seconds=0.5, ring_max_fps=10, stable_seconds=0.4)
         )
 
         assert reader.ring.snapshot() == before[-7:]
@@ -156,7 +156,7 @@ def test_only_history_samples_are_jpeg_encoded(monkeypatch):
         return original(*args)
 
     monkeypatch.setattr(cv2, "imencode", encode)
-    settings = DetectionConfig(ring_max_fps=10, candidate_frame_interval=0.1)
+    settings = DetectionConfig(ring_max_fps=10)
     with running_reader(settings) as (reader, feed):
         pixels = np.full((24, 32, 3), (10, 20, 30), dtype=np.uint8)
         for _ in range(10):
@@ -169,7 +169,7 @@ def test_only_history_samples_are_jpeg_encoded(monkeypatch):
 
 
 def test_faster_history_sampling_starts_on_the_next_frame():
-    settings = DetectionConfig(ring_max_fps=10, candidate_frame_interval=0.1)
+    settings = DetectionConfig(ring_max_fps=10)
     with running_reader(settings) as (reader, feed):
         feed.send_frame(reader)
         reader.update_settings(settings.model_copy(update={"ring_max_fps": 100}))

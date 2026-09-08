@@ -22,7 +22,7 @@ class RunningCameras:
         config_path.write_text(
             '[frigate]\nrtsp_base_url="rtsp://localhost:8554"\n'
             f"[detection]\ninference_fps={fps}\nring_max_fps={ring_fps}\n"
-            "stable_seconds=0.2\ncandidate_frame_interval=0.05\n"
+            "stable_seconds=0.2\n"
             + "".join(
                 f'[cameras.{name}]\nstream="{name}_sub"\n'
                 + (f"inference_fps={rate}\n" if rate is not None else "")
